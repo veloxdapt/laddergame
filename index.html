@@ -28,7 +28,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:#07071a;overflow-x:clip;ov
 .lang-select:hover{border-color:#a78bfa}
 .lang-select option{background:#1a1a2e;color:#e5e7eb;font-weight:700}
 html[dir="rtl"] .lang-select{left:auto;right:12px}
-html[dir="rtl"] .coffee-fab,html[dir="rtl"] .contact-fab{right:auto;left:20px}
 html[dir="rtl"] .made-by{text-align:left}
 .scr{display:none}.scr.on{display:flex;flex-direction:column;align-items:center}
 #s-setup,#s-result{min-height:100vh}
@@ -171,13 +170,14 @@ html[dir="rtl"] .made-by{text-align:left}
 .swap-cnt{color:#6b7280;font-size:.75rem;margin-top:2px}
 #revbtn{background:linear-gradient(135deg,#059669,#10b981);border:none;color:#fff;padding:11px 36px;font-family:'Jua',sans-serif;font-size:1.05rem;border-radius:50px;cursor:pointer;box-shadow:0 4px 18px rgba(16,185,129,.4);transition:all .2s}
 #revbtn:hover{transform:translateY(-2px)}
-.coffee-fab{position:fixed;bottom:68px;right:20px;z-index:999;background:linear-gradient(135deg,#ff9500,#ff6b00);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(255,100,0,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
+.fab-box{display:flex;flex-direction:column;gap:10px;align-items:center;width:100%;max-width:500px;margin-top:12px;}
+.coffee-fab{background:linear-gradient(135deg,#ff9500,#ff6b00);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(255,100,0,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
 .coffee-fab:hover{transform:scale(1.06);}
-.contact-fab{position:fixed;bottom:20px;right:20px;z-index:999;background:linear-gradient(135deg,#4a5aeb,#1f30c5);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(31,48,197,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
+.contact-fab{background:linear-gradient(135deg,#4a5aeb,#1f30c5);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(31,48,197,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
 .contact-fab:hover{transform:scale(1.06);}
 @media (max-width:480px){
-  .coffee-fab{padding:9px 14px;font-size:.88rem;min-width:140px;bottom:56px;right:14px}
-  .contact-fab{padding:9px 14px;font-size:.88rem;min-width:140px;bottom:14px;right:14px}
+  .coffee-fab{padding:9px 14px;font-size:.88rem;min-width:140px}
+  .contact-fab{padding:9px 14px;font-size:.88rem;min-width:140px}
 }
 .coffee-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
 .coffee-bg.show{opacity:1;pointer-events:all;}
@@ -1467,13 +1467,16 @@ function drawBracketTree(players){
 function showScreen(id){
   document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
   document.getElementById(id).classList.add('on');
-  // 커피/문의 버튼: 시작·결과 화면만 표시
-  const showFab = (id==='s-setup'||id==='s-result');
-  const disp = showFab ? 'flex' : 'none';
-  const cf=document.querySelector('.coffee-fab');
-  const ct=document.querySelector('.contact-fab');
-  if(cf) cf.style.display=disp;
-  if(ct) ct.style.display=disp;
+  // 커피/문의 버튼: 시작·결과 화면 맨 아래에 inline으로 배치
+  const fab=document.getElementById('fab-box');
+  if(fab){
+    if(id==='s-setup'||id==='s-result'){
+      document.getElementById(id).appendChild(fab);
+      fab.style.display='flex';
+    }else{
+      fab.style.display='none';
+    }
+  }
 }
 function cleanupGame(){
   if(RAF){cancelAnimationFrame(RAF);RAF=null}
@@ -1558,8 +1561,10 @@ function copyContactMail(){
 }
 </script>
 
+<div class="fab-box" id="fab-box">
 <button class="coffee-fab" onclick="openCoffee()" data-i18n="coffeeBtn">☕ 커피 사주기</button>
 <button class="contact-fab" onclick="openContact()" data-i18n="contactBtn">📧 문의하기</button>
+</div>
 <div class="coffee-bg" id="coffee-bg" onclick="closeCoffee(event)">
   <div class="coffee-box">
     <div class="coffee-ttl" data-i18n="coffeeModalTitle">☕ 커피 사주기</div>
