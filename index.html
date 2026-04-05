@@ -1464,7 +1464,17 @@ function drawBracketTree(players){
   ctx.fillText(t('bracketChampion'),lastX+slotW/2,pad-8);
 }
 
-function showScreen(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on')}
+function showScreen(id){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  // 커피/문의 버튼: 시작·결과 화면만 표시
+  const showFab = (id==='s-setup'||id==='s-result');
+  const disp = showFab ? 'flex' : 'none';
+  const cf=document.querySelector('.coffee-fab');
+  const ct=document.querySelector('.contact-fab');
+  if(cf) cf.style.display=disp;
+  if(ct) ct.style.display=disp;
+}
 function cleanupGame(){
   if(RAF){cancelAnimationFrame(RAF);RAF=null}
   const lc=document.getElementById('lc');
