@@ -3,26 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="사다리 타기 게임 | Ladder Game | 벌칙 정하기, 팀 나누기, 토너먼트 대진표, 역할 분담 - 무료 온라인 사다리 게임. 월례회, 회식, 단체게임에 딱!">
-<meta name="keywords" content="사다리타기, 사다리 타기, 사다리게임, 사다리 게임, 온라인 사다리타기, 무료 사다리타기, 벌칙정하기, 벌칙 정하기, 벌칙게임, 내기게임, 내기 게임, 월례회게임, 월례회 게임, 월례회의 게임, 단체게임, 단체 게임, 단체 레크리에이션, 토너먼트, 토너먼트 대진표, 대진표, 대진표 만들기, 역할분담, 역할 분담, 역할분담 게임, 팀나누기, 팀 나누기, 팀 짜기, 조 나누기, 당첨 나누기, 당첨자 뽑기, 랜덤 뽑기, 랜덤 추첨, 추첨게임, 확률게임, 운빨게임, 간단한 게임, 미팅 게임, 회식 게임, 팀빌딩 게임, 워크샵 게임, 야유회 게임, 사무실 게임, 점심시간 게임, 파티게임, 심심할때 게임, 브라우저게임, 순위 정하기, 순위 게임, ladder game, online ladder game, ladder tournament, team picker, random picker, penalty picker, roulette game, party game, group game, office game, team building, tournament bracket, role assignment, プレゼント当選, 梯子游戏, 抽签游戏, 抽奖游戏">
-<meta property="og:title" content="🎯 사다리 타기 | Ladder Game - 벌칙/팀/토너먼트/역할분담">
-<meta property="og:description" content="사다리로 벌칙, 역할, 순위, 팀, 토너먼트 대진표까지! 무료 온라인 사다리 게임. 월례회·회식·단체게임·워크샵에 딱.">
+<title>🎯 Ladder Game — Veloxdapt</title>
+<meta name="description" content="Up to 20 players! Win/Lose, Role Assign, Ranking modes + Swap Chance. Characters race down the ladder simultaneously. Free, instant, no download needed.">
+
+<!-- Open Graph / SNS Preview -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://veloxdapt.github.io/laddergame">
+<meta property="og:title" content="🎯 Ladder Game — Up to 20 Players!">
+<meta property="og:description" content="Win/Lose · Role Assign · Ranking · Swap Chance. Characters animate down the ladder simultaneously. Free &amp; instant — no download needed. Made by Veloxdapt.">
+<meta property="og:image" content="https://veloxdapt.github.io/laddergame/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Veloxdapt Games">
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<title>🎯 사다리 타기 | 벌칙·팀·토너먼트·역할분담 사다리게임</title>
+<meta name="twitter:url" content="https://veloxdapt.github.io/laddergame">
+<meta name="twitter:title" content="🎯 Ladder Game — Up to 20 Players!">
+<meta name="twitter:description" content="Win/Lose · Role Assign · Ranking · Swap Chance. Free &amp; instant. Made by Veloxdapt.">
+<meta name="twitter:image" content="https://veloxdapt.github.io/laddergame/og-image.png">
+
+<!-- SEO Keywords (16 languages) -->
+<meta name="keywords" content="사다리타기, ladder game, 梯子游戏, juego de escalera, はしごゲーム, jeu d'échelle, Leiterspiel, jogo da escada,사다리 뽑기, random picker, 抽签, sorteo, 단체게임, party game, 파티게임, 회식게임, team game, juego de equipo, チームゲーム, jeu d'équipe">
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{overflow-x:clip} /* clip: no scroll-blocking side effect unlike hidden */
 body{font-family:'Noto Sans KR',sans-serif;background:#07071a;overflow-x:clip;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.lang-select{position:fixed;top:12px;left:12px;z-index:1001;background:rgba(30,30,60,.85);border:1.5px solid rgba(167,139,250,.4);border-radius:10px;padding:6px 10px;font-family:'Noto Sans KR',sans-serif;font-size:.78rem;font-weight:700;color:#e5e7eb;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.4);outline:none;max-width:150px;backdrop-filter:blur(8px)}
-.lang-select:hover{border-color:#a78bfa}
-.lang-select option{background:#1a1a2e;color:#e5e7eb;font-weight:700}
-html[dir="rtl"] .lang-select{left:auto;right:12px}
-html[dir="rtl"] .coffee-fab,html[dir="rtl"] .contact-fab{right:auto;left:20px}
-html[dir="rtl"] .made-by{text-align:left}
 .scr{display:none}.scr.on{display:flex;flex-direction:column;align-items:center}
 #s-setup,#s-result{min-height:100vh}
 #s-game{height:100dvh;height:100vh;overflow:hidden}
@@ -38,7 +46,7 @@ html[dir="rtl"] .made-by{text-align:left}
 }
 .sub{color:#6b7280;text-align:center;font-size:.82rem;margin-top:3px}
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;width:100%;max-width:500px;backdrop-filter:blur(20px)}
-.made-by{color:rgba(255,255,255,.38);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;width:100%;max-width:500px;text-align:right;padding-right:4px;margin-bottom:-4px}
+.made-by{color:rgba(255,255,255,.28);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;align-self:flex-end;padding-right:4px;margin-bottom:-4px}
 .emoji-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
 .epill{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:3px 9px 3px 5px;font-size:.8rem;color:#d1d5db;transition:border-color .2s}
 .epill.filled{border-color:rgba(167,139,250,.5);background:rgba(167,139,250,.1)}
@@ -76,8 +84,7 @@ html[dir="rtl"] .made-by{text-align:left}
 .ghdr{background:rgba(7,7,26,.9);backdrop-filter:blur(12px);width:100%;padding:9px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;position:relative;z-index:20}
 .ghdr h2{font-family:'Jua',sans-serif;color:#e5e7eb;font-size:.98rem}
 #gstat{color:#6b7280;font-size:.78rem;margin-top:2px;transition:color .4s}
-#lcont{overflow:auto;flex:1;width:100%;min-height:0;scrollbar-width:none;-ms-overflow-style:none}
-#lcont::-webkit-scrollbar{display:none;width:0;height:0}
+#lcont{overflow:auto;flex:1;width:100%;min-height:0}
 #lc{display:block}
 .gftr{background:rgba(7,7,26,.9);backdrop-filter:blur(12px);width:100%;padding:11px 16px;text-align:center;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;min-height:56px;display:flex;align-items:center;justify-content:center}
 #rbtn{background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);border:none;color:#fff;padding:11px 40px;font-family:'Jua',sans-serif;font-size:1.05rem;border-radius:50px;cursor:pointer;display:none;animation:gpulse .9s infinite}
@@ -99,49 +106,9 @@ html[dir="rtl"] .made-by{text-align:left}
 .rc .re{font-size:1.9rem}.rc .rn{color:#f3f4f6;font-weight:700;font-size:.85rem;margin-top:5px}
 .rc .rres{font-size:.78rem;font-weight:700;margin-top:5px}
 .rc.top .rres{color:#fbbf24}.rc.rank2 .rres{color:#c0c0c0}.rc.rank3 .rres{color:#cd7f32}
-.rc.role .rres{color:#60a5fa}
-.rc:not(.top):not(.rank2):not(.rank3):not(.role):not(.pass):not(.penalty) .rres{color:#6b7280}
-.rc.pass{border-color:#22c55e;background:rgba(34,197,94,.08)}.rc.pass .rres{color:#22c55e}
-.rc.penalty{border-color:#ef4444;background:rgba(239,68,68,.08)}.rc.penalty .rres{color:#ef4444}
-.team-section{width:100%;max-width:520px;margin-bottom:8px;animation:fadeUp .4s both}
-.team-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.team-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
-.team-label{font-weight:700;font-size:.92rem}
-.team-members{display:flex;flex-wrap:wrap;gap:7px}
-.team-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 12px 5px 7px;font-size:.84rem;color:#e5e7eb}
-.team-chip .tc-em{font-size:1.1rem}
-.bracket-round{width:100%;max-width:520px;margin-bottom:16px;animation:fadeUp .4s both}
-.bracket-rtitle{color:#a78bfa;font-weight:700;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;text-align:center}
-.bracket-match{display:flex;align-items:center;gap:0;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;margin-bottom:8px}
-.bracket-slot{flex:1;display:flex;align-items:center;gap:8px;padding:12px 14px}
-.bracket-vs{background:rgba(167,139,250,.15);color:#a78bfa;font-family:'Jua',sans-serif;font-size:.9rem;padding:8px 10px;flex-shrink:0}
-.bracket-em{font-size:1.3rem}.bracket-nm{color:#f3f4f6;font-weight:700;font-size:.88rem}
-.bracket-bye{color:#6b7280;font-style:italic;padding:12px 14px;flex:1;text-align:center;font-size:.84rem}
-.sub-opt{display:flex;gap:6px;margin-top:10px}
-.sub-btn{flex:1;padding:8px 6px;border-radius:8px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#9ca3af;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:.76rem;font-weight:600;text-align:center;transition:all .18s}
-.sub-btn:hover{border-color:rgba(255,255,255,.2);color:#e5e7eb}
-.sub-btn.sel{border-color:#60a5fa;background:rgba(96,165,250,.12);color:#60a5fa}
-.team-manual-inputs{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:7px;margin-top:10px}
-.spd-btns{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-.spd-btn{padding:5px 10px;border-radius:8px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#9ca3af;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:.73rem;font-weight:600;transition:all .18s;white-space:nowrap}
-.spd-btn:hover{border-color:rgba(255,255,255,.2);color:#e5e7eb}
-.spd-btn.sel{border-color:#f59e0b;background:rgba(245,158,11,.12);color:#f59e0b;box-shadow:0 0 10px rgba(245,158,11,.15)}
+.rc.role .rres{color:#60a5fa}.rc:not(.top):not(.rank2):not(.rank3):not(.role) .rres{color:#6b7280}
 .restbtn{background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:#fff;padding:13px 50px;font-family:'Jua',sans-serif;font-size:1.05rem;border-radius:50px;cursor:pointer;box-shadow:0 6px 24px rgba(124,58,237,.4);transition:all .2s}
 .restbtn:hover{transform:translateY(-2px)}
-.r-actions{display:flex;gap:10px;width:100%;max-width:520px;flex-wrap:wrap;justify-content:center}
-.r-act{flex:1;min-width:140px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 10px 14px;text-align:center;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:4px}
-.r-act:hover{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.07);transform:translateY(-2px)}
-.r-act:active{transform:translateY(0)}
-.r-act.disabled{opacity:.35;pointer-events:none}
-.r-act-ico{font-size:1.6rem}
-.r-act-lbl{font-family:'Jua',sans-serif;color:#e5e7eb;font-size:.95rem}
-.r-act-desc{color:#6b7280;font-size:.72rem;line-height:1.3}
-.r-act.primary{border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.08)}
-.r-act.primary:hover{border-color:#a78bfa;background:rgba(167,139,250,.15)}
-.r-act.green{border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.06)}
-.r-act.green:hover{border-color:#22c55e;background:rgba(34,197,94,.12)}
-.r-act.amber{border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.06)}
-.r-act.amber:hover{border-color:#f59e0b;background:rgba(245,158,11,.12)}
 .rklist{width:100%;max-width:480px;display:flex;flex-direction:column;gap:8px}
 .rki{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:12px;padding:12px 16px;animation:fadeUp .3s both}
 .rki.r1{border-color:#fbbf24;background:rgba(251,191,36,.08)}.rki.r2{border-color:#c0c0c0;background:rgba(192,192,192,.05)}.rki.r3{border-color:#cd7f32;background:rgba(205,127,50,.05)}
@@ -149,7 +116,7 @@ html[dir="rtl"] .made-by{text-align:left}
 .rki.r1 .rki-rank{color:#fbbf24}.rki.r2 .rki-rank{color:#c0c0c0}.rki.r3 .rki-rank{color:#cd7f32}
 .rki:not(.r1):not(.r2):not(.r3) .rki-rank{color:#6b7280}
 .rki-em{font-size:1.5rem}.rki-name{color:#f3f4f6;font-weight:700;font-size:.9rem;flex:1}
-.opt-row{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:500px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 18px;gap:10px;flex-wrap:wrap}
+.opt-row{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:500px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 18px;gap:12px}
 .opt-label{color:#e5e7eb;font-size:.88rem;font-weight:600;display:flex;flex-direction:column;gap:2px}
 .opt-sub{color:#6b7280;font-size:.74rem;font-weight:400}
 .tog{position:relative;width:50px;height:28px;flex-shrink:0;cursor:pointer}
@@ -164,74 +131,18 @@ html[dir="rtl"] .made-by{text-align:left}
 .swap-cnt{color:#6b7280;font-size:.75rem;margin-top:2px}
 #revbtn{background:linear-gradient(135deg,#059669,#10b981);border:none;color:#fff;padding:11px 36px;font-family:'Jua',sans-serif;font-size:1.05rem;border-radius:50px;cursor:pointer;box-shadow:0 4px 18px rgba(16,185,129,.4);transition:all .2s}
 #revbtn:hover{transform:translateY(-2px)}
-.coffee-fab{position:fixed;bottom:68px;right:20px;z-index:999;background:linear-gradient(135deg,#ff9500,#ff6b00);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(255,100,0,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
-.coffee-fab:hover{transform:scale(1.06);}
-.contact-fab{position:fixed;bottom:20px;right:20px;z-index:999;background:linear-gradient(135deg,#4a5aeb,#1f30c5);color:#fff;border:none;border-radius:50px;padding:11px 18px;font-size:1rem;cursor:pointer;box-shadow:0 4px 18px rgba(31,48,197,.45);font-family:'Noto Sans KR',sans-serif;font-weight:700;transition:transform .2s,box-shadow .2s;min-width:180px;display:flex;align-items:center;justify-content:center;gap:4px;}
-.contact-fab:hover{transform:scale(1.06);}
-@media (max-width:480px){
-  .coffee-fab{padding:9px 14px;font-size:.88rem;min-width:140px;bottom:56px;right:14px}
-  .contact-fab{padding:9px 14px;font-size:.88rem;min-width:140px;bottom:14px;right:14px}
-}
-.coffee-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
-.coffee-bg.show{opacity:1;pointer-events:all;}
-.coffee-box{background:#1a1a2e;border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:28px 24px;width:88%;max-width:320px;text-align:center;transform:scale(.9);transition:transform .25s;}
-.coffee-bg.show .coffee-box{transform:scale(1);}
-.coffee-ttl{font-family:'Jua',sans-serif;font-size:1.5rem;color:#fff;margin-bottom:4px;}
-.coffee-sub{color:#9ca3af;font-size:.82rem;margin-bottom:22px;line-height:1.5;}
-.coffee-btns{display:flex;flex-direction:column;gap:10px;}
-.cbtn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;border:none;font-family:'Noto Sans KR',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:transform .15s;text-decoration:none;}
-.cbtn:hover{transform:translateY(-2px);}
-.cbtn-toss{background:#0064FF;color:#fff;}
-.cbtn-kakao{background:#FEE500;color:#191919;}
-.cbtn-copy{background:rgba(255,255,255,.08);color:#d1d5db;font-size:.85rem;border:1px solid rgba(255,255,255,.1);}
-.cbtn-kofi{background:#29abe0;color:#fff;}
-.cbtn-paypal{background:#003087;color:#fff;}
-.cbtn-crypto{background:#f7931a;color:#fff;border:none;}
-.coffee-coins{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
-.coin-btn{display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);cursor:pointer;font-family:'Noto Sans KR',sans-serif;text-align:left;transition:all .18s;}
-.coin-btn:hover{border-color:#f7931a;background:rgba(247,147,26,.08);transform:translateX(2px);}
-.coin-btn:active{transform:scale(.98);}
-.coin-ico{font-size:1.3rem;flex-shrink:0;}
-.coin-nm{font-size:.84rem;font-weight:700;color:#f3f4f6;min-width:36px;flex-shrink:0;}
-.coin-addr{font-size:.66rem;color:#9ca3af;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:monospace;}
-.coin-cp{font-size:.7rem;color:#f7931a;font-weight:700;flex-shrink:0;}
-.coffee-back{display:flex;align-items:center;gap:4px;font-size:.78rem;color:#9ca3af;cursor:pointer;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:none;border:none;padding:0;margin-bottom:8px;align-self:flex-start;transition:color .15s;}
-.coffee-back:hover{color:#e5e7eb;}
-.coffee-close{margin-top:16px;background:none;border:none;color:#6b7280;font-size:.82rem;cursor:pointer;}
-.copy-ok{color:#34d399;font-size:.78rem;margin-top:6px;min-height:18px;}
-.cbtn-mail{background:linear-gradient(135deg,#4a5aeb,#1f30c5);color:#fff;border:none;font-weight:700;word-break:break-all;line-height:1.4;}
 </style>
 </head>
 <body>
 
-<!-- 🌐 Language selector -->
-<select class="lang-select" id="langSelect" onchange="applyLanguage(this.value)">
-  <option value="ko">🇰🇷 한국어</option>
-  <option value="en">🇺🇸 English</option>
-  <option value="zh">🇨🇳 中文</option>
-  <option value="es">🇪🇸 Español</option>
-  <option value="ja">🇯🇵 日本語</option>
-  <option value="fr">🇫🇷 Français</option>
-  <option value="de">🇩🇪 Deutsch</option>
-  <option value="pt">🇵🇹 Português</option>
-  <option value="ar">🇸🇦 العربية</option>
-  <option value="ru">🇷🇺 Русский</option>
-  <option value="hi">🇮🇳 हिन्दी</option>
-  <option value="it">🇮🇹 Italiano</option>
-  <option value="tr">🇹🇷 Türkçe</option>
-  <option value="nl">🇳🇱 Nederlands</option>
-  <option value="pl">🇵🇱 Polski</option>
-  <option value="id">🇮🇩 Indonesia</option>
-</select>
-
 <div id="s-setup" class="scr on">
-  <div class="made-by">Made by Veloxdapt</div>
-  <div class="big-title"><svg width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px;margin-bottom:3px;filter:drop-shadow(0 0 6px #60a5fa)"><line x1="6" y1="2" x2="6" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="21" y1="2" x2="21" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="36" y1="2" x2="36" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="6" y1="13" x2="21" y2="13" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/><line x1="21" y1="25" x2="36" y2="25" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/><line x1="6" y1="37" x2="21" y2="37" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/></svg><span data-i18n="bigTitle">사다리 타기</span></div>
-  <div class="sub" style="margin-top:2px;margin-bottom:2px" data-i18n="subtitle">두근두근 운명의 사다리!</div>
+  <div class="made-by">Made by JY</div>
+  <div class="big-title"><svg width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px;margin-bottom:3px;filter:drop-shadow(0 0 6px #60a5fa)"><line x1="6" y1="2" x2="6" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="21" y1="2" x2="21" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="36" y1="2" x2="36" y2="46" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/><line x1="6" y1="13" x2="21" y2="13" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/><line x1="21" y1="25" x2="36" y2="25" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/><line x1="6" y1="37" x2="21" y2="37" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linecap="round"/></svg>사다리 타기</div>
+  <div class="sub" style="margin-top:2px;margin-bottom:2px">두근두근 운명의 사다리!</div>
   <div class="card">
-    <div class="ctitle" data-i18n="participantSec">👥 참가자 설정</div>
+    <div class="ctitle">👥 참가자 설정</div>
     <div class="row">
-      <span style="color:#d1d5db;flex:1"><span data-i18n="participantCount">참가자 수</span> <span id="cd" style="color:#60a5fa;font-weight:700">4</span><span data-i18n="personSuffix">명</span></span>
+      <span style="color:#d1d5db;flex:1">참가자 수 <span id="cd" style="color:#60a5fa;font-weight:700">4</span>명</span>
       <button class="nbtn" onclick="cc(-1)">−</button>
       <button class="nbtn" onclick="cc(+1)">+</button>
     </div>
@@ -239,22 +150,19 @@ html[dir="rtl"] .made-by{text-align:left}
     <div class="big-input-wrap">
       <textarea class="big-input" id="name-input" rows="2"
         oninput="onNameInput()" onfocus="showPh('name-ph',false)" onblur="showPh('name-ph',!this.value.trim())"></textarea>
-      <div class="ph-label" id="name-ph" data-i18n="namePlaceholder">민서, 유준, 도혁, 하리 …&#10;반복 입력: 도혁*2, 하리*3 …</div>
+      <div class="ph-label" id="name-ph">민서, 유준, 도혁, 하리 …&#10;반복 입력: 도혁*2, 하리*3 …</div>
     </div>
   </div>
-  <div class="mtabs" style="flex-wrap:wrap">
-    <button class="mtab sel" onclick="selMode('A')"><span class="mico">🏆</span><span data-i18n="tabA">당첨/꽝<br>고르기</span></button>
-    <button class="mtab" onclick="selMode('B')"><span class="mico">👔</span><span data-i18n="tabB">역할<br>분담하기</span></button>
-    <button class="mtab" onclick="selMode('C')"><span class="mico">🥇</span><span data-i18n="tabC">순위<br>고르기</span></button>
-    <button class="mtab" onclick="selMode('D')"><span class="mico">😈</span><span data-i18n="tabD">벌칙<br>모드</span></button>
-    <button class="mtab" onclick="selMode('E')"><span class="mico">👥</span><span data-i18n="tabE">팀<br>나누기</span></button>
-    <button class="mtab" onclick="selMode('F')"><span class="mico">⚔️</span><span data-i18n="tabF">토너먼트<br>모드</span></button>
+  <div class="mtabs">
+    <button class="mtab sel" onclick="selMode('A')"><span class="mico">🏆</span>당첨/꽝<br>고르기</button>
+    <button class="mtab" onclick="selMode('B')"><span class="mico">👔</span>역할<br>분담하기</button>
+    <button class="mtab" onclick="selMode('C')"><span class="mico">🥇</span>순위<br>고르기</button>
   </div>
   <div id="ms-card" class="card"></div>
   <div class="opt-row">
     <div class="opt-label">
-      <span data-i18n="swapOpt">🔀 바꾸기 찬스 옵션</span>
-      <span class="opt-sub" data-i18n="swapOptDesc">도착 후 포스트잇을 서로 바꿀 수 있어요</span>
+      🔀 바꾸기 찬스 옵션
+      <span class="opt-sub">도착 후 포스트잇을 서로 바꿀 수 있어요</span>
     </div>
     <label class="tog">
       <input type="checkbox" id="swap-opt">
@@ -262,34 +170,23 @@ html[dir="rtl"] .made-by{text-align:left}
       <div class="tog-thumb"></div>
     </label>
   </div>
-  <div class="opt-row">
-    <div class="opt-label">
-      <span data-i18n="speedOpt">🏃 사다리 속도</span>
-      <span class="opt-sub" data-i18n="speedOptDesc">캐릭터 이동 속도를 조절해요</span>
-    </div>
-    <div class="spd-btns">
-      <button class="spd-btn sel" onclick="setSpd(1,this)"><span data-i18n="spdNormal">🐢 보통</span></button>
-      <button class="spd-btn" onclick="setSpd(1.8,this)"><span data-i18n="spdFast">⚡ 빠르게</span></button>
-      <button class="spd-btn" onclick="setSpd(3.5,this)"><span data-i18n="spdFastest">🚀 매우빠르게</span></button>
-    </div>
-  </div>
   <div class="err" id="em"></div>
-  <button class="sbtn" onclick="startGame()" data-i18n="startBtn">🎮 게임 시작!</button>
+  <button class="sbtn" onclick="startGame()">🎮 게임 시작!</button>
 </div>
 
 <div id="s-game" class="scr">
   <div class="ghdr">
-    <h2 id="gml" data-i18n="appTitle">🎯 사다리 타기</h2>
-    <div id="gstat" data-i18n="gameReady">준비 중...</div>
+    <h2 id="gml">🎯 사다리 타기</h2>
+    <div id="gstat">준비 중...</div>
   </div>
   <div id="lcont"><canvas id="lc"></canvas></div>
   <div class="gftr">
     <div id="swap-ui">
-      <div id="swap-hint" data-i18n="swapHint">🔀 포스트잇을 눌러 서로 바꿔보세요!</div>
+      <div id="swap-hint">🔀 포스트잇을 눌러 서로 바꿔보세요!</div>
       <div class="swap-cnt" id="swap-cnt"></div>
-      <button id="revbtn" onclick="startReveal()" data-i18n="revealBtn">✅ 공개하기!</button>
+      <button id="revbtn" onclick="startReveal()">✅ 공개하기!</button>
     </div>
-    <button id="rbtn" onclick="showResult()" data-i18n="finalResultBtn">🎉 최종 결과 보기!</button>
+    <button id="rbtn" onclick="showResult()">🎉 최종 결과 보기!</button>
   </div>
 </div>
 
@@ -297,256 +194,30 @@ html[dir="rtl"] .made-by{text-align:left}
   <div class="rtitle" id="rt"></div>
   <div id="rh"></div>
   <div id="rb"></div>
-  <div class="r-actions">
-    <div class="r-act primary" onclick="restart()">
-      <div class="r-act-ico">🔄</div>
-      <div class="r-act-lbl" data-i18n="actRestart">다시 하기</div>
-      <div class="r-act-desc" data-i18n="actRestartDesc">처음부터 새로 시작</div>
-    </div>
-    <div class="r-act green" onclick="reshuffle()">
-      <div class="r-act-ico">🔀</div>
-      <div class="r-act-lbl" data-i18n="actReshuffle">다시 섞기</div>
-      <div class="r-act-desc" data-i18n="actReshuffleDesc">같은 멤버로 사다리만 새로</div>
-    </div>
-    <div class="r-act amber" id="extra-btn" onclick="extraDraw()">
-      <div class="r-act-ico">➕</div>
-      <div class="r-act-lbl" data-i18n="actExtra">추가 뽑기</div>
-      <div class="r-act-desc" data-i18n="actExtraDesc">꽝/탈락자끼리 한 판 더</div>
-    </div>
-  </div>
+  <button class="restbtn" onclick="restart()">🔄 다시 하기</button>
 </div>
 
 <script>
 'use strict';
-// 🌐 16-language i18n system
-const T={
-  appTitle:{ko:'🎯 사다리 타기',en:'🎯 Ladder Game',zh:'🎯 梯子游戏',es:'🎯 Juego de Escalera',ja:'🎯 あみだくじ',fr:'🎯 Jeu d\'Échelle',de:'🎯 Leiterspiel',pt:'🎯 Jogo da Escada',ar:'🎯 لعبة السلم',ru:'🎯 Игра-Лестница',hi:'🎯 सीढ़ी खेल',it:'🎯 Gioco della Scala',tr:'🎯 Merdiven Oyunu',nl:'🎯 Ladderspel',pl:'🎯 Gra Drabinkowa',id:'🎯 Permainan Tangga'},
-  bigTitle:{ko:'사다리 타기',en:'Ladder Game',zh:'梯子游戏',es:'Juego de Escalera',ja:'あみだくじ',fr:'Jeu d\'Échelle',de:'Leiterspiel',pt:'Jogo da Escada',ar:'لعبة السلم',ru:'Игра-Лестница',hi:'सीढ़ी खेल',it:'Gioco della Scala',tr:'Merdiven Oyunu',nl:'Ladderspel',pl:'Gra Drabinkowa',id:'Permainan Tangga'},
-  subtitle:{ko:'두근두근 운명의 사다리!',en:'Thrilling ladder of fate!',zh:'激动人心的命运阶梯！',es:'¡Escalera emocionante del destino!',ja:'ドキドキ運命のあみだくじ！',fr:'L\'échelle du destin palpitante !',de:'Aufregende Leiter des Schicksals!',pt:'Emocionante escada do destino!',ar:'سلم القدر المثير!',ru:'Захватывающая лестница судьбы!',hi:'रोमांचक किस्मत की सीढ़ी!',it:'Emozionante scala del destino!',tr:'Heyecan verici kader merdiveni!',nl:'Spannende ladder van het lot!',pl:'Ekscytująca drabina losu!',id:'Tangga takdir yang mendebarkan!'},
-  participantSec:{ko:'👥 참가자 설정',en:'👥 Participant Setup',zh:'👥 参与者设置',es:'👥 Participantes',ja:'👥 参加者設定',fr:'👥 Paramètres',de:'👥 Teilnehmer',pt:'👥 Participantes',ar:'👥 إعداد المشاركين',ru:'👥 Участники',hi:'👥 प्रतिभागी',it:'👥 Partecipanti',tr:'👥 Katılımcı Ayarı',nl:'👥 Deelnemers',pl:'👥 Uczestnicy',id:'👥 Peserta'},
-  participantCount:{ko:'참가자 수',en:'Participants',zh:'参与者数量',es:'Participantes',ja:'参加人数',fr:'Participants',de:'Teilnehmer',pt:'Participantes',ar:'عدد المشاركين',ru:'Кол-во игроков',hi:'प्रतिभागी',it:'Partecipanti',tr:'Katılımcı sayısı',nl:'Deelnemers',pl:'Uczestnicy',id:'Peserta'},
-  personSuffix:{ko:'명',en:'',zh:'人',es:'',ja:'人',fr:'',de:'',pt:'',ar:'',ru:'',hi:'',it:'',tr:' kişi',nl:'',pl:'',id:' orang'},
-  namePlaceholder:{ko:'민서, 유준, 도혁, 하리 …\n반복 입력: 도혁*2, 하리*3 …',en:'Alex, Brian, Chris, Dana …\nRepeat: Chris*2, Dana*3 …',zh:'小明, 小红, 小李, 小王 …\n重复输入: 小李*2, 小王*3 …',es:'Ana, Juan, Luis, Sofía …\nRepetir: Luis*2, Sofía*3 …',ja:'たろう, はなこ, じろう, さき …\n繰り返し: じろう*2, さき*3 …',fr:'Alex, Marie, Pierre, Sophie …\nRépéter : Pierre*2, Sophie*3 …',de:'Alex, Brian, Chris, Dana …\nWiederholen: Chris*2, Dana*3 …',pt:'Ana, Bruno, Carlos, Diana …\nRepetir: Carlos*2, Diana*3 …',ar:'أحمد, سارة, خالد, لينا …\nتكرار: خالد*2, لينا*3 …',ru:'Алекс, Брайан, Крис, Дана …\nПовтор: Крис*2, Дана*3 …',hi:'आलेक्स, ब्रायन, क्रिस, डाना …\nदोहराएँ: क्रिस*2, डाना*3 …',it:'Alex, Bruno, Chiara, Diana …\nRipeti: Chiara*2, Diana*3 …',tr:'Ali, Beste, Can, Deniz …\nTekrar: Can*2, Deniz*3 …',nl:'Alex, Bram, Chris, Dana …\nHerhaal: Chris*2, Dana*3 …',pl:'Alex, Bartek, Chris, Dana …\nPowtórz: Chris*2, Dana*3 …',id:'Alex, Budi, Citra, Dani …\nUlangi: Citra*2, Dani*3 …'},
-  tabA:{ko:'당첨/꽝<br>고르기',en:'Win/Lose<br>Picker',zh:'中奖/失败<br>选择',es:'Ganar/Perder<br>Selector',ja:'当たり/ハズレ<br>選択',fr:'Gagner/Perdre<br>Sélecteur',de:'Win/Lose<br>Wähler',pt:'Ganhar/Perder<br>Seletor',ar:'فوز/خسارة<br>اختيار',ru:'Победа/Проигрыш<br>Выбор',hi:'जीत/हार<br>चुनें',it:'Vinci/Perdi<br>Selettore',tr:'Kazan/Kaybet<br>Seç',nl:'Winst/Verlies<br>Kiezer',pl:'Wygrana/Przegrana<br>Wybór',id:'Menang/Kalah<br>Pilih'},
-  tabB:{ko:'역할<br>분담하기',en:'Role<br>Assignment',zh:'角色<br>分配',es:'Asignar<br>Roles',ja:'役割<br>分担',fr:'Attribution<br>de Rôle',de:'Rollen<br>Zuweisen',pt:'Atribuir<br>Papéis',ar:'تعيين<br>الأدوار',ru:'Распределение<br>Ролей',hi:'भूमिका<br>बाँटें',it:'Assegna<br>Ruoli',tr:'Rol<br>Dağıtımı',nl:'Rol<br>Verdelen',pl:'Podział<br>Ról',id:'Bagi<br>Peran'},
-  tabC:{ko:'순위<br>고르기',en:'Ranking<br>Picker',zh:'排名<br>选择',es:'Clasificación<br>Selector',ja:'順位<br>決め',fr:'Classement<br>Sélecteur',de:'Rang<br>Wähler',pt:'Ranking<br>Seletor',ar:'الترتيب<br>اختيار',ru:'Рейтинг<br>Выбор',hi:'रैंकिंग<br>चुनें',it:'Classifica<br>Selettore',tr:'Sıralama<br>Seç',nl:'Rangorde<br>Kiezer',pl:'Ranking<br>Wybór',id:'Peringkat<br>Pilih'},
-  tabD:{ko:'벌칙<br>모드',en:'Penalty<br>Mode',zh:'惩罚<br>模式',es:'Modo<br>Castigo',ja:'罰ゲーム<br>モード',fr:'Mode<br>Pénalité',de:'Strafe<br>Modus',pt:'Modo<br>Castigo',ar:'وضع<br>العقوبة',ru:'Режим<br>Наказания',hi:'सजा<br>मोड',it:'Modalità<br>Penalità',tr:'Ceza<br>Modu',nl:'Strafmodus',pl:'Tryb<br>Kary',id:'Mode<br>Hukuman'},
-  tabE:{ko:'팀<br>나누기',en:'Team<br>Split',zh:'分组<br>团队',es:'Dividir<br>Equipos',ja:'チーム<br>分け',fr:'Diviser<br>Équipes',de:'Team<br>Aufteilen',pt:'Dividir<br>Equipes',ar:'تقسيم<br>الفرق',ru:'Разделить<br>Команды',hi:'टीम<br>बाँटें',it:'Dividi<br>Squadre',tr:'Takım<br>Ayır',nl:'Team<br>Verdelen',pl:'Podział<br>Drużyn',id:'Bagi<br>Tim'},
-  tabF:{ko:'토너먼트<br>모드',en:'Tournament<br>Mode',zh:'锦标赛<br>模式',es:'Modo<br>Torneo',ja:'トーナメント<br>モード',fr:'Mode<br>Tournoi',de:'Turnier<br>Modus',pt:'Modo<br>Torneio',ar:'وضع<br>البطولة',ru:'Режим<br>Турнира',hi:'टूर्नामेंट<br>मोड',it:'Modalità<br>Torneo',tr:'Turnuva<br>Modu',nl:'Toernooi<br>Modus',pl:'Tryb<br>Turnieju',id:'Mode<br>Turnamen'},
-  swapOpt:{ko:'🔀 바꾸기 찬스 옵션',en:'🔀 Swap Chance Option',zh:'🔀 交换机会选项',es:'🔀 Opción de Intercambio',ja:'🔀 交換チャンスオプション',fr:'🔀 Option d\'Échange',de:'🔀 Tausch-Option',pt:'🔀 Opção de Troca',ar:'🔀 خيار التبديل',ru:'🔀 Опция Обмена',hi:'🔀 अदला-बदली विकल्प',it:'🔀 Opzione Scambio',tr:'🔀 Takas Fırsatı',nl:'🔀 Wisselkans Optie',pl:'🔀 Opcja Zamiany',id:'🔀 Opsi Tukar'},
-  swapOptDesc:{ko:'도착 후 포스트잇을 서로 바꿀 수 있어요',en:'Swap post-its after arrival',zh:'到达后可以交换便签',es:'Intercambia notas al llegar',ja:'到着後に付箋を交換できます',fr:'Échanger les post-its après l\'arrivée',de:'Nach Ankunft Notizen tauschen',pt:'Trocar post-its ao chegar',ar:'تبديل الملاحظات بعد الوصول',ru:'Меняйте стикеры после прибытия',hi:'पहुँचने पर पोस्ट-इट बदलें',it:'Scambia i post-it all\'arrivo',tr:'Varıştan sonra notları takasla',nl:'Wissel post-its na aankomst',pl:'Zamień karteczki po przybyciu',id:'Tukar post-it setelah tiba'},
-  speedOpt:{ko:'🏃 사다리 속도',en:'🏃 Ladder Speed',zh:'🏃 梯子速度',es:'🏃 Velocidad',ja:'🏃 あみだ速度',fr:'🏃 Vitesse',de:'🏃 Geschwindigkeit',pt:'🏃 Velocidade',ar:'🏃 سرعة السلم',ru:'🏃 Скорость',hi:'🏃 गति',it:'🏃 Velocità',tr:'🏃 Hız',nl:'🏃 Snelheid',pl:'🏃 Prędkość',id:'🏃 Kecepatan'},
-  speedOptDesc:{ko:'캐릭터 이동 속도를 조절해요',en:'Adjust character movement speed',zh:'调整角色移动速度',es:'Ajusta la velocidad',ja:'キャラクター移動速度を調整',fr:'Régler la vitesse des personnages',de:'Bewegungsgeschwindigkeit anpassen',pt:'Ajusta a velocidade',ar:'ضبط سرعة الشخصيات',ru:'Регулировка скорости',hi:'गति समायोजित करें',it:'Regola la velocità',tr:'Karakter hızını ayarla',nl:'Pas snelheid aan',pl:'Dostosuj prędkość',id:'Sesuaikan kecepatan'},
-  spdNormal:{ko:'🐢 보통',en:'🐢 Normal',zh:'🐢 普通',es:'🐢 Normal',ja:'🐢 普通',fr:'🐢 Normal',de:'🐢 Normal',pt:'🐢 Normal',ar:'🐢 عادي',ru:'🐢 Обычно',hi:'🐢 सामान्य',it:'🐢 Normale',tr:'🐢 Normal',nl:'🐢 Normaal',pl:'🐢 Normalnie',id:'🐢 Normal'},
-  spdFast:{ko:'⚡ 빠르게',en:'⚡ Fast',zh:'⚡ 快速',es:'⚡ Rápido',ja:'⚡ 速い',fr:'⚡ Rapide',de:'⚡ Schnell',pt:'⚡ Rápido',ar:'⚡ سريع',ru:'⚡ Быстро',hi:'⚡ तेज़',it:'⚡ Veloce',tr:'⚡ Hızlı',nl:'⚡ Snel',pl:'⚡ Szybko',id:'⚡ Cepat'},
-  spdFastest:{ko:'🚀 매우빠르게',en:'🚀 Very Fast',zh:'🚀 极速',es:'🚀 Muy Rápido',ja:'🚀 超高速',fr:'🚀 Très Rapide',de:'🚀 Sehr Schnell',pt:'🚀 Muito Rápido',ar:'🚀 سريع جداً',ru:'🚀 Очень быстро',hi:'🚀 बहुत तेज़',it:'🚀 Velocissimo',tr:'🚀 Çok Hızlı',nl:'🚀 Zeer Snel',pl:'🚀 Bardzo Szybko',id:'🚀 Sangat Cepat'},
-  startBtn:{ko:'🎮 게임 시작!',en:'🎮 Start Game!',zh:'🎮 开始游戏！',es:'🎮 ¡Empezar!',ja:'🎮 ゲーム開始！',fr:'🎮 Démarrer !',de:'🎮 Spiel Starten!',pt:'🎮 Começar!',ar:'🎮 ابدأ اللعبة!',ru:'🎮 Начать!',hi:'🎮 शुरू करें!',it:'🎮 Avvia!',tr:'🎮 Başlat!',nl:'🎮 Start!',pl:'🎮 Start!',id:'🎮 Mulai!'},
-  coffeeBtn:{ko:'☕ 커피 사주기',en:'☕ Buy me a coffee',zh:'☕ 请喝咖啡',es:'☕ Invítame un café',ja:'☕ コーヒーをおごる',fr:'☕ Offrez un café',de:'☕ Kaffee spendieren',pt:'☕ Me pague um café',ar:'☕ اشتر لي قهوة',ru:'☕ Купи мне кофе',hi:'☕ कॉफी खिलाओ',it:'☕ Offrimi un caffè',tr:'☕ Kahve ısmarla',nl:'☕ Koop een koffie',pl:'☕ Postaw kawę',id:'☕ Belikan Kopi'},
-  contactBtn:{ko:'📧 문의하기',en:'📧 Contact',zh:'📧 联系',es:'📧 Contacto',ja:'📧 お問い合わせ',fr:'📧 Contact',de:'📧 Kontakt',pt:'📧 Contato',ar:'📧 تواصل',ru:'📧 Контакт',hi:'📧 संपर्क',it:'📧 Contatti',tr:'📧 İletişim',nl:'📧 Contact',pl:'📧 Kontakt',id:'📧 Kontak'},
-  gameReady:{ko:'준비 중...',en:'Getting ready...',zh:'准备中...',es:'Preparando...',ja:'準備中…',fr:'Préparation...',de:'Bereite vor...',pt:'Preparando...',ar:'جاري التحضير...',ru:'Готовим...',hi:'तैयार हो रहा...',it:'Preparazione...',tr:'Hazırlanıyor...',nl:'Voorbereiden...',pl:'Przygotowanie...',id:'Bersiap...'},
-  gameGo:{ko:'출발 준비! 🚦',en:'Ready to start! 🚦',zh:'准备出发！🚦',es:'¡Listos! 🚦',ja:'スタート準備！🚦',fr:'Prêt à partir ! 🚦',de:'Startklar! 🚦',pt:'Pronto! 🚦',ar:'استعد للانطلاق! 🚦',ru:'Готовы к старту! 🚦',hi:'शुरू करने के लिए तैयार! 🚦',it:'Pronti! 🚦',tr:'Başlamaya hazır! 🚦',nl:'Klaar om te beginnen! 🚦',pl:'Gotowi! 🚦',id:'Siap mulai! 🚦'},
-  gameRunning:{ko:'🚀 달리는 중!',en:'🚀 Running!',zh:'🚀 奔跑中！',es:'🚀 ¡Corriendo!',ja:'🚀 走行中！',fr:'🚀 En course !',de:'🚀 Läuft!',pt:'🚀 Correndo!',ar:'🚀 يركض!',ru:'🚀 Бегут!',hi:'🚀 दौड़ रहे हैं!',it:'🚀 In corsa!',tr:'🚀 Koşuyor!',nl:'🚀 Rennen!',pl:'🚀 Bieg!',id:'🚀 Berlari!'},
-  gameSwap:{ko:'🔀 바꾸기 찬스! 포스트잇을 눌러 서로 바꿔보세요',en:'🔀 Swap chance! Tap post-its to swap them',zh:'🔀 交换机会！点击便签来交换',es:'🔀 ¡Intercambia! Toca las notas',ja:'🔀 交換チャンス！付箋をタップして交換',fr:'🔀 Chance d\'échange ! Touchez les post-its',de:'🔀 Tausch-Chance! Notizen antippen',pt:'🔀 Troca! Toque nos post-its',ar:'🔀 فرصة التبديل! اضغط الملاحظات',ru:'🔀 Шанс обменять! Нажимайте стикеры',hi:'🔀 अदला-बदली! पोस्ट-इट टैप करें',it:'🔀 Scambia! Tocca i post-it',tr:'🔀 Takas fırsatı! Notlara dokun',nl:'🔀 Wisselkans! Tik op post-its',pl:'🔀 Szansa zamiany! Dotknij karteczki',id:'🔀 Kesempatan tukar! Ketuk post-it'},
-  gameArrived:{ko:'모두 도착! 결과 공개 중... 🎊',en:'All arrived! Revealing results... 🎊',zh:'全部到达！公布结果... 🎊',es:'¡Todos llegaron! Revelando... 🎊',ja:'全員到着！結果公開中… 🎊',fr:'Tous arrivés ! Révélation... 🎊',de:'Alle da! Ergebnisse... 🎊',pt:'Todos chegaram! Revelando... 🎊',ar:'الجميع وصل! كشف النتائج... 🎊',ru:'Все прибыли! Результаты... 🎊',hi:'सब पहुँच गए! परिणाम... 🎊',it:'Tutti arrivati! Rivelazione... 🎊',tr:'Herkes vardı! Sonuçlar... 🎊',nl:'Allemaal aangekomen! 🎊',pl:'Wszyscy dotarli! Wyniki... 🎊',id:'Semua tiba! Mengungkap... 🎊'},
-  gameDrum:{ko:'두구두구... 🎊',en:'Drumroll... 🎊',zh:'鼓声隆隆... 🎊',es:'Redoble... 🎊',ja:'ドラムロール… 🎊',fr:'Roulement de tambour... 🎊',de:'Trommelwirbel... 🎊',pt:'Rufar de tambores... 🎊',ar:'طبول... 🎊',ru:'Барабанная дробь... 🎊',hi:'ड्रमरोल... 🎊',it:'Rullo di tamburi... 🎊',tr:'Davul sesi... 🎊',nl:'Tromgeroffel... 🎊',pl:'Werbel... 🎊',id:'Genderang... 🎊'},
-  gameRevealed:{ko:'🎉 결과 공개 완료!',en:'🎉 Results revealed!',zh:'🎉 结果公布完成！',es:'🎉 ¡Revelado!',ja:'🎉 結果発表完了！',fr:'🎉 Résultats révélés !',de:'🎉 Ergebnis enthüllt!',pt:'🎉 Revelado!',ar:'🎉 تم الكشف!',ru:'🎉 Результаты раскрыты!',hi:'🎉 परिणाम सामने!',it:'🎉 Rivelato!',tr:'🎉 Sonuçlar açıklandı!',nl:'🎉 Onthuld!',pl:'🎉 Wyniki ujawnione!',id:'🎉 Hasil terungkap!'},
-  swapHint:{ko:'🔀 포스트잇을 눌러 서로 바꿔보세요!',en:'🔀 Tap post-its to swap!',zh:'🔀 点击便签来交换！',es:'🔀 ¡Toca para intercambiar!',ja:'🔀 付箋をタップして交換！',fr:'🔀 Touchez pour échanger !',de:'🔀 Zum Tauschen antippen!',pt:'🔀 Toque para trocar!',ar:'🔀 اضغط للتبديل!',ru:'🔀 Нажмите для обмена!',hi:'🔀 बदलने के लिए टैप!',it:'🔀 Tocca per scambiare!',tr:'🔀 Takas için dokun!',nl:'🔀 Tik om te wisselen!',pl:'🔀 Dotknij by zamienić!',id:'🔀 Ketuk untuk tukar!'},
-  revealBtn:{ko:'✅ 공개하기!',en:'✅ Reveal!',zh:'✅ 公开！',es:'✅ ¡Revelar!',ja:'✅ 公開！',fr:'✅ Révéler !',de:'✅ Enthüllen!',pt:'✅ Revelar!',ar:'✅ اكشف!',ru:'✅ Показать!',hi:'✅ दिखाएँ!',it:'✅ Rivela!',tr:'✅ Açıkla!',nl:'✅ Onthul!',pl:'✅ Ujawnij!',id:'✅ Ungkap!'},
-  finalResultBtn:{ko:'🎉 최종 결과 보기!',en:'🎉 View Final Results!',zh:'🎉 查看最终结果！',es:'🎉 ¡Ver Resultados!',ja:'🎉 最終結果を見る！',fr:'🎉 Résultats Finals !',de:'🎉 Endergebnis!',pt:'🎉 Ver Resultados!',ar:'🎉 اعرض النتائج النهائية!',ru:'🎉 Финальные результаты!',hi:'🎉 अंतिम परिणाम देखें!',it:'🎉 Risultati Finali!',tr:'🎉 Sonuçları Gör!',nl:'🎉 Eindresultaat!',pl:'🎉 Wyniki Końcowe!',id:'🎉 Hasil Akhir!'},
-  swapCountMsg:{ko:'총 {n}번 바꿈',en:'Swapped {n} times',zh:'共交换 {n} 次',es:'Intercambiado {n} veces',ja:'計{n}回交換',fr:'Échangé {n} fois',de:'{n}× getauscht',pt:'Trocou {n} vezes',ar:'تم التبديل {n} مرة',ru:'Обменов: {n}',hi:'{n} बार बदला',it:'Scambiato {n} volte',tr:'{n} kez takas',nl:'{n}× gewisseld',pl:'Zamieniono {n}×',id:'Ditukar {n} kali'},
-  actRestart:{ko:'다시 하기',en:'Restart',zh:'重新开始',es:'Reiniciar',ja:'もう一度',fr:'Recommencer',de:'Neu Starten',pt:'Reiniciar',ar:'إعادة',ru:'Заново',hi:'फिर से',it:'Riavvia',tr:'Yeniden',nl:'Opnieuw',pl:'Od nowa',id:'Ulangi'},
-  actRestartDesc:{ko:'처음부터 새로 시작',en:'Start from scratch',zh:'从头开始',es:'Empezar de cero',ja:'最初から新しく',fr:'Partir de zéro',de:'Von vorn beginnen',pt:'Começar do zero',ar:'ابدأ من جديد',ru:'Начать заново',hi:'शुरू से',it:'Da capo',tr:'Sıfırdan başla',nl:'Vanaf nul',pl:'Od początku',id:'Dari awal'},
-  actReshuffle:{ko:'다시 섞기',en:'Reshuffle',zh:'再次洗牌',es:'Rebarajar',ja:'シャッフル',fr:'Remélanger',de:'Neu Mischen',pt:'Embaralhar',ar:'إعادة الخلط',ru:'Перемешать',hi:'फिर फेंटें',it:'Rimescola',tr:'Karıştır',nl:'Opnieuw schudden',pl:'Przetasuj',id:'Kocok ulang'},
-  actReshuffleDesc:{ko:'같은 멤버로 사다리만 새로',en:'Same members, new ladder',zh:'相同成员，新梯子',es:'Mismos, nueva escalera',ja:'同じメンバーで新しく',fr:'Mêmes membres, nouvelle échelle',de:'Gleiche, neue Leiter',pt:'Mesmos, nova escada',ar:'نفس الأعضاء، سلم جديد',ru:'Те же, новая лестница',hi:'वही लोग, नई सीढ़ी',it:'Stessi membri, nuova scala',tr:'Aynı kişiler, yeni merdiven',nl:'Zelfde, nieuwe ladder',pl:'Ci sami, nowa drabina',id:'Anggota sama, tangga baru'},
-  actExtra:{ko:'추가 뽑기',en:'Extra Draw',zh:'追加抽签',es:'Sorteo Extra',ja:'追加抽選',fr:'Tirage Bonus',de:'Extra-Runde',pt:'Sorteio Extra',ar:'سحب إضافي',ru:'Доп. жребий',hi:'अतिरिक्त ड्रॉ',it:'Estrazione Extra',tr:'Ek Çekiliş',nl:'Extra Trekking',pl:'Dodatkowe Losowanie',id:'Undian Tambahan'},
-  actExtraDesc:{ko:'꽝/탈락자끼리 한 판 더',en:'Losers play again',zh:'失败者再来一局',es:'Perdedores juegan de nuevo',ja:'ハズレ/脱落者で再戦',fr:'Les perdants rejouent',de:'Verlierer nochmal',pt:'Perdedores jogam de novo',ar:'الخاسرون يعيدون',ru:'Проигравшие снова',hi:'हारे फिर खेलें',it:'Perdenti rigiocano',tr:'Kaybedenler tekrar',nl:'Verliezers spelen opnieuw',pl:'Przegrani grają znów',id:'Kalah main lagi'},
-  extraAvail:{ko:'꽝 {n}명끼리 한 판 더',en:'{n} losers play again',zh:'{n} 人再来一局',es:'{n} perdedores de nuevo',ja:'ハズレ{n}人で再戦',fr:'{n} perdants rejouent',de:'{n} Verlierer nochmal',pt:'{n} perdedores de novo',ar:'{n} خاسرين مرة أخرى',ru:'{n} проигравших снова',hi:'{n} हारे फिर खेलें',it:'{n} perdenti rigiocano',tr:'{n} kaybeden tekrar',nl:'{n} verliezers opnieuw',pl:'{n} przegranych znów',id:'{n} kalah main lagi'},
-  extraAvailP:{ko:'벌칙 {n}명끼리 한 판 더',en:'{n} penalized play again',zh:'{n} 惩罚者再来一局',es:'{n} castigados de nuevo',ja:'罰ゲーム{n}人で再戦',fr:'{n} punis rejouent',de:'{n} Bestrafte nochmal',pt:'{n} punidos de novo',ar:'{n} معاقبين مرة أخرى',ru:'{n} наказанных снова',hi:'{n} दंडित फिर खेलें',it:'{n} puniti rigiocano',tr:'{n} cezalı tekrar',nl:'{n} gestraften opnieuw',pl:'{n} ukaranych znów',id:'{n} kena hukuman main lagi'},
-  extraUnavail:{ko:'추가 뽑기 불가',en:'Extra draw unavailable',zh:'无法追加抽签',es:'Sorteo extra no disponible',ja:'追加抽選不可',fr:'Tirage bonus indisponible',de:'Extra-Runde nicht verfügbar',pt:'Sorteio extra indisponível',ar:'السحب الإضافي غير متاح',ru:'Доп. жребий недоступен',hi:'अतिरिक्त ड्रॉ अनुपलब्ध',it:'Estrazione non disponibile',tr:'Ek çekiliş yok',nl:'Extra trekking niet mogelijk',pl:'Dodatkowe losowanie niedostępne',id:'Undian tidak tersedia'},
-  extraModeUnavail:{ko:'이 모드에선 사용 불가',en:'Not available in this mode',zh:'此模式不可用',es:'No disponible en este modo',ja:'このモードでは使用不可',fr:'Indisponible dans ce mode',de:'In diesem Modus nicht verfügbar',pt:'Indisponível neste modo',ar:'غير متاح في هذا الوضع',ru:'Недоступно в этом режиме',hi:'इस मोड में उपलब्ध नहीं',it:'Non disponibile in questa modalità',tr:'Bu modda kullanılamaz',nl:'Niet beschikbaar in deze modus',pl:'Niedostępne w tym trybie',id:'Tidak tersedia di mode ini'},
-  // Mode A/C labels
-  modeTitleA:{ko:'🏆 당첨/꽝 게임',en:'🏆 Win/Lose Game',zh:'🏆 中奖/失败游戏',es:'🏆 Juego Ganar/Perder',ja:'🏆 当たりハズレゲーム',fr:'🏆 Jeu Gagner/Perdre',de:'🏆 Win/Lose Spiel',pt:'🏆 Jogo Ganhar/Perder',ar:'🏆 لعبة الفوز/الخسارة',ru:'🏆 Игра Победа/Поражение',hi:'🏆 जीत/हार खेल',it:'🏆 Gioco Vinci/Perdi',tr:'🏆 Kazan/Kaybet',nl:'🏆 Winst/Verlies Spel',pl:'🏆 Gra Wygrana/Przegrana',id:'🏆 Permainan Menang/Kalah'},
-  modeTitleB:{ko:'👔 역할 분담',en:'👔 Role Assignment',zh:'👔 角色分配',es:'👔 Asignación de Roles',ja:'👔 役割分担',fr:'👔 Attribution de Rôles',de:'👔 Rollenverteilung',pt:'👔 Atribuição de Papéis',ar:'👔 تعيين الأدوار',ru:'👔 Распределение Ролей',hi:'👔 भूमिका',it:'👔 Assegnazione Ruoli',tr:'👔 Rol Dağıtımı',nl:'👔 Rolverdeling',pl:'👔 Podział Ról',id:'👔 Penugasan Peran'},
-  modeTitleC:{ko:'🥇 순위 고르기',en:'🥇 Ranking Picker',zh:'🥇 排名选择',es:'🥇 Clasificación',ja:'🥇 順位決め',fr:'🥇 Classement',de:'🥇 Rangfolge',pt:'🥇 Classificação',ar:'🥇 الترتيب',ru:'🥇 Ранжирование',hi:'🥇 रैंकिंग',it:'🥇 Classifica',tr:'🥇 Sıralama',nl:'🥇 Rangorde',pl:'🥇 Ranking',id:'🥇 Peringkat'},
-  modeTitleD:{ko:'😈 벌칙 모드',en:'😈 Penalty Mode',zh:'😈 惩罚模式',es:'😈 Modo Castigo',ja:'😈 罰ゲームモード',fr:'😈 Mode Pénalité',de:'😈 Strafmodus',pt:'😈 Modo Castigo',ar:'😈 وضع العقوبة',ru:'😈 Режим Наказания',hi:'😈 सजा मोड',it:'😈 Modalità Penalità',tr:'😈 Ceza Modu',nl:'😈 Strafmodus',pl:'😈 Tryb Kary',id:'😈 Mode Hukuman'},
-  modeTitleE:{ko:'👥 팀 나누기',en:'👥 Team Split',zh:'👥 分组',es:'👥 División en Equipos',ja:'👥 チーム分け',fr:'👥 Répartition en Équipes',de:'👥 Team-Aufteilung',pt:'👥 Divisão em Equipes',ar:'👥 تقسيم الفرق',ru:'👥 Разделение Команд',hi:'👥 टीम विभाजन',it:'👥 Divisione in Squadre',tr:'👥 Takım Bölme',nl:'👥 Teamverdeling',pl:'👥 Podział na Drużyny',id:'👥 Pembagian Tim'},
-  modeTitleF:{ko:'⚔️ 토너먼트',en:'⚔️ Tournament',zh:'⚔️ 锦标赛',es:'⚔️ Torneo',ja:'⚔️ トーナメント',fr:'⚔️ Tournoi',de:'⚔️ Turnier',pt:'⚔️ Torneio',ar:'⚔️ بطولة',ru:'⚔️ Турнир',hi:'⚔️ टूर्नामेंट',it:'⚔️ Torneo',tr:'⚔️ Turnuva',nl:'⚔️ Toernooi',pl:'⚔️ Turniej',id:'⚔️ Turnamen'},
-  // Result titles
-  resTitleA:{ko:'🏆 당첨자 발표!',en:'🏆 Winners Announcement!',zh:'🏆 中奖者公布！',es:'🏆 ¡Ganadores!',ja:'🏆 当選者発表！',fr:'🏆 Gagnants !',de:'🏆 Gewinner!',pt:'🏆 Vencedores!',ar:'🏆 الفائزون!',ru:'🏆 Победители!',hi:'🏆 विजेता!',it:'🏆 Vincitori!',tr:'🏆 Kazananlar!',nl:'🏆 Winnaars!',pl:'🏆 Zwycięzcy!',id:'🏆 Pemenang!'},
-  resTitleB:{ko:'👔 역할 배정 결과!',en:'👔 Role Assignment Results!',zh:'👔 角色分配结果！',es:'👔 ¡Roles Asignados!',ja:'👔 役割決定！',fr:'👔 Rôles Attribués !',de:'👔 Rollen Zugewiesen!',pt:'👔 Papéis Atribuídos!',ar:'👔 تم التعيين!',ru:'👔 Роли Назначены!',hi:'👔 भूमिका तय!',it:'👔 Ruoli Assegnati!',tr:'👔 Roller Verildi!',nl:'👔 Rollen Toegewezen!',pl:'👔 Role Przydzielone!',id:'👔 Peran Ditetapkan!'},
-  resTitleC:{ko:'🏅 순위 결과!',en:'🏅 Ranking Results!',zh:'🏅 排名结果！',es:'🏅 ¡Clasificación!',ja:'🏅 順位結果！',fr:'🏅 Classement !',de:'🏅 Rangfolge!',pt:'🏅 Classificação!',ar:'🏅 الترتيب النهائي!',ru:'🏅 Результаты!',hi:'🏅 रैंकिंग!',it:'🏅 Classifica!',tr:'🏅 Sıralama!',nl:'🏅 Rangorde!',pl:'🏅 Ranking!',id:'🏅 Peringkat!'},
-  resTitleD:{ko:'😈 벌칙 결과!',en:'😈 Penalty Results!',zh:'😈 惩罚结果！',es:'😈 ¡Resultados!',ja:'😈 罰ゲーム結果！',fr:'😈 Résultats Pénalité !',de:'😈 Strafen!',pt:'😈 Resultado Castigo!',ar:'😈 نتائج العقوبة!',ru:'😈 Результаты!',hi:'😈 सजा के नतीजे!',it:'😈 Risultati Penalità!',tr:'😈 Ceza Sonuçları!',nl:'😈 Straf Resultaat!',pl:'😈 Wyniki Kary!',id:'😈 Hasil Hukuman!'},
-  resTitleE:{ko:'👥 팀 배정 결과!',en:'👥 Team Split Results!',zh:'👥 分组结果！',es:'👥 ¡Equipos!',ja:'👥 チーム分け結果！',fr:'👥 Équipes Formées !',de:'👥 Teams Gebildet!',pt:'👥 Equipes Formadas!',ar:'👥 الفرق جاهزة!',ru:'👥 Команды Сформированы!',hi:'👥 टीम तय!',it:'👥 Squadre Formate!',tr:'👥 Takımlar Oluştu!',nl:'👥 Teams Gevormd!',pl:'👥 Drużyny Utworzone!',id:'👥 Tim Terbentuk!'},
-  resTitleF:{ko:'⚔️ 토너먼트 대진표!',en:'⚔️ Tournament Bracket!',zh:'⚔️ 锦标赛对阵表！',es:'⚔️ ¡Cuadro del Torneo!',ja:'⚔️ トーナメント表！',fr:'⚔️ Tableau du Tournoi !',de:'⚔️ Turnierbaum!',pt:'⚔️ Chaveamento!',ar:'⚔️ شجرة البطولة!',ru:'⚔️ Турнирная Сетка!',hi:'⚔️ टूर्नामेंट ब्रैकेट!',it:'⚔️ Tabellone!',tr:'⚔️ Fikstür!',nl:'⚔️ Toernooischema!',pl:'⚔️ Drabinka!',id:'⚔️ Bagan Turnamen!'},
-  // ms-card dynamic sections
-  msWinSetup:{ko:'🏆 당첨 수 설정',en:'🏆 Winner Count',zh:'🏆 中奖人数',es:'🏆 Ganadores',ja:'🏆 当選数設定',fr:'🏆 Nombre de Gagnants',de:'🏆 Gewinner-Anzahl',pt:'🏆 N° Vencedores',ar:'🏆 عدد الفائزين',ru:'🏆 Число Победителей',hi:'🏆 विजेता संख्या',it:'🏆 N° Vincitori',tr:'🏆 Kazanan Sayısı',nl:'🏆 Aantal Winnaars',pl:'🏆 Liczba Zwycięzców',id:'🏆 Jumlah Pemenang'},
-  msWinInfo:{ko:'{p}명 중 <b>{w}명</b> 당첨',en:'<b>{w}</b> of {p} win',zh:'{p} 人中 <b>{w} 人</b> 中奖',es:'<b>{w}</b> de {p} ganan',ja:'{p}人中<b>{w}人</b>当選',fr:'<b>{w}</b> sur {p} gagnent',de:'<b>{w}</b> von {p} gewinnen',pt:'<b>{w}</b> de {p} ganham',ar:'<b>{w}</b> من {p} يفوزون',ru:'<b>{w}</b> из {p} выиграли',hi:'{p} में से <b>{w}</b> जीते',it:'<b>{w}</b> su {p} vincono',tr:'{p} kişiden <b>{w} kişi</b> kazanır',nl:'<b>{w}</b> van {p} winnen',pl:'<b>{w}</b> z {p} wygrywa',id:'<b>{w}</b> dari {p} menang'},
-  msRoleInput:{ko:'👔 역할 입력 ({n}개)',en:'👔 Enter Roles ({n})',zh:'👔 输入角色 ({n}个)',es:'👔 Ingresar Roles ({n})',ja:'👔 役割入力 ({n}個)',fr:'👔 Saisir les Rôles ({n})',de:'👔 Rollen Eingeben ({n})',pt:'👔 Inserir Papéis ({n})',ar:'👔 إدخال الأدوار ({n})',ru:'👔 Введите Роли ({n})',hi:'👔 भूमिकाएँ दर्ज ({n})',it:'👔 Inserisci Ruoli ({n})',tr:'👔 Rolleri Gir ({n})',nl:'👔 Rollen Invoeren ({n})',pl:'👔 Wpisz Role ({n})',id:'👔 Masukkan Peran ({n})'},
-  msRolePH:{ko:'팀원*3, 자료조사*2, 발표자 …\n반복 입력: 역할이름*개수',en:'Member*3, Research*2, Presenter …\nRepeat: role*count',zh:'成员*3, 调研*2, 主讲人 …\n重复: 角色*数量',es:'Miembro*3, Investigación*2, Presentador …\nRepetir: rol*cantidad',ja:'メンバー*3, 調査*2, 発表者 …\n繰り返し: 役割名*個数',fr:'Membre*3, Recherche*2, Présentateur …\nRépéter : rôle*nombre',de:'Mitglied*3, Recherche*2, Sprecher …\nWiederholen: Rolle*Anzahl',pt:'Membro*3, Pesquisa*2, Apresentador …\nRepetir: papel*quantidade',ar:'عضو*3, بحث*2, مقدم …\nتكرار: الدور*العدد',ru:'Участник*3, Исследование*2, Докладчик …\nПовтор: роль*кол-во',hi:'सदस्य*3, अनुसंधान*2, प्रस्तुतकर्ता …\nदोहराएँ: भूमिका*संख्या',it:'Membro*3, Ricerca*2, Relatore …\nRipeti: ruolo*numero',tr:'Üye*3, Araştırma*2, Sunucu …\nTekrar: rol*sayı',nl:'Lid*3, Onderzoek*2, Presentator …\nHerhaal: rol*aantal',pl:'Członek*3, Badanie*2, Prezenter …\nPowtórz: rola*liczba',id:'Anggota*3, Riset*2, Pembicara …\nUlangi: peran*jumlah'},
-  msRankSetup:{ko:'🏅 순위 자동 배정',en:'🏅 Auto Ranking',zh:'🏅 自动排名',es:'🏅 Clasificación Auto',ja:'🏅 順位自動割当',fr:'🏅 Classement Auto',de:'🏅 Auto-Rang',pt:'🏅 Ranking Auto',ar:'🏅 ترتيب تلقائي',ru:'🏅 Авто-Ранжирование',hi:'🏅 स्वतः रैंकिंग',it:'🏅 Classifica Auto',tr:'🏅 Otomatik Sıralama',nl:'🏅 Auto Rangorde',pl:'🏅 Auto Ranking',id:'🏅 Peringkat Otomatis'},
-  msRankDesc:{ko:'사다리가 <b>{n}명</b>의 순위를 정해드립니다',en:'Ladder decides ranks for <b>{n}</b>',zh:'梯子为 <b>{n}人</b> 排名',es:'La escalera clasifica a <b>{n}</b>',ja:'あみだで<b>{n}人</b>の順位を決定',fr:'L\'échelle classe <b>{n}</b>',de:'Leiter bestimmt Rang für <b>{n}</b>',pt:'A escada classifica <b>{n}</b>',ar:'السلم يحدد ترتيب <b>{n}</b>',ru:'Лестница ранжирует <b>{n}</b>',hi:'सीढ़ी <b>{n}</b> की रैंकिंग करती है',it:'La scala classifica <b>{n}</b>',tr:'Merdiven <b>{n}</b> kişiyi sıralar',nl:'De ladder rangschikt <b>{n}</b>',pl:'Drabina ustala ranking <b>{n}</b>',id:'Tangga tentukan peringkat <b>{n}</b>'},
-  rankLast:{ko:'꼴찌',en:'Last',zh:'垫底',es:'Último',ja:'最下位',fr:'Dernier',de:'Letzter',pt:'Último',ar:'الأخير',ru:'Последний',hi:'अंतिम',it:'Ultimo',tr:'Son',nl:'Laatste',pl:'Ostatni',id:'Terakhir'},
-  rankNth:{ko:'{i}등',en:'#{i}',zh:'第{i}名',es:'#{i}',ja:'{i}位',fr:'#{i}',de:'#{i}',pt:'#{i}',ar:'#{i}',ru:'{i}-й',hi:'#{i}',it:'#{i}',tr:'{i}.',nl:'#{i}',pl:'#{i}',id:'#{i}'},
-  msPenaltySetup:{ko:'😈 벌칙 모드 설정',en:'😈 Penalty Mode Setup',zh:'😈 惩罚模式设置',es:'😈 Modo Castigo',ja:'😈 罰ゲーム設定',fr:'😈 Config. Pénalité',de:'😈 Straf-Einstellung',pt:'😈 Config. Castigo',ar:'😈 إعداد العقوبة',ru:'😈 Настройка Наказания',hi:'😈 सजा मोड सेटिंग',it:'😈 Config. Penalità',tr:'😈 Ceza Modu',nl:'😈 Straf Instellen',pl:'😈 Ustawienia Kary',id:'😈 Pengaturan Hukuman'},
-  msPassLabel:{ko:'✅ 통과',en:'✅ Pass',zh:'✅ 通过',es:'✅ Paso',ja:'✅ 通過',fr:'✅ Passer',de:'✅ Bestanden',pt:'✅ Passar',ar:'✅ نجاح',ru:'✅ Пропуск',hi:'✅ पास',it:'✅ Passa',tr:'✅ Geç',nl:'✅ Pas',pl:'✅ Przejście',id:'✅ Lulus'},
-  msPenLabel:{ko:'🔥 벌칙',en:'🔥 Penalty',zh:'🔥 惩罚',es:'🔥 Castigo',ja:'🔥 罰ゲーム',fr:'🔥 Pénalité',de:'🔥 Strafe',pt:'🔥 Castigo',ar:'🔥 عقوبة',ru:'🔥 Штраф',hi:'🔥 सजा',it:'🔥 Penalità',tr:'🔥 Ceza',nl:'🔥 Straf',pl:'🔥 Kara',id:'🔥 Hukuman'},
-  msPenHint:{ko:'🔥 벌칙 항목 {n}개를 입력하세요 (통과는 자동)',en:'🔥 Enter {n} penalty items (passes are auto)',zh:'🔥 输入 {n} 个惩罚项目 (通过自动)',es:'🔥 Ingresa {n} castigos (pasos automáticos)',ja:'🔥 罰ゲーム{n}個を入力 (通過は自動)',fr:'🔥 Saisir {n} pénalités (passes auto)',de:'🔥 {n} Strafen eingeben (Pässe auto)',pt:'🔥 Digite {n} castigos (passes auto)',ar:'🔥 أدخل {n} عقوبات (النجاح تلقائي)',ru:'🔥 Введите {n} штрафов (пропуски авто)',hi:'🔥 {n} सजाएँ दर्ज (पास ऑटो)',it:'🔥 Inserisci {n} penalità (passa auto)',tr:'🔥 {n} ceza gir (geçişler otomatik)',nl:'🔥 {n} straffen invoeren (passes auto)',pl:'🔥 Wpisz {n} kar (przejścia auto)',id:'🔥 Masukkan {n} hukuman (lulus otomatis)'},
-  msPenPH:{ko:'춤추기, 노래, 만원내기 …\n반복 입력: 벌칙이름*개수',en:'Dance, Sing, Pay 10k …\nRepeat: penalty*count',zh:'跳舞, 唱歌, 请客 …\n重复: 惩罚*数量',es:'Bailar, Cantar, Pagar …\nRepetir: castigo*cantidad',ja:'ダンス, 歌, おごり …\n繰り返し: 罰ゲーム*個数',fr:'Danse, Chant, Payer …\nRépéter : pénalité*nombre',de:'Tanzen, Singen, Zahlen …\nWiederholen: Strafe*Anzahl',pt:'Dançar, Cantar, Pagar …\nRepetir: castigo*quantidade',ar:'رقص, غناء, دفع …\nتكرار: عقوبة*عدد',ru:'Танец, Песня, Платить …\nПовтор: штраф*кол-во',hi:'नाचें, गाएँ, भुगतान …\nदोहराएँ: सजा*संख्या',it:'Balla, Canta, Paga …\nRipeti: penalità*numero',tr:'Dans, Şarkı, Öde …\nTekrar: ceza*sayı',nl:'Dansen, Zingen, Betalen …\nHerhaal: straf*aantal',pl:'Taniec, Śpiew, Zapłać …\nPowtórz: kara*liczba',id:'Tari, Nyanyi, Bayar …\nUlangi: hukuman*jumlah'},
-  msPenPrefix:{ko:'벌칙',en:'Penalty',zh:'惩罚',es:'Castigo',ja:'罰',fr:'Pénalité',de:'Strafe',pt:'Castigo',ar:'عقوبة',ru:'Штраф',hi:'सजा',it:'Penalità',tr:'Ceza',nl:'Straf',pl:'Kara',id:'Hukuman'},
-  msRolePrefix:{ko:'역할',en:'Role',zh:'角色',es:'Rol',ja:'役割',fr:'Rôle',de:'Rolle',pt:'Papel',ar:'دور',ru:'Роль',hi:'भूमिका',it:'Ruolo',tr:'Rol',nl:'Rol',pl:'Rola',id:'Peran'},
-  msPass:{ko:'통과',en:'Pass',zh:'通过',es:'Paso',ja:'通過',fr:'Passer',de:'Bestanden',pt:'Passar',ar:'نجاح',ru:'Пропуск',hi:'पास',it:'Passa',tr:'Geç',nl:'Pas',pl:'Przejście',id:'Lulus'},
-  msTeamSetup:{ko:'👥 팀 나누기 설정',en:'👥 Team Split Setup',zh:'👥 分组设置',es:'👥 División en Equipos',ja:'👥 チーム分け設定',fr:'👥 Config. Équipes',de:'👥 Team-Aufteilung',pt:'👥 Divisão em Equipes',ar:'👥 إعداد الفرق',ru:'👥 Настройка Команд',hi:'👥 टीम विभाजन',it:'👥 Config. Squadre',tr:'👥 Takım Ayarı',nl:'👥 Team Instellen',pl:'👥 Konfiguracja Drużyn',id:'👥 Pengaturan Tim'},
-  msTeamCount:{ko:'팀 수 <b>{n}</b>팀',en:'<b>{n}</b> teams',zh:'分 <b>{n}</b> 组',es:'<b>{n}</b> equipos',ja:'チーム数 <b>{n}</b>',fr:'<b>{n}</b> équipes',de:'<b>{n}</b> Teams',pt:'<b>{n}</b> equipes',ar:'<b>{n}</b> فرق',ru:'<b>{n}</b> команд',hi:'<b>{n}</b> टीमें',it:'<b>{n}</b> squadre',tr:'<b>{n}</b> takım',nl:'<b>{n}</b> teams',pl:'<b>{n}</b> drużyn',id:'<b>{n}</b> tim'},
-  msTeamEven:{ko:'⚖️ 균등분배',en:'⚖️ Even Split',zh:'⚖️ 均匀分配',es:'⚖️ División Igual',ja:'⚖️ 均等分配',fr:'⚖️ Répartition Égale',de:'⚖️ Gleich',pt:'⚖️ Divisão Igual',ar:'⚖️ تقسيم متساوٍ',ru:'⚖️ Равномерно',hi:'⚖️ समान विभाजन',it:'⚖️ Divisione Uguale',tr:'⚖️ Eşit Dağıtım',nl:'⚖️ Gelijk Verdelen',pl:'⚖️ Równy Podział',id:'⚖️ Bagi Rata'},
-  msTeamManual:{ko:'✏️ 직접입력',en:'✏️ Manual',zh:'✏️ 手动',es:'✏️ Manual',ja:'✏️ 手動入力',fr:'✏️ Manuel',de:'✏️ Manuell',pt:'✏️ Manual',ar:'✏️ يدوي',ru:'✏️ Вручную',hi:'✏️ मैनुअल',it:'✏️ Manuale',tr:'✏️ Manuel',nl:'✏️ Handmatig',pl:'✏️ Ręcznie',id:'✏️ Manual'},
-  msTeamDist:{ko:'{p}명 → {t}팀 ({sizes}명)',en:'{p} → {t} teams ({sizes})',zh:'{p} 人 → {t} 组 ({sizes})',es:'{p} → {t} equipos ({sizes})',ja:'{p}人 → {t}チーム ({sizes})',fr:'{p} → {t} équipes ({sizes})',de:'{p} → {t} Teams ({sizes})',pt:'{p} → {t} equipes ({sizes})',ar:'{p} → {t} فرق ({sizes})',ru:'{p} → {t} команд ({sizes})',hi:'{p} → {t} टीमें ({sizes})',it:'{p} → {t} squadre ({sizes})',tr:'{p} → {t} takım ({sizes})',nl:'{p} → {t} teams ({sizes})',pl:'{p} → {t} drużyn ({sizes})',id:'{p} → {t} tim ({sizes})'},
-  msTeamSumErr:{ko:'⚠️ 합계 {total}명 ≠ 참가자 {p}명',en:'⚠️ Sum {total} ≠ {p} participants',zh:'⚠️ 总数 {total} ≠ 参与者 {p}',es:'⚠️ Suma {total} ≠ {p} participantes',ja:'⚠️ 合計{total}人 ≠ 参加者{p}人',fr:'⚠️ Total {total} ≠ {p} participants',de:'⚠️ Summe {total} ≠ {p} Teilnehmer',pt:'⚠️ Soma {total} ≠ {p} participantes',ar:'⚠️ المجموع {total} ≠ {p} مشاركين',ru:'⚠️ Сумма {total} ≠ {p} игроков',hi:'⚠️ कुल {total} ≠ {p} प्रतिभागी',it:'⚠️ Totale {total} ≠ {p} partecipanti',tr:'⚠️ Toplam {total} ≠ {p} katılımcı',nl:'⚠️ Totaal {total} ≠ {p} deelnemers',pl:'⚠️ Suma {total} ≠ {p} uczestników',id:'⚠️ Total {total} ≠ {p} peserta'},
-  msTeamInputPH:{ko:'명',en:'ppl',zh:'人',es:'pers',ja:'人',fr:'pers',de:'Pers',pt:'pess',ar:'شخص',ru:'чел',hi:'लोग',it:'pers',tr:'kişi',nl:'pers',pl:'os',id:'org'},
-  msTournSetup:{ko:'⚔️ 토너먼트 대진 배정',en:'⚔️ Tournament Seeding',zh:'⚔️ 锦标赛对阵',es:'⚔️ Emparejamiento',ja:'⚔️ トーナメント対戦',fr:'⚔️ Tirage Tournoi',de:'⚔️ Turnier-Auslosung',pt:'⚔️ Sorteio do Torneio',ar:'⚔️ توزيع البطولة',ru:'⚔️ Жеребьёвка',hi:'⚔️ टूर्नामेंट सीडिंग',it:'⚔️ Sorteggio',tr:'⚔️ Eşleştirme',nl:'⚔️ Loting',pl:'⚔️ Losowanie',id:'⚔️ Pengundian'},
-  msTournDesc:{ko:'사다리로 <b>{n}명</b>의 대진 순서를 배정합니다',en:'Ladder seeds <b>{n}</b> players',zh:'梯子为 <b>{n}人</b> 排对阵',es:'La escalera empareja a <b>{n}</b>',ja:'あみだで<b>{n}人</b>の対戦順を決定',fr:'L\'échelle tire <b>{n}</b> joueurs',de:'Leiter lost <b>{n}</b> aus',pt:'A escada sorteia <b>{n}</b>',ar:'السلم يوزع <b>{n}</b>',ru:'Лестница жребит <b>{n}</b>',hi:'सीढ़ी <b>{n}</b> को सीड करती है',it:'La scala sorteggia <b>{n}</b>',tr:'Merdiven <b>{n}</b> oyuncu eşleştirir',nl:'De ladder lot <b>{n}</b>',pl:'Drabina losuje <b>{n}</b>',id:'Tangga mengundi <b>{n}</b>'},
-  msTournMatches:{ko:'🥊 {m}경기',en:'🥊 {m} matches',zh:'🥊 {m} 场比赛',es:'🥊 {m} partidos',ja:'🥊 {m}試合',fr:'🥊 {m} matchs',de:'🥊 {m} Spiele',pt:'🥊 {m} partidas',ar:'🥊 {m} مباراة',ru:'🥊 {m} матчей',hi:'🥊 {m} मैच',it:'🥊 {m} partite',tr:'🥊 {m} maç',nl:'🥊 {m} wedstrijden',pl:'🥊 {m} meczów',id:'🥊 {m} pertandingan'},
-  msTournBye:{ko:' + 부전승 1명',en:' + 1 bye',zh:' + 1 轮空',es:' + 1 exención',ja:' + 不戦勝1名',fr:' + 1 bye',de:' + 1 Freilos',pt:' + 1 bye',ar:' + 1 استراحة',ru:' + 1 проходной',hi:' + 1 बाई',it:' + 1 bye',tr:' + 1 serbest',nl:' + 1 bye',pl:' + 1 wolny los',id:' + 1 bye'},
-  errInvalidWin:{ko:'당첨 수가 올바르지 않습니다.',en:'Invalid winner count.',zh:'中奖人数无效。',es:'Número de ganadores inválido.',ja:'当選数が無効です。',fr:'Nombre de gagnants invalide.',de:'Ungültige Gewinneranzahl.',pt:'Número de vencedores inválido.',ar:'عدد الفائزين غير صحيح.',ru:'Неверное число победителей.',hi:'विजेता संख्या अमान्य।',it:'Numero vincitori non valido.',tr:'Geçersiz kazanan sayısı.',nl:'Ongeldig aantal winnaars.',pl:'Nieprawidłowa liczba zwycięzców.',id:'Jumlah pemenang tidak valid.'},
-  // Slot labels (shown in ladder game boxes)
-  slotWin:{ko:'당첨!',en:'WIN!',zh:'中奖！',es:'¡GANA!',ja:'当たり！',fr:'GAGNÉ !',de:'GEWINN!',pt:'GANHOU!',ar:'فوز!',ru:'ПОБЕДА!',hi:'जीत!',it:'VINCI!',tr:'KAZANDI!',nl:'WINST!',pl:'WYGRANA!',id:'MENANG!'},
-  slotLose:{ko:'꽝',en:'LOSE',zh:'失败',es:'PIERDE',ja:'ハズレ',fr:'PERDU',de:'VERLIERT',pt:'PERDE',ar:'خسارة',ru:'МИМО',hi:'हार',it:'PERDE',tr:'KAYBETTİ',nl:'VERLIES',pl:'PRZEGRANA',id:'KALAH'},
-  slotLast:{ko:'꼴찌',en:'Last',zh:'垫底',es:'Último',ja:'最下位',fr:'Dernier',de:'Letzter',pt:'Último',ar:'الأخير',ru:'Последний',hi:'अंतिम',it:'Ultimo',tr:'Sonuncu',nl:'Laatste',pl:'Ostatni',id:'Terakhir'},
-  slotTeamN:{ko:'{l}팀',en:'Team {l}',zh:'{l}组',es:'Equipo {l}',ja:'{l}チーム',fr:'Équipe {l}',de:'Team {l}',pt:'Equipe {l}',ar:'فريق {l}',ru:'Команда {l}',hi:'टीम {l}',it:'Squadra {l}',tr:'{l} Takımı',nl:'Team {l}',pl:'Drużyna {l}',id:'Tim {l}'},
-  slotSeatN:{ko:'{n}번',en:'#{n}',zh:'{n}号',es:'#{n}',ja:'{n}番',fr:'#{n}',de:'#{n}',pt:'#{n}',ar:'#{n}',ru:'#{n}',hi:'#{n}',it:'#{n}',tr:'{n}.',nl:'#{n}',pl:'#{n}',id:'#{n}'},
-  participantDefault:{ko:'참가자{i}',en:'Player{i}',zh:'玩家{i}',es:'Jugador{i}',ja:'参加者{i}',fr:'Joueur{i}',de:'Spieler{i}',pt:'Jogador{i}',ar:'لاعب{i}',ru:'Игрок{i}',hi:'खिलाड़ी{i}',it:'Giocatore{i}',tr:'Oyuncu{i}',nl:'Speler{i}',pl:'Gracz{i}',id:'Pemain{i}'},
-  resWinnersTitle:{ko:'🏆 당첨자 ({n}명)',en:'🏆 Winners ({n})',zh:'🏆 中奖者 ({n})',es:'🏆 Ganadores ({n})',ja:'🏆 当選者 ({n}人)',fr:'🏆 Gagnants ({n})',de:'🏆 Gewinner ({n})',pt:'🏆 Vencedores ({n})',ar:'🏆 الفائزون ({n})',ru:'🏆 Победители ({n})',hi:'🏆 विजेता ({n})',it:'🏆 Vincitori ({n})',tr:'🏆 Kazananlar ({n})',nl:'🏆 Winnaars ({n})',pl:'🏆 Zwycięzcy ({n})',id:'🏆 Pemenang ({n})'},
-  resPunishedTitle:{ko:'🔥 벌칙 당첨 ({n}명)',en:'🔥 Penalized ({n})',zh:'🔥 受罚 ({n})',es:'🔥 Castigados ({n})',ja:'🔥 罰ゲーム当選 ({n}人)',fr:'🔥 Pénalisés ({n})',de:'🔥 Bestraft ({n})',pt:'🔥 Punidos ({n})',ar:'🔥 معاقبون ({n})',ru:'🔥 Наказанных ({n})',hi:'🔥 दंडित ({n})',it:'🔥 Puniti ({n})',tr:'🔥 Cezalılar ({n})',nl:'🔥 Gestraften ({n})',pl:'🔥 Ukarani ({n})',id:'🔥 Kena Hukuman ({n})'},
-  resTeamTitle:{ko:'{l}팀 ({n}명)',en:'Team {l} ({n})',zh:'{l}组 ({n})',es:'Equipo {l} ({n})',ja:'{l}チーム ({n}人)',fr:'Équipe {l} ({n})',de:'Team {l} ({n})',pt:'Equipe {l} ({n})',ar:'فريق {l} ({n})',ru:'Команда {l} ({n})',hi:'टीम {l} ({n})',it:'Squadra {l} ({n})',tr:'{l} Takımı ({n})',nl:'Team {l} ({n})',pl:'Drużyna {l} ({n})',id:'Tim {l} ({n})'},
-  bracketRound1:{ko:'🥊 1라운드 대진표',en:'🥊 Round 1 Matches',zh:'🥊 第一轮对阵',es:'🥊 Ronda 1',ja:'🥊 1回戦',fr:'🥊 1er Tour',de:'🥊 Runde 1',pt:'🥊 Rodada 1',ar:'🥊 الجولة 1',ru:'🥊 1-й раунд',hi:'🥊 राउंड 1',it:'🥊 Turno 1',tr:'🥊 1. Tur',nl:'🥊 Ronde 1',pl:'🥊 Runda 1',id:'🥊 Ronde 1'},
-  bracketBye:{ko:'부전승 🎉',en:'BYE 🎉',zh:'轮空 🎉',es:'EXENTO 🎉',ja:'不戦勝 🎉',fr:'BYE 🎉',de:'FREILOS 🎉',pt:'BYE 🎉',ar:'استراحة 🎉',ru:'ПРОХОД 🎉',hi:'BYE 🎉',it:'BYE 🎉',tr:'SERBEST 🎉',nl:'BYE 🎉',pl:'WOLNY 🎉',id:'BYE 🎉'},
-  bracketByeShort:{ko:'부전승',en:'BYE',zh:'轮空',es:'EXENTO',ja:'不戦勝',fr:'BYE',de:'FREILOS',pt:'BYE',ar:'استراحة',ru:'ПРОХОД',hi:'BYE',it:'BYE',tr:'SERBEST',nl:'BYE',pl:'WOLNY',id:'BYE'},
-  bracketFinal:{ko:'결승',en:'Final',zh:'决赛',es:'Final',ja:'決勝',fr:'Finale',de:'Finale',pt:'Final',ar:'النهائي',ru:'Финал',hi:'फाइनल',it:'Finale',tr:'Final',nl:'Finale',pl:'Finał',id:'Final'},
-  bracketSemi:{ko:'준결승',en:'Semifinal',zh:'半决赛',es:'Semifinal',ja:'準決勝',fr:'Demi-finale',de:'Halbfinale',pt:'Semifinal',ar:'نصف النهائي',ru:'Полуфинал',hi:'सेमीफाइनल',it:'Semifinale',tr:'Yarı Final',nl:'Halve finale',pl:'Półfinał',id:'Semifinal'},
-  bracketRoundN:{ko:'{n}회전',en:'Round {n}',zh:'第{n}轮',es:'Ronda {n}',ja:'{n}回戦',fr:'Tour {n}',de:'Runde {n}',pt:'Rodada {n}',ar:'الجولة {n}',ru:'Раунд {n}',hi:'राउंड {n}',it:'Turno {n}',tr:'{n}. Tur',nl:'Ronde {n}',pl:'Runda {n}',id:'Ronde {n}'},
-  bracketChampion:{ko:'우승',en:'Champion',zh:'冠军',es:'Campeón',ja:'優勝',fr:'Champion',de:'Meister',pt:'Campeão',ar:'بطل',ru:'Чемпион',hi:'चैंपियन',it:'Campione',tr:'Şampiyon',nl:'Kampioen',pl:'Mistrz',id:'Juara'},
-  coffeeCopiedMsg:{ko:'복사됐어요! 케이뱅크에 붙여넣기 하세요',en:'Copied! Paste into your bank app',zh:'已复制！请粘贴到银行应用',es:'¡Copiado! Pega en tu app bancaria',ja:'コピーしました！銀行アプリに貼り付け',fr:'Copié ! Collez dans votre appli bancaire',de:'Kopiert! In Banking-App einfügen',pt:'Copiado! Cole no app do banco',ar:'تم النسخ! الصق في تطبيق البنك',ru:'Скопировано! Вставьте в банк',hi:'कॉपी हो गया! बैंक ऐप में पेस्ट करें',it:'Copiato! Incolla nell\'app bancaria',tr:'Kopyalandı! Banka uygulamasına yapıştırın',nl:'Gekopieerd! Plak in bank-app',pl:'Skopiowano! Wklej w aplikacji',id:'Disalin! Tempel di aplikasi bank'},
-  contactCopiedMsg:{ko:'이메일 주소가 복사되었습니다!',en:'Email address copied!',zh:'邮箱地址已复制！',es:'¡Dirección copiada!',ja:'メールアドレスをコピーしました！',fr:'Email copié !',de:'E-Mail-Adresse kopiert!',pt:'Email copiado!',ar:'تم نسخ البريد الإلكتروني!',ru:'Email скопирован!',hi:'ईमेल कॉपी हुआ!',it:'Email copiata!',tr:'E-posta kopyalandı!',nl:'E-mail gekopieerd!',pl:'Email skopiowany!',id:'Email disalin!'},
-  contactMailSubject:{ko:'사다리 타기 문의',en:'Ladder Game Inquiry',zh:'梯子游戏咨询',es:'Consulta Juego de Escalera',ja:'あみだくじお問い合わせ',fr:'Question Jeu d\'Échelle',de:'Leiterspiel Anfrage',pt:'Consulta Jogo da Escada',ar:'استفسار لعبة السلم',ru:'Вопрос по игре',hi:'सीढ़ी खेल प्रश्न',it:'Domanda Gioco Scala',tr:'Merdiven Oyunu Soru',nl:'Ladder Vraag',pl:'Pytanie Drabina',id:'Pertanyaan Tangga'},
-  // Coffee/contact modal
-  coffeeModalTitle:{ko:'☕ 커피 사주기',en:'☕ Buy me a coffee',zh:'☕ 请喝咖啡',es:'☕ Invítame un café',ja:'☕ コーヒーをおごる',fr:'☕ Offrez un café',de:'☕ Kaffee spendieren',pt:'☕ Me pague um café',ar:'☕ اشتر لي قهوة',ru:'☕ Купи мне кофе',hi:'☕ एक कॉफी खिलाओ',it:'☕ Offrimi un caffè',tr:'☕ Bana bir kahve ısmarla',nl:'☕ Koop een koffie',pl:'☕ Postaw kawę',id:'☕ Belikan Kopi'},
-  coffeeModalSub:{ko:'사다리 타기가 도움이 됐다면\n커피 한 잔 어떠세요? 😊',en:'If you enjoyed the game,\nhow about a coffee? 😊',zh:'如果你喜欢这个游戏，\n请开发者喝杯咖啡吧？😊',es:'¿Te gustó el juego?\n¡Un café para el dev! 😊',ja:'ゲームが楽しかったら\nコーヒーいかが？😊',fr:'Si vous avez aimé,\nun café pour le dev ? 😊',de:'Gefällt dir das Spiel?\nEinen Kaffee? 😊',pt:'Gostou do jogo?\nUm café? 😊',ar:'إذا استمتعت باللعبة،\nما رأيك بقهوة؟ 😊',ru:'Понравилась игра?\nКофе для разработчика? 😊',hi:'खेल पसंद आया?\nडेवलपर को कॉफी? 😊',it:'Ti è piaciuto il gioco?\nUn caffè? 😊',tr:'Oyunu beğendiyseniz\nbir kahve? 😊',nl:'Leuk gevonden?\nKoffie voor de dev? 😊',pl:'Spodobała ci się gra?\nKawa dla dewelopera? 😊',id:'Suka gamenya?\nKopi untuk developer? 😊'},
-  coffeeKofi:{ko:'Ko-fi로 보내기',en:'Ko-fi',zh:'Ko-fi',es:'Ko-fi',ja:'Ko-fi',fr:'Ko-fi',de:'Ko-fi',pt:'Ko-fi',ar:'Ko-fi',ru:'Ko-fi',hi:'Ko-fi',it:'Ko-fi',tr:'Ko-fi',nl:'Ko-fi',pl:'Ko-fi',id:'Ko-fi'},
-  coffeePayPal:{ko:'PayPal로 보내기',en:'PayPal',zh:'PayPal',es:'PayPal',ja:'PayPal',fr:'PayPal',de:'PayPal',pt:'PayPal',ar:'PayPal',ru:'PayPal',hi:'PayPal',it:'PayPal',tr:'PayPal',nl:'PayPal',pl:'PayPal',id:'PayPal'},
-  coffeeCrypto:{ko:'암호화폐로 보내기',en:'Crypto',zh:'加密货币',es:'Cripto',ja:'暗号通貨',fr:'Crypto',de:'Krypto',pt:'Cripto',ar:'عملة رقمية',ru:'Крипта',hi:'क्रिप्टो',it:'Cripto',tr:'Kripto',nl:'Crypto',pl:'Krypto',id:'Kripto'},
-  coffeeBack:{ko:'← 뒤로',en:'← Back',zh:'← 返回',es:'← Atrás',ja:'← 戻る',fr:'← Retour',de:'← Zurück',pt:'← Voltar',ar:'← رجوع',ru:'← Назад',hi:'← वापस',it:'← Indietro',tr:'← Geri',nl:'← Terug',pl:'← Wstecz',id:'← Kembali'},
-  coffeeCoinCopy:{ko:'📋 복사',en:'📋 Copy',zh:'📋 复制',es:'📋 Copiar',ja:'📋 コピー',fr:'📋 Copier',de:'📋 Kopieren',pt:'📋 Copiar',ar:'📋 نسخ',ru:'📋 Копировать',hi:'📋 कॉपी',it:'📋 Copia',tr:'📋 Kopyala',nl:'📋 Kopieer',pl:'📋 Kopiuj',id:'📋 Salin'},
-  coffeeAddrCopied:{ko:'주소 복사됨!',en:'address copied!',zh:'地址已复制！',es:'¡dirección copiada!',ja:'アドレスをコピーしました！',fr:'adresse copiée !',de:'Adresse kopiert!',pt:'endereço copiado!',ar:'تم نسخ العنوان!',ru:'адрес скопирован!',hi:'पता कॉपी हुआ!',it:'indirizzo copiato!',tr:'adres kopyalandı!',nl:'adres gekopieerd!',pl:'adres skopiowany!',id:'alamat disalin!'},
-  contactModalTitle:{ko:'📧 문의하기',en:'📧 Contact Us',zh:'📧 联系我们',es:'📧 Contáctanos',ja:'📧 お問い合わせ',fr:'📧 Nous Contacter',de:'📧 Kontaktieren',pt:'📧 Fale Conosco',ar:'📧 اتصل بنا',ru:'📧 Связаться',hi:'📧 संपर्क करें',it:'📧 Contattaci',tr:'📧 Bize Ulaşın',nl:'📧 Neem Contact Op',pl:'📧 Skontaktuj się',id:'📧 Hubungi Kami'},
-  contactModalSub:{ko:'피드백이나 문의사항이 있으신가요?\n이메일로 연락주세요! 😊',en:'Got feedback or questions?\nDrop us an email! 😊',zh:'有反馈或问题吗？\n给我们发邮件吧！😊',es:'¿Comentarios o preguntas?\n¡Envíanos un email! 😊',ja:'フィードバックやご質問は？\nメールでお気軽に！😊',fr:'Des retours ou questions ?\nEnvoyez un email ! 😊',de:'Feedback oder Fragen?\nSchreib uns! 😊',pt:'Feedback ou perguntas?\nEnvie um email! 😊',ar:'لديك ملاحظات أو أسئلة؟\nراسلنا عبر البريد! 😊',ru:'Отзывы или вопросы?\nНапишите нам! 😊',hi:'फीडबैक या सवाल हैं?\nहमें ईमेल करें! 😊',it:'Feedback o domande?\nInviaci un\'email! 😊',tr:'Geri bildirim veya sorular?\nBize e-posta gönderin! 😊',nl:'Feedback of vragen?\nStuur ons een e-mail! 😊',pl:'Opinie lub pytania?\nWyślij nam email! 😊',id:'Masukan atau pertanyaan?\nKirim email kepada kami! 😊'},
-  contactCopyBtn:{ko:'📋 이메일 주소 복사',en:'📋 Copy email address',zh:'📋 复制邮箱地址',es:'📋 Copiar dirección',ja:'📋 メールアドレスをコピー',fr:'📋 Copier l\'email',de:'📋 E-Mail kopieren',pt:'📋 Copiar email',ar:'📋 نسخ البريد الإلكتروني',ru:'📋 Копировать email',hi:'📋 ईमेल कॉपी',it:'📋 Copia email',tr:'📋 E-postayı kopyala',nl:'📋 E-mail kopiëren',pl:'📋 Kopiuj email',id:'📋 Salin email'},
-  closeBtn:{ko:'닫기',en:'Close',zh:'关闭',es:'Cerrar',ja:'閉じる',fr:'Fermer',de:'Schließen',pt:'Fechar',ar:'إغلاق',ru:'Закрыть',hi:'बंद',it:'Chiudi',tr:'Kapat',nl:'Sluiten',pl:'Zamknij',id:'Tutup'}
-};
-let currentLang='ko';
-function t(key,vars){let s=(T[key]&&(T[key][currentLang]||T[key].en))||key;if(vars)Object.keys(vars).forEach(k=>{s=s.replace('{'+k+'}',vars[k]);});return s;}
-function applyLanguage(lang){
-  if(!T.subtitle[lang])lang='en';
-  currentLang=lang;
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key=el.dataset.i18n;
-    if(T[key])el.innerHTML=T[key][lang]||T[key].en;
-  });
-  const sel=document.getElementById('langSelect');if(sel)sel.value=lang;
-  // Switch donation buttons: ko→Toss/Kakao, else→Kofi/PayPal/Crypto
-  const ko=document.getElementById('coffee-btns-ko');
-  const intl=document.getElementById('coffee-btns-intl');
-  const cry=document.getElementById('coffee-btns-crypto');
-  if(ko&&intl&&cry){
-    const isKo=lang==='ko';
-    ko.style.display=isKo?'flex':'none';
-    intl.style.display=isKo?'none':'flex';
-    cry.style.display='none';
-  }
-  // Refresh dynamic UI
-  if(typeof renderMS==='function')try{renderMS();}catch(e){}
-  if(typeof renderNames==='function')try{renderNames();}catch(e){}
-  try{localStorage.setItem('ladderLang',lang);}catch(e){}
-}
-// ─ Crypto donation ─
-const CRYPTO_ADDR={
-  eth:{addr:'0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3',deep:'ethereum:0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3'},
-  btc:{addr:'bc1qtqslrh837400fdua783vref6fqj3yltwcz2srj',deep:'bitcoin:bc1qtqslrh837400fdua783vref6fqj3yltwcz2srj'},
-  sol:{addr:'FAXQXViwZtxm7PM29dStHHmQyhvECF8uFK54eU9T1B79',deep:null},
-  arb:{addr:'0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3',deep:'ethereum:0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3'}
-};
-function tryDeepLink(url){
-  if(!url)return;
-  try{
-    const f=document.createElement('iframe');
-    f.style.cssText='display:none;position:absolute;width:0;height:0;border:0';
-    f.src=url;
-    document.body.appendChild(f);
-    setTimeout(()=>{try{document.body.removeChild(f);}catch(e){}},1500);
-  }catch(e){}
-}
-function showCrypto(){
-  document.getElementById('coffee-btns-intl').style.display='none';
-  document.getElementById('coffee-btns-crypto').style.display='flex';
-  document.getElementById('copy-ok').textContent='';
-}
-function showCoffeeMain(){
-  document.getElementById('coffee-btns-crypto').style.display='none';
-  document.getElementById('coffee-btns-intl').style.display='flex';
-  document.getElementById('copy-ok').textContent='';
-}
-function copyCoin(symbol){
-  const info=CRYPTO_ADDR[symbol];if(!info)return;
-  const showOk=()=>{
-    const el=document.getElementById('copy-ok');
-    el.textContent='✅ '+symbol.toUpperCase()+' '+t('coffeeAddrCopied');
-    setTimeout(()=>el.textContent='',3000);
-  };
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(info.addr).then(showOk).catch(()=>{
-      const ta=document.createElement('textarea');ta.value=info.addr;
-      document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-      showOk();
-    });
-  } else {
-    const ta=document.createElement('textarea');ta.value=info.addr;
-    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-    showOk();
-  }
-  tryDeepLink(info.deep);
-}
-function detectLanguage(){
-  try{const s=localStorage.getItem('ladderLang');if(s&&T.subtitle[s])return s;}catch(e){}
-  const nav=(navigator.language||navigator.userLanguage||'en').toLowerCase();
-  const code=nav.split('-')[0];
-  const supp=['ko','en','zh','es','ja','fr','de','pt','ar','ru','hi','it','tr','nl','pl','id'];
-  return supp.includes(code)?code:'en';
-}
 const EMOJIS=['🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐸','🐵','🦄','🐙','🦋','🐬','🐝'];
 const COLORS=['#FF6B6B','#4ECDC4','#45B7D1','#96e86b','#FFEAA7','#dd6bff','#98D8C8','#F7DC6F','#BB8FCE','#85C1E9','#F1948A','#82E0AA','#F8C471','#AED6F1','#A9DFBF','#FFB347','#D2B4DE','#A3E4D7','#FAD7A0','#D5E8D4'];
 const PCOLORS=['#ffd93d','#ff6b6b','#6bcb77','#4d96ff','#c084fc','#fb923c','#34d399','#f472b6','#60a5fa','#a78bfa','#fbbf24','#4ade80','#818cf8','#f87171','#2dd4bf','#e879f9','#38bdf8','#fb7185','#a3e635','#fdba74'];
 const NR=16;
 
-let pCnt=4,wCnt=1,MODE='A',roleValues=[],penaltyValues=[],passCnt=2;
-let teamCount=2,teamDistMode='even',teamManual=[];
-let speedMult=1;
-let G=null,RAF=null,_stars=null,lastGame=null;
+let pCnt=4,wCnt=1,MODE='A',roleValues=[];
+let G=null,RAF=null,_stars=null;
 
-function cc(d){pCnt=clamp(pCnt+d,2,20);wCnt=Math.min(wCnt,pCnt-1);passCnt=Math.min(passCnt,pCnt-1);renderNames();renderMS()}
+function cc(d){pCnt=clamp(pCnt+d,2,20);wCnt=Math.min(wCnt,pCnt-1);renderNames();renderMS()}
 function cw(d){wCnt=clamp(wCnt+d,1,pCnt-1);renderMS()}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
 function saveBR(){
   const ri=document.getElementById('role-input');
   if(ri) roleValues=ri.value;
-  const pi=document.getElementById('penalty-input');
-  if(pi) penaltyValues=pi.value;
 }
 
 function selMode(m){
-  saveBR();
   MODE=m;
-  const modes=['A','B','C','D','E','F'];
-  document.querySelectorAll('.mtab').forEach((t,i)=>t.classList.toggle('sel',modes[i]===m));
+  document.querySelectorAll('.mtab').forEach((t,i)=>t.classList.toggle('sel',['A','B','C'][i]===m));
   renderMS();
 }
 
@@ -590,71 +261,22 @@ function showPh(id,show){
 function renderMS(){
   const el=document.getElementById('ms-card');
   if(MODE==='A'){
-    el.innerHTML=`<div class="ctitle">${t('msWinSetup')}</div><div class="row"><button class="nbtn" onclick="cw(-1)">−</button><div class="wdsp">${wCnt}</div><button class="nbtn" onclick="cw(+1)">+</button><div class="rinfo">${t('msWinInfo',{p:pCnt,w:`<span style="color:#fbbf24">${wCnt}</span>`})}</div></div>`;
+    el.innerHTML=`<div class="ctitle">🏆 당첨 수 설정</div><div class="row"><button class="nbtn" onclick="cw(-1)">−</button><div class="wdsp">${wCnt}</div><button class="nbtn" onclick="cw(+1)">+</button><div class="rinfo">${pCnt}명 중 <strong style="color:#fbbf24">${wCnt}명</strong> 당첨</div></div>`;
   } else if(MODE==='B'){
     const curVal=typeof roleValues==='string'?roleValues:(roleValues||[]).join(', ');
-    el.innerHTML=`<div class="ctitle">${t('msRoleInput',{n:pCnt})}</div>
+    el.innerHTML=`<div class="ctitle">👔 역할 입력 (${pCnt}개)</div>
       <div class="emoji-row" id="rg"></div>
       <div class="big-input-wrap">
         <textarea class="big-input" id="role-input" rows="2"
           oninput="onRoleInput()" onfocus="showPh('role-ph',false)" onblur="showPh('role-ph',!this.value.trim())">${curVal}</textarea>
-        <div class="ph-label" id="role-ph" style="opacity:${curVal?0:1}">${t('msRolePH')}</div>
+        <div class="ph-label" id="role-ph" style="opacity:${curVal?0:1}">팀원*3, 자료조사*2, 발표자 …&#10;반복 입력: 역할이름*개수</div>
       </div>`;
     renderRoleEmojis();
-  } else if(MODE==='C'){
+  } else {
     const medals=['🥇','🥈','🥉'];
-    let p='';for(let i=0;i<Math.min(pCnt,3);i++)p+=medals[i]+` ${t('rankNth',{i:i+1})} `;
-    if(pCnt>3)p+=`... 😅 ${t('rankLast')}`;
-    el.innerHTML=`<div class="ctitle">${t('msRankSetup')}</div><div class="rank-preview">${t('msRankDesc',{n:`<span style="color:#fbbf24">${pCnt}</span>`})}<br>${p.trim()}</div>`;
-  } else if(MODE==='D'){
-    passCnt=clamp(passCnt,0,pCnt-1);
-    const penaltyCnt=pCnt-passCnt;
-    const curVal=typeof penaltyValues==='string'?penaltyValues:(penaltyValues||[]).join(', ');
-    el.innerHTML=`<div class="ctitle">${t('msPenaltySetup')}</div>
-      <div class="row" style="margin-bottom:12px">
-        <span style="color:#d1d5db;flex:1">${t('msPassLabel')} <span style="color:#22c55e;font-weight:700">${passCnt}</span> / ${t('msPenLabel')} <span style="color:#ef4444;font-weight:700">${penaltyCnt}</span></span>
-        <button class="nbtn" style="border-color:#22c55e;color:#22c55e" onclick="chgPass(-1)">−</button>
-        <button class="nbtn" style="border-color:#22c55e;color:#22c55e" onclick="chgPass(+1)">+</button>
-      </div>
-      <div style="color:#9ca3af;font-size:.76rem;margin-bottom:8px">${t('msPenHint',{n:penaltyCnt})}</div>
-      <div class="emoji-row" id="pg"></div>
-      <div class="big-input-wrap">
-        <textarea class="big-input" id="penalty-input" rows="2"
-          oninput="onPenaltyInput()" onfocus="showPh('penalty-ph',false)" onblur="showPh('penalty-ph',!this.value.trim())">${curVal}</textarea>
-        <div class="ph-label" id="penalty-ph" style="opacity:${curVal?0:1}">${t('msPenPH')}</div>
-      </div>`;
-    renderPenaltyEmojis();
-  } else if(MODE==='E'){
-    teamCount=clamp(teamCount,2,6);
-    let manualHtml='';
-    if(teamDistMode==='manual'){
-      const TCOLORS=['#ef4444','#3b82f6','#22c55e','#f59e0b','#a855f7','#06b6d4'];
-      manualHtml='<div class="team-manual-inputs" id="team-manual">';
-      for(let i=0;i<teamCount;i++){
-        const val=teamManual[i]||'';
-        manualHtml+=`<div class="niw" style="border-color:${TCOLORS[i]}40"><span class="nem" style="background:${TCOLORS[i]}30;color:${TCOLORS[i]}">${i+1}</span><input class="ni" type="number" min="0" placeholder="${t('msTeamInputPH')}" value="${val}" onchange="onTeamManual(${i},this.value)"></div>`;
-      }
-      manualHtml+='</div>';
-      const total=teamManual.slice(0,teamCount).reduce((s,v)=>s+(parseInt(v)||0),0);
-      if(total>0&&total!==pCnt) manualHtml+=`<div style="color:#f87171;font-size:.78rem;margin-top:6px;text-align:center">${t('msTeamSumErr',{total:total,p:pCnt})}</div>`;
-    }
-    el.innerHTML=`<div class="ctitle">${t('msTeamSetup')}</div>
-      <div class="row">
-        <span style="color:#d1d5db;flex:1">${t('msTeamCount',{n:`<span style="color:#60a5fa">${teamCount}</span>`})}</span>
-        <button class="nbtn" onclick="chgTeam(-1)">−</button>
-        <button class="nbtn" onclick="chgTeam(+1)">+</button>
-      </div>
-      <div class="sub-opt">
-        <button class="sub-btn ${teamDistMode==='even'?'sel':''}" onclick="setTeamDist('even')">${t('msTeamEven')}</button>
-        <button class="sub-btn ${teamDistMode==='manual'?'sel':''}" onclick="setTeamDist('manual')">${t('msTeamManual')}</button>
-      </div>
-      ${teamDistMode==='even'?`<div style="color:#9ca3af;font-size:.82rem;text-align:center;margin-top:10px">${t('msTeamDist',{p:pCnt,t:teamCount,sizes:Array.from({length:teamCount},(_,i)=>{const base=Math.floor(pCnt/teamCount);return base+(i<pCnt%teamCount?1:0)}).join(', ')})}</div>`:''}
-      ${manualHtml}`;
-  } else if(MODE==='F'){
-    const matchCount=Math.floor(pCnt/2);
-    const bye=pCnt%2===1;
-    el.innerHTML=`<div class="ctitle">${t('msTournSetup')}</div>
-      <div class="rank-preview">${t('msTournDesc',{n:`<span style="color:#fbbf24">${pCnt}</span>`})}<br>${t('msTournMatches',{m:matchCount})}${bye?t('msTournBye'):''}</div>`;
+    let p='';for(let i=0;i<Math.min(pCnt,3);i++)p+=medals[i]+` ${i+1}등 `;
+    if(pCnt>3)p+=`... 😅 꼴찌`;
+    el.innerHTML=`<div class="ctitle">🏅 순위 자동 배정</div><div class="rank-preview">사다리가 <strong style="color:#fbbf24">${pCnt}명</strong>의 순위를 정해드립니다<br>${p.trim()}</div>`;
   }
 }
 
@@ -667,7 +289,7 @@ function renderRoleEmojis(){
     const nm=roles[i]||'';
     const d=document.createElement('div');
     d.className='epill'+(nm?' filled':'');
-    d.innerHTML=`<span class="pem">📌</span><span class="pnm">${nm||`${t('msRolePrefix')}${i+1}`}</span>`;
+    d.innerHTML=`<span class="pem">📌</span><span class="pnm">${nm||`역할${i+1}`}</span>`;
     g.appendChild(d);
   }
 }
@@ -676,38 +298,6 @@ function onRoleInput(){
   const ta=document.getElementById('role-input');
   showPh('role-ph',!ta.value.trim());
 }
-
-function renderPenaltyEmojis(){
-  const raw=(document.getElementById('penalty-input')||{value:''}).value||'';
-  const penaltyCnt=pCnt-passCnt;
-  const items=parseNames(raw,penaltyCnt);
-  const g=document.getElementById('pg');if(!g)return;
-  g.innerHTML='';
-  for(let i=0;i<passCnt;i++){
-    const d=document.createElement('div');
-    d.className='epill filled';
-    d.style.borderColor='rgba(34,197,94,.5)';
-    d.innerHTML=`<span class="pem">✅</span><span class="pnm">${t('msPass')}</span>`;
-    g.appendChild(d);
-  }
-  for(let i=0;i<penaltyCnt;i++){
-    const nm=items[i]||'';
-    const d=document.createElement('div');
-    d.className='epill'+(nm?' filled':'');
-    if(nm)d.style.borderColor='rgba(239,68,68,.5)';
-    d.innerHTML=`<span class="pem">🔥</span><span class="pnm">${nm||`${t('msPenPrefix')}${i+1}`}</span>`;
-    g.appendChild(d);
-  }
-}
-function onPenaltyInput(){
-  renderPenaltyEmojis();
-  const ta=document.getElementById('penalty-input');
-  showPh('penalty-ph',!ta.value.trim());
-}
-function chgPass(d){passCnt=clamp(passCnt+d,0,pCnt-1);renderMS()}
-function chgTeam(d){teamCount=clamp(teamCount+d,2,6);teamManual=[];renderMS()}
-function setTeamDist(m){teamDistMode=m;if(m==='manual')teamManual=[];renderMS()}
-function onTeamManual(i,v){teamManual[i]=v;renderMS()}
 
 function calcDim(n){
   const availW=window.innerWidth-24;
@@ -745,39 +335,24 @@ function trace(start,bars,n){
   return cols;
 }
 
-const TCOLORS_G=['#ef4444','#3b82f6','#22c55e','#f59e0b','#a855f7','#06b6d4'];
-const TNAMES=['A','B','C','D','E','F'];
-
 function genSlots(n,mode,md){
   const slots=Array(n).fill(null).map(()=>({}));
   const rnd=arr=>[...arr].sort(()=>Math.random()-.5);
   if(mode==='A'){
     rnd(Array.from({length:n},(_,i)=>i)).forEach((col,i)=>{
-      slots[col]=i<md.w?{lbl:t('slotWin'),ico:'🏆',cls:'top',color:'#fbbf24'}:{lbl:t('slotLose'),ico:'😢',cls:'',color:'#4b5563'};
+      slots[col]=i<md.w?{lbl:'당첨!',ico:'🏆',cls:'top',color:'#fbbf24'}:{lbl:'꽝',ico:'😢',cls:'',color:'#4b5563'};
     });
   } else if(mode==='B'){
-    rnd(md.roles).forEach((role,col)=>{slots[col]={lbl:role||`${t('msRolePrefix')}${col+1}`,ico:'📌',cls:'role',color:'#60a5fa'}});
-  } else if(mode==='C'){
+    rnd(md.roles).forEach((role,col)=>{slots[col]={lbl:role||`역할${col+1}`,ico:'📌',cls:'role',color:'#60a5fa'}});
+  } else {
     const ranks=Array.from({length:n},(_,i)=>{
-      if(i===0)return{lbl:t('rankNth',{i:1}),ico:'🥇',cls:'top',color:'#fbbf24'};
-      if(i===1)return{lbl:t('rankNth',{i:2}),ico:'🥈',cls:'rank2',color:'#c0c0c0'};
-      if(i===2)return{lbl:t('rankNth',{i:3}),ico:'🥉',cls:'rank3',color:'#cd7f32'};
-      if(i===n-1)return{lbl:t('slotLast'),ico:'😅',cls:'',color:'#6b7280'};
-      return{lbl:t('rankNth',{i:i+1}),ico:'🎯',cls:'',color:'#9ca3af'};
+      if(i===0)return{lbl:'1등',ico:'🥇',cls:'top',color:'#fbbf24'};
+      if(i===1)return{lbl:'2등',ico:'🥈',cls:'rank2',color:'#c0c0c0'};
+      if(i===2)return{lbl:'3등',ico:'🥉',cls:'rank3',color:'#cd7f32'};
+      if(i===n-1)return{lbl:'꼴찌',ico:'😅',cls:'',color:'#6b7280'};
+      return{lbl:`${i+1}등`,ico:'🎯',cls:'',color:'#9ca3af'};
     });
     rnd(ranks).forEach((r,col)=>slots[col]=r);
-  } else if(mode==='D'){
-    rnd(md.penalties).forEach((p,col)=>{
-      const isPass=p===t('msPass');
-      slots[col]={lbl:p,ico:isPass?'✅':'🔥',cls:isPass?'pass':'penalty',color:isPass?'#22c55e':'#ef4444'};
-    });
-  } else if(mode==='E'){
-    const teamSlots=[];
-    md.sizes.forEach((sz,ti)=>{for(let j=0;j<sz;j++)teamSlots.push({lbl:t('slotTeamN',{l:TNAMES[ti]}),ico:['🔴','🔵','🟢','🟡','🟣','🩵'][ti],cls:'team',color:TCOLORS_G[ti],teamIdx:ti})});
-    rnd(teamSlots).forEach((s,col)=>slots[col]=s);
-  } else if(mode==='F'){
-    const positions=Array.from({length:n},(_,i)=>({lbl:t('slotSeatN',{n:i+1}),ico:'🥊',cls:'bracket',color:'#a78bfa',pos:i}));
-    rnd(positions).forEach((p,col)=>slots[col]=p);
   }
   return slots;
 }
@@ -801,44 +376,20 @@ function buildWP(pathCols,n,cW,dim){
 function startGame(){
   const rawNames=(document.getElementById('name-input')||{value:''}).value||'';
   const parsedNms=parseNames(rawNames,pCnt);
-  const names=Array.from({length:pCnt},(_,i)=>parsedNms[i]||t('participantDefault',{i:i+1}));
+  const names=Array.from({length:pCnt},(_,i)=>parsedNms[i]||`참가자${i+1}`);
   const n=pCnt;
   document.getElementById('em').textContent='';
   let md={};
-  if(MODE==='A'){if(wCnt<1||wCnt>=n){document.getElementById('em').textContent=t('errInvalidWin');return}md={w:wCnt}}
+  if(MODE==='A'){if(wCnt<1||wCnt>=n){document.getElementById('em').textContent='당첨 수가 올바르지 않습니다.';return}md={w:wCnt}}
   else if(MODE==='B'){
     const rawRoles=(document.getElementById('role-input')||{value:''}).value||'';
     const pr=parseNames(rawRoles,pCnt);
-    md={roles:Array.from({length:pCnt},(_,i)=>pr[i]||`${t('msRolePrefix')}${i+1}`)};
-  } else if(MODE==='D'){
-    const penaltyCnt=pCnt-passCnt;
-    const rawP=(document.getElementById('penalty-input')||{value:''}).value||'';
-    const pp=parseNames(rawP,penaltyCnt);
-    const penalties=[];
-    for(let i=0;i<passCnt;i++)penalties.push(t('msPass'));
-    for(let i=0;i<penaltyCnt;i++)penalties.push(pp[i]||`${t('msPenPrefix')}${i+1}`);
-    md={penalties};
-  } else if(MODE==='E'){
-    let sizes;
-    if(teamDistMode==='even'){
-      sizes=Array.from({length:teamCount},(_,i)=>{const base=Math.floor(pCnt/teamCount);return base+(i<pCnt%teamCount?1:0)});
-    } else {
-      sizes=Array.from({length:teamCount},(_,i)=>parseInt(teamManual[i])||0);
-      const total=sizes.reduce((s,v)=>s+v,0);
-      if(total!==pCnt){document.getElementById('em').textContent=t('msTeamSumErr',{total:total,p:pCnt}).replace(/<[^>]+>/g,'');return}
-    }
-    md={sizes};
-  } else if(MODE==='F'){
-    md={};
+    md={roles:Array.from({length:pCnt},(_,i)=>pr[i]||`역할${i+1}`)};
   }
-  launchGame(names,MODE,md);
-}
 
-function launchGame(names,mode,md){
-  const n=names.length;
   const bars=genLadder(n);
   const paths=Array.from({length:n},(_,i)=>trace(i,bars,n));
-  const slots=genSlots(n,mode,md);
+  const slots=genSlots(n,MODE,md);
   const dim=calcDim(n);
   const{cw,rh,pt,pb}=dim;
   const cW=Math.max((n-1)*cw+50+20,window.innerWidth);
@@ -850,13 +401,12 @@ function launchGame(names,mode,md){
     return{name,emoji:EMOJIS[i],color:COLORS[i],startCol:i,finalCol:fc,slot:slots[fc],waypoints:wps,wpIdx:0,x:wps[0].x,y:wps[0].y,done:false,trail:[]};
   });
 
-  lastGame={names:[...names],mode,md};
-  G={n,bars,characters,slots,cW,cH,dim,mode,phase:'waiting',revP:0,particles:[],celebT:0,swapSel:-1,swapCount:0,swapFlash:null,swapMode:document.getElementById('swap-opt').checked,pitColors:Array.from({length:n},(_,i)=>PCOLORS[i%PCOLORS.length])};
+  G={n,bars,characters,slots,cW,cH,dim,mode:MODE,phase:'waiting',revP:0,particles:[],celebT:0,swapSel:-1,swapCount:0,swapFlash:null,swapMode:document.getElementById('swap-opt').checked,pitColors:Array.from({length:n},(_,i)=>PCOLORS[i%PCOLORS.length])};
 
   showScreen('s-game');
-  const mlKey={A:'modeTitleA',B:'modeTitleB',C:'modeTitleC',D:'modeTitleD',E:'modeTitleE',F:'modeTitleF'};
-  document.getElementById('gml').textContent=t(mlKey[mode]);
-  document.getElementById('gstat').textContent=t('gameGo');
+  const ml={A:'🏆 당첨/꽝 게임',B:'👔 역할 분담',C:'🥇 순위 고르기'};
+  document.getElementById('gml').textContent=ml[MODE];
+  document.getElementById('gstat').textContent='출발 준비! 🚦';
   document.getElementById('rbtn').style.display='none';
 
   const canvas=document.getElementById('lc');
@@ -874,7 +424,7 @@ function launchGame(names,mode,md){
     if(!G)return;
     try{AC().resume()}catch(e){}  // unlock AudioContext
     G.phase='moving';
-    document.getElementById('gstat').textContent=t('gameRunning');
+    document.getElementById('gstat').textContent='🚀 달리는 중!';
     if(RAF)cancelAnimationFrame(RAF);
     RAF=requestAnimationFrame(loop);
   },1300);
@@ -882,8 +432,7 @@ function launchGame(names,mode,md){
 
 function loop(){if(!G)return;tick();drawFrame();if(G.phase==='revealed'&&G.particles.length===0&&G.celebT>200)return;RAF=requestAnimationFrame(loop)}
 
-function getSpd(dim,h){const b=h?4.2:2.5;return Math.max(1.5,b*Math.max(0.5,dim.sc))*speedMult}
-function setSpd(m,el){speedMult=m;document.querySelectorAll('.spd-btn').forEach(b=>b.classList.remove('sel'));el.classList.add('sel')}
+function getSpd(dim,h){const b=h?4.2:2.5;return Math.max(1.5,b*Math.max(0.5,dim.sc))}
 
 function tick(){
   const g=G;
@@ -906,11 +455,11 @@ function tick(){
         setTimeout(()=>{
           if(!G)return;
           G.phase='swapping';
-          document.getElementById('gstat').textContent=t('gameSwap');
+          document.getElementById('gstat').textContent='🔀 바꾸기 찬스! 포스트잇을 눌러 서로 바꿔보세요';
           document.getElementById('swap-ui').style.display='flex';
         },800);
       } else {
-        document.getElementById('gstat').textContent=t('gameArrived');
+        document.getElementById('gstat').textContent='모두 도착! 결과 공개 중... 🎊';
         setTimeout(()=>{if(G){G.phase='revealing';snd_reveal();}},700);
       }
     } else {
@@ -921,8 +470,8 @@ function tick(){
   }
   if(g.phase==='revealing'){
     g.revP=Math.min(1,g.revP+.018);
-    if(g.revP>.4&&Math.random()<.3)for(const c of g.characters)if((c.slot.cls==='top'||c.slot.cls==='role'||c.slot.cls==='penalty'||c.slot.cls==='team')&&Math.random()<.5)spawnP(g,CX(c.finalCol,g.n,g.cW,g.dim.cw),RY(NR,g.dim.pt,g.dim.rh)+40,3);
-    if(g.revP>=1){g.phase='revealed';document.getElementById('rbtn').style.display='inline-block';document.getElementById('gstat').textContent=t('gameRevealed');}
+    if(g.revP>.4&&Math.random()<.3)for(const c of g.characters)if((c.slot.cls==='top'||c.slot.cls==='role')&&Math.random()<.5)spawnP(g,CX(c.finalCol,g.n,g.cW,g.dim.cw),RY(NR,g.dim.pt,g.dim.rh)+40,3);
+    if(g.revP>=1){g.phase='revealed';document.getElementById('rbtn').style.display='inline-block';document.getElementById('gstat').textContent='🎉 결과 공개 완료!'}
   }
   if(g.phase==='revealed'){g.celebT++;if(g.celebT<160&&Math.random()<.2)for(const c of g.characters)if(c.slot.cls==='top'&&Math.random()<.4)spawnP(g,CX(c.finalCol,g.n,g.cW,g.dim.cw),RY(NR,g.dim.pt,g.dim.rh)+40,2)}
   g.particles=g.particles.filter(p=>p.life>0);
@@ -978,12 +527,11 @@ function drawFrame(){
 
     if(showed&&revP>0){
       ctx.save();ctx.globalAlpha=revP;
-      const highlight=slot.cls==='top'||slot.cls==='penalty';
-      if(slot.cls==='top'){ctx.shadowColor='#fbbf24';ctx.shadowBlur=16}
-      else if(slot.cls==='penalty'){ctx.shadowColor='#ef4444';ctx.shadowBlur=16}
+      const isTop=slot.cls==='top';
+      if(isTop){ctx.shadowColor='#fbbf24';ctx.shadowBlur=16}
       rr(ctx,x-bw/2,y,bw,bh,rad);
-      ctx.fillStyle=slot.cls==='top'?'rgba(251,191,36,.15)':slot.cls==='penalty'?'rgba(239,68,68,.15)':slot.cls==='team'?hr(slot.color||'#fff',.12):'rgba(255,255,255,.04)';ctx.fill();
-      ctx.strokeStyle=slot.color||'rgba(255,255,255,.08)';ctx.lineWidth=highlight?2:1;ctx.stroke();
+      ctx.fillStyle=isTop?'rgba(251,191,36,.15)':'rgba(255,255,255,.04)';ctx.fill();
+      ctx.strokeStyle=slot.color||'rgba(255,255,255,.08)';ctx.lineWidth=isTop?2:1;ctx.stroke();
       ctx.shadowBlur=0;
       ctx.font=`${icoSz}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
       ctx.fillText(slot.ico,x,y+bh*0.33);
@@ -1221,37 +769,33 @@ function doSwap(mx,my){
   G.swapCount++;G.swapSel=-1;
   G.swapFlash={a,b,t:22,ca:G.pitColors[a],cb:G.pitColors[b]};
   const cnt=document.getElementById('swap-cnt');
-  cnt.textContent=t('swapCountMsg',{n:G.swapCount});
+  cnt.textContent=`총 ${G.swapCount}번 바꿈`;
 }
 function startReveal(){
   if(!G||G.phase!=='swapping')return;
   G.phase='revealing';
   snd_reveal();
   document.getElementById('swap-ui').style.display='none';
-  document.getElementById('gstat').textContent=t('gameDrum');
+  document.getElementById('gstat').textContent='두구두구... 🎊';
 }
 
 function showResult(){
   snd_celebrate();
   const{characters,mode,n}=G;
   const sorted=[...characters].sort((a,b)=>{
-    const pri={top:0,rank2:1,rank3:2,role:3,pass:1,penalty:0,team:0,bracket:0,'':4};
+    const pri={top:0,rank2:1,rank3:2,role:3,'':4};
     const pa=pri[a.slot.cls]??4,pb=pri[b.slot.cls]??4;
-    if(mode==='D'){return(a.slot.cls==='pass'?1:0)-(b.slot.cls==='pass'?1:0)}
-    if(mode==='E'){return(a.slot.teamIdx||0)-(b.slot.teamIdx||0)}
-    if(mode==='F'){return(a.slot.pos||0)-(b.slot.pos||0)}
     if(pa!==pb)return pa-pb;
     if(mode==='C'){const na=parseInt(a.slot.lbl),nb=parseInt(b.slot.lbl);if(!isNaN(na)&&!isNaN(nb))return na-nb}
     return 0;
   });
 
-  const titleKey={A:'resTitleA',B:'resTitleB',C:'resTitleC',D:'resTitleD',E:'resTitleE',F:'resTitleF'};
-  document.getElementById('rt').textContent=t(titleKey[mode]);
+  document.getElementById('rt').textContent=mode==='A'?'🏆 당첨자 발표!':mode==='B'?'👔 역할 배정 결과!':'🏅 순위 결과!';
   const rh=document.getElementById('rh'),rb=document.getElementById('rb');
 
   if(mode==='A'){
     const winners=characters.filter(c=>c.slot.cls==='top');
-    rh.innerHTML=`<div class="hbox"><div class="hboxt">${t('resWinnersTitle',{n:winners.length})}</div><div class="hnms">${winners.map(c=>`<span class="hnm">${c.emoji} ${c.name}</span>`).join('')}</div></div>`;
+    rh.innerHTML=`<div class="hbox"><div class="hboxt">🏆 당첨자 (${winners.length}명)</div><div class="hnms">${winners.map(c=>`<span class="hnm">${c.emoji} ${c.name}</span>`).join('')}</div></div>`;
     rb.innerHTML='<div class="rgrid" id="rg2"></div>';
     const rg=document.getElementById('rg2');
     sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>`;rg.appendChild(d)});
@@ -1259,7 +803,7 @@ function showResult(){
     rh.innerHTML='';rb.innerHTML='<div class="rgrid" id="rg2"></div>';
     const rg=document.getElementById('rg2');
     sorted.forEach((c,i)=>{const d=document.createElement('div');d.className='rc role';d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">📌 ${c.slot.lbl}</div>`;rg.appendChild(d)});
-  } else if(mode==='C'){
+  } else {
     rh.innerHTML='';
     let h='<div class="rklist">';
     sorted.forEach((c,i)=>{
@@ -1267,345 +811,23 @@ function showResult(){
       h+=`<div class="rki ${rc}" style="animation-delay:${i*.07}s"><div class="rki-rank">${c.slot.ico}</div><div class="rki-em">${c.emoji}</div><div class="rki-name">${c.name}</div><div style="color:${c.slot.color||'#6b7280'};font-weight:700;font-size:.88rem">${c.slot.lbl}</div></div>`;
     });
     rb.innerHTML=h+'</div>';
-  } else if(mode==='D'){
-    const punished=characters.filter(c=>c.slot.cls==='penalty');
-    rh.innerHTML=punished.length?`<div class="hbox" style="border-color:rgba(239,68,68,.35);background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(239,68,68,.04))"><div class="hboxt" style="color:#ef4444">${t('resPunishedTitle',{n:punished.length})}</div><div class="hnms">${punished.map(c=>`<span class="hnm" style="background:rgba(239,68,68,.18);color:#ef4444">${c.emoji} ${c.name} — ${c.slot.lbl}</span>`).join('')}</div></div>`:'';
-    rb.innerHTML='<div class="rgrid" id="rg2"></div>';
-    const rg=document.getElementById('rg2');
-    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>`;rg.appendChild(d)});
-  } else if(mode==='E'){
-    rh.innerHTML='';
-    const teams={};
-    characters.forEach(c=>{const ti=c.slot.teamIdx;if(!teams[ti])teams[ti]=[];teams[ti].push(c)});
-    let h='';
-    Object.keys(teams).sort((a,b)=>a-b).forEach((ti,idx)=>{
-      const tc=TCOLORS_G[ti];
-      h+=`<div class="team-section" style="animation-delay:${idx*.1}s">
-        <div class="team-hdr"><div class="team-dot" style="background:${tc}"></div><div class="team-label" style="color:${tc}">${t('resTeamTitle',{l:TNAMES[ti],n:teams[ti].length})}</div></div>
-        <div class="team-members">${teams[ti].map(c=>`<div class="team-chip" style="border-color:${tc}40"><span class="tc-em">${c.emoji}</span>${c.name}</div>`).join('')}</div>
-      </div>`;
-    });
-    rb.innerHTML=h;
-  } else if(mode==='F'){
-    rh.innerHTML='';
-    const byPos=[...characters].sort((a,b)=>a.slot.pos-b.slot.pos);
-    let h=`<div class="bracket-round"><div class="bracket-rtitle">${t('bracketRound1')}</div>`;
-    for(let i=0;i<byPos.length;i+=2){
-      const a=byPos[i];
-      if(i+1<byPos.length){
-        const b=byPos[i+1];
-        h+=`<div class="bracket-match" style="animation-delay:${(i/2)*.1}s">
-          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}</span></div>
-          <div class="bracket-vs">VS</div>
-          <div class="bracket-slot" style="justify-content:flex-end"><span class="bracket-nm">${b.name}</span><span class="bracket-em">${b.emoji}</span></div>
-        </div>`;
-      } else {
-        h+=`<div class="bracket-match" style="animation-delay:${(i/2)*.1}s">
-          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}</span></div>
-          <div class="bracket-vs">VS</div>
-          <div class="bracket-bye">${t('bracketBye')}</div>
-        </div>`;
-      }
-    }
-    h+='</div>';
-    h+=`<div style="width:100%;max-width:560px;overflow-x:auto;margin-top:8px;border-radius:16px"><canvas id="bracket-canvas" style="border-radius:16px"></canvas></div>`;
-    rb.innerHTML=h;
-    setTimeout(()=>drawBracketTree(byPos),100);
-  }
-  // Enable/disable extra draw button
-  const extraBtn=document.getElementById('extra-btn');
-  if(mode==='A'){
-    const losers=characters.filter(c=>c.slot.cls!=='top');
-    extraBtn.classList.toggle('disabled',losers.length<2);
-    extraBtn.querySelector('.r-act-desc').textContent=losers.length>=2?t('extraAvail',{n:losers.length}):t('extraUnavail');
-  } else if(mode==='D'){
-    const losers=characters.filter(c=>c.slot.cls!=='pass');
-    extraBtn.classList.toggle('disabled',losers.length<2);
-    extraBtn.querySelector('.r-act-desc').textContent=losers.length>=2?t('extraAvailP',{n:losers.length}):t('extraUnavail');
-  } else {
-    extraBtn.classList.add('disabled');
-    extraBtn.querySelector('.r-act-desc').textContent=t('extraModeUnavail');
   }
   showScreen('s-result');
 }
 
-function drawBracketTree(players){
-  const cv=document.getElementById('bracket-canvas');if(!cv)return;
-  const n=players.length;
-  if(n<2)return;
-  const totalSlots=Math.pow(2,Math.ceil(Math.log2(n)));
-  const rounds=Math.ceil(Math.log2(n));
-
-  const dpr=window.devicePixelRatio||1;
-  const slotH=48,slotW=120,gapY=12,roundGap=70,pad=28;
-  const r1Matches=totalSlots/2;
-  const cvH=pad*2+r1Matches*(slotH*2+gapY)-gapY;
-  const cvW=pad*2+(rounds+1)*(slotW)+(rounds)*roundGap;
-  cv.width=cvW*dpr;cv.height=cvH*dpr;
-  cv.style.width=cvW+'px';cv.style.height=cvH+'px';
-  const ctx=cv.getContext('2d');
-  ctx.scale(dpr,dpr);
-  ctx.fillStyle='rgba(15,15,40,.9)';
-  rr(ctx,0,0,cvW,cvH,16);ctx.fill();
-
-  // Fill first round with players + byes
-  const r0=[];
-  for(let i=0;i<totalSlots;i++) r0.push(i<n?{emoji:players[i].emoji,name:players[i].name}:null);
-
-  // Build match data per round
-  const roundData=[];
-  roundData[0]=[];
-  for(let i=0;i<r0.length;i+=2) roundData[0].push({a:r0[i],b:r0[i+1]});
-  for(let r=1;r<rounds;r++){
-    roundData[r]=[];
-    for(let i=0;i<roundData[r-1].length;i+=2) roundData[r].push({a:null,b:null});
-  }
-
-  // Compute center Y for each match per round
-  function matchCenters(round){
-    if(round===0){
-      return Array.from({length:roundData[0].length},(_,i)=>pad+i*(slotH*2+gapY)+slotH);
-    }
-    const prev=matchCenters(round-1);
-    const cs=[];
-    for(let i=0;i<roundData[round].length;i++){
-      const a=prev[i*2], b=i*2+1<prev.length?prev[i*2+1]:a;
-      cs.push((a+b)/2);
-    }
-    return cs;
-  }
-
-  // Round labels
-  const labels=[];
-  for(let r=0;r<rounds;r++){
-    if(r===rounds-1)labels.push(t('bracketFinal'));
-    else if(r===rounds-2&&rounds>=2)labels.push(t('bracketSemi'));
-    else labels.push(t('bracketRoundN',{n:r+1}));
-  }
-
-  // Draw each round
-  for(let r=0;r<rounds;r++){
-    const x=pad+r*(slotW+roundGap);
-    const centers=matchCenters(r);
-
-    ctx.font="600 11px 'Noto Sans KR',sans-serif";
-    ctx.fillStyle='#6b7280';ctx.textAlign='center';ctx.textBaseline='bottom';
-    ctx.fillText(labels[r],x+slotW/2,pad-8);
-
-    for(let m=0;m<roundData[r].length;m++){
-      const cy=centers[m];
-      const match=roundData[r][m];
-
-      for(let s=0;s<2;s++){
-        const sy=cy+(s===0?-slotH:0);
-        const p=s===0?match.a:match.b;
-        rr(ctx,x,sy+2,slotW,slotH-4,6);
-        if(p){
-          ctx.fillStyle='rgba(255,255,255,.06)';ctx.fill();
-          ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=1;ctx.stroke();
-          ctx.font="18px 'Apple Color Emoji','Segoe UI Emoji',serif";
-          ctx.textAlign='left';ctx.textBaseline='middle';
-          ctx.fillText(p.emoji,x+8,sy+slotH/2);
-          ctx.font="600 12px 'Noto Sans KR',sans-serif";
-          ctx.fillStyle='#e5e7eb';ctx.textAlign='left';
-          ctx.fillText(p.name.length>7?p.name.slice(0,7)+'…':p.name,x+32,sy+slotH/2+1);
-        } else {
-          ctx.fillStyle='rgba(255,255,255,.02)';ctx.fill();
-          ctx.strokeStyle='rgba(255,255,255,.08)';ctx.lineWidth=1;ctx.stroke();
-          ctx.font="600 11px 'Noto Sans KR',sans-serif";
-          ctx.fillStyle='#4b5563';ctx.textAlign='center';ctx.textBaseline='middle';
-          ctx.fillText(r===0?t('bracketByeShort'):'?',x+slotW/2,sy+slotH/2);
-        }
-      }
-
-      // Connectors to next round
-      if(r<rounds-1){
-        const topMid=cy-slotH/2, botMid=cy+slotH/2;
-        const nx=x+slotW;
-        // Right bracket shape: two horizontal ticks + vertical + horizontal out
-        ctx.strokeStyle='rgba(167,139,250,.4)';ctx.lineWidth=1.5;
-        ctx.beginPath();ctx.moveTo(nx,topMid);ctx.lineTo(nx+14,topMid);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(nx,botMid);ctx.lineTo(nx+14,botMid);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(nx+14,topMid);ctx.lineTo(nx+14,botMid);ctx.stroke();
-        // Horizontal to next round
-        const nextCenters=matchCenters(r+1);
-        const nm=Math.floor(m/2);
-        const ncy=nextCenters[nm];
-        const targetY=m%2===0?ncy-slotH/2:ncy+slotH/2;
-        ctx.beginPath();ctx.moveTo(nx+14,cy);ctx.lineTo(pad+(r+1)*(slotW+roundGap),targetY);
-        ctx.stroke();
-      }
-    }
-  }
-
-  // Winner / trophy box
-  const lastX=pad+rounds*(slotW+roundGap);
-  const lastCenters=matchCenters(rounds-1);
-  const fy=lastCenters[0];
-  ctx.strokeStyle='rgba(167,139,250,.4)';ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(lastX-roundGap,fy-slotH/2);ctx.lineTo(lastX-roundGap+14,fy-slotH/2);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(lastX-roundGap,fy+slotH/2);ctx.lineTo(lastX-roundGap+14,fy+slotH/2);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(lastX-roundGap+14,fy-slotH/2);ctx.lineTo(lastX-roundGap+14,fy+slotH/2);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(lastX-roundGap+14,fy);ctx.lineTo(lastX,fy);ctx.stroke();
-
-  rr(ctx,lastX,fy-slotH/2+4,slotW,slotH-8,8);
-  ctx.fillStyle='rgba(251,191,36,.12)';ctx.fill();
-  ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.5;ctx.stroke();
-  ctx.font="22px serif";ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.fillText('🏆',lastX+slotW/2,fy);
-  ctx.font="600 11px 'Noto Sans KR',sans-serif";ctx.fillStyle='#fbbf24';ctx.textBaseline='bottom';
-  ctx.fillText(t('bracketChampion'),lastX+slotW/2,pad-8);
-}
-
 function showScreen(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on')}
-function cleanupGame(){
+function restart(){
   if(RAF){cancelAnimationFrame(RAF);RAF=null}
   const lc=document.getElementById('lc');
   lc.onclick=null;lc.ontouchend=null;
   document.getElementById('swap-ui').style.display='none';
   document.getElementById('rbtn').style.display='none';
-  _stars=null;
-}
-
-function restart(){
-  cleanupGame();
-  G=null;
+  G=null;_stars=null;
   showScreen('s-setup');
 }
 
-function reshuffle(){
-  if(!lastGame)return;
-  cleanupGame();
-  G=null;
-  launchGame(lastGame.names,lastGame.mode,lastGame.md);
-}
-
-function extraDraw(){
-  if(!G||!lastGame)return;
-  const mode=G.mode;
-  // Determine losers based on mode
-  let losers;
-  if(mode==='A') losers=G.characters.filter(c=>c.slot.cls!=='top');
-  else if(mode==='D') losers=G.characters.filter(c=>c.slot.cls!=='pass');
-  else return;
-
-  if(losers.length<2)return;
-  cleanupGame();
-  const names=losers.map(c=>c.name);
-  // Rebuild md for the subset
-  let md={};
-  if(mode==='A'){md={w:Math.min(lastGame.md.w,Math.max(1,names.length-1))};}
-  else if(mode==='D'){
-    const oldPenalties=lastGame.md.penalties.filter(p=>p!==t('msPass'));
-    const newPassCnt=Math.max(1,names.length-oldPenalties.length);
-    const penaltySlots=names.length-newPassCnt;
-    const penalties=[];
-    for(let i=0;i<newPassCnt;i++)penalties.push(t('msPass'));
-    for(let i=0;i<penaltySlots;i++)penalties.push(oldPenalties[i]||`${t('msPenPrefix')}${i+1}`);
-    md={penalties};
-  }
-  G=null;
-  launchGame(names,mode,md);
-}
-
-applyLanguage(detectLanguage());
 renderNames();renderMS();
 showPh('name-ph',true);
-
-function openCoffee(){
-  document.getElementById('copy-ok').textContent='';
-  // Always reset to main view (hide crypto detail)
-  const cry=document.getElementById('coffee-btns-crypto');if(cry)cry.style.display='none';
-  const isKo=currentLang==='ko';
-  const ko=document.getElementById('coffee-btns-ko');if(ko)ko.style.display=isKo?'flex':'none';
-  const intl=document.getElementById('coffee-btns-intl');if(intl)intl.style.display=isKo?'none':'flex';
-  document.getElementById('coffee-bg').classList.add('show');
-}
-function closeCoffee(e){if(!e||e.target===document.getElementById('coffee-bg'))document.getElementById('coffee-bg').classList.remove('show')}
-function closeCoffeeDelay(){setTimeout(()=>document.getElementById('coffee-bg').classList.remove('show'),800)}
-function copyAccount(){navigator.clipboard.writeText('100109333413').then(()=>{const el=document.getElementById('copy-ok');el.textContent='✅ '+t('coffeeCopiedMsg');setTimeout(()=>el.textContent='',3000);})}
-function openContact(){document.getElementById('contact-ok').textContent='';document.getElementById('contact-bg').classList.add('show')}
-function closeContact(e){if(!e||e.target===document.getElementById('contact-bg'))document.getElementById('contact-bg').classList.remove('show')}
-function sendContactMail(){
-  const subject=encodeURIComponent(t('contactMailSubject'));
-  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=veloxdapt@gmail.com&su='+subject,'_blank','noopener');
-  setTimeout(()=>{
-    try{const f=document.createElement('iframe');f.style.cssText='display:none;position:absolute;width:0;height:0;border:0';f.src='mailto:veloxdapt@gmail.com?subject='+subject;document.body.appendChild(f);setTimeout(()=>{try{document.body.removeChild(f);}catch(e){}},1500);}catch(e){}
-  },100);
-}
-function copyContactMail(){
-  const addr='veloxdapt@gmail.com';
-  const showOk=()=>{const el=document.getElementById('contact-ok');el.textContent='✅ '+t('contactCopiedMsg');setTimeout(()=>el.textContent='',3000);};
-  if(navigator.clipboard){navigator.clipboard.writeText(addr).then(showOk).catch(()=>{const ta=document.createElement('textarea');ta.value=addr;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showOk();});}
-  else{const ta=document.createElement('textarea');ta.value=addr;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showOk();}
-}
 </script>
-
-<button class="coffee-fab" onclick="openCoffee()" data-i18n="coffeeBtn">☕ 커피 사주기</button>
-<button class="contact-fab" onclick="openContact()" data-i18n="contactBtn">📧 문의하기</button>
-<div class="coffee-bg" id="coffee-bg" onclick="closeCoffee(event)">
-  <div class="coffee-box">
-    <div class="coffee-ttl" data-i18n="coffeeModalTitle">☕ 커피 사주기</div>
-    <div class="coffee-sub" data-i18n="coffeeModalSub" style="white-space:pre-line">사다리 타기가 도움이 됐다면
-커피 한 잔 어떠세요? 😊</div>
-    <!-- 한국어: Toss/Kakao -->
-    <div class="coffee-btns" id="coffee-btns-ko">
-      <a class="cbtn cbtn-toss" href="supertoss://send?amount=3000&bank=%EC%BC%80%EC%9D%B4%EB%B1%85%ED%81%AC&accountNo=100109333413&origin=qr" onclick="closeCoffeeDelay()">💙 토스로 보내기 (3,000원)</a>
-      <a class="cbtn cbtn-kakao" href="https://qr.kakaopay.com/FVamP887r" target="_blank" onclick="closeCoffeeDelay()">💛 카카오페이로 보내기 (3,000원)</a>
-      <button class="cbtn cbtn-copy" onclick="copyAccount()">🏦 계좌번호 복사 (케이뱅크)</button>
-    </div>
-    <!-- 국제: Ko-fi/PayPal/Crypto -->
-    <div class="coffee-btns" id="coffee-btns-intl" style="display:none">
-      <a class="cbtn cbtn-kofi" href="https://ko-fi.com/veloxdapt" target="_blank" rel="noopener" onclick="closeCoffeeDelay()">💚 <span data-i18n="coffeeKofi">Ko-fi</span></a>
-      <a class="cbtn cbtn-paypal" href="https://paypal.me/veloxdapt" target="_blank" rel="noopener" onclick="closeCoffeeDelay()">💙 <span data-i18n="coffeePayPal">PayPal</span></a>
-      <button class="cbtn cbtn-crypto" onclick="showCrypto()">🪙 <span data-i18n="coffeeCrypto">Crypto</span></button>
-    </div>
-    <!-- 암호화폐 상세 -->
-    <div class="coffee-btns" id="coffee-btns-crypto" style="display:none">
-      <button class="coffee-back" onclick="showCoffeeMain()"><span data-i18n="coffeeBack">← Back</span></button>
-      <div class="coffee-coins">
-        <button class="coin-btn" onclick="copyCoin('eth')">
-          <span class="coin-ico">🔷</span>
-          <span class="coin-nm">ETH</span>
-          <span class="coin-addr">0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3</span>
-          <span class="coin-cp" data-i18n="coffeeCoinCopy">📋 Copy</span>
-        </button>
-        <button class="coin-btn" onclick="copyCoin('btc')">
-          <span class="coin-ico">🟠</span>
-          <span class="coin-nm">BTC</span>
-          <span class="coin-addr">bc1qtqslrh837400fdua783vref6fqj3yltwcz2srj</span>
-          <span class="coin-cp" data-i18n="coffeeCoinCopy">📋 Copy</span>
-        </button>
-        <button class="coin-btn" onclick="copyCoin('sol')">
-          <span class="coin-ico">🟣</span>
-          <span class="coin-nm">SOL</span>
-          <span class="coin-addr">FAXQXViwZtxm7PM29dStHHmQyhvECF8uFK54eU9T1B79</span>
-          <span class="coin-cp" data-i18n="coffeeCoinCopy">📋 Copy</span>
-        </button>
-        <button class="coin-btn" onclick="copyCoin('arb')">
-          <span class="coin-ico">🔵</span>
-          <span class="coin-nm">ARB</span>
-          <span class="coin-addr">0x10b5983cFb31185f6Bd4021754aC0d70Cc7fc1F3</span>
-          <span class="coin-cp" data-i18n="coffeeCoinCopy">📋 Copy</span>
-        </button>
-      </div>
-    </div>
-    <div class="copy-ok" id="copy-ok"></div>
-    <button class="coffee-close" onclick="closeCoffee()" data-i18n="closeBtn">닫기</button>
-  </div>
-</div>
-<div class="coffee-bg" id="contact-bg" onclick="closeContact(event)">
-  <div class="coffee-box">
-    <div class="coffee-ttl" data-i18n="contactModalTitle">📧 문의하기</div>
-    <div class="coffee-sub" data-i18n="contactModalSub" style="white-space:pre-line">피드백이나 문의사항이 있으신가요?
-이메일로 연락주세요! 😊</div>
-    <div class="coffee-btns">
-      <button class="cbtn cbtn-mail" onclick="sendContactMail()">📧 veloxdapt@gmail.com</button>
-      <button class="cbtn cbtn-copy" onclick="copyContactMail()" data-i18n="contactCopyBtn">📋 이메일 주소 복사</button>
-    </div>
-    <div class="copy-ok" id="contact-ok"></div>
-    <button class="coffee-close" onclick="closeContact()" data-i18n="closeBtn">닫기</button>
-  </div>
-</div>
 </body>
 </html>
