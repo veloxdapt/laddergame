@@ -63,6 +63,10 @@ html[dir="rtl"] .made-by{text-align:left}
 .nbtn{background:rgba(96,165,250,.12);border:1.5px solid #60a5fa;color:#60a5fa;width:36px;height:36px;border-radius:9px;font-size:1.3rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
 .nbtn:hover{background:#60a5fa;color:#fff}.nbtn:active{transform:scale(.88)}
 .ndsp{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);color:#fff;width:52px;text-align:center;padding:7px 4px;border-radius:9px;font-size:1.1rem;font-weight:700}
+.pnum{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);color:#fff;width:62px;text-align:center;padding:7px 4px;border-radius:9px;font-size:1.05rem;font-weight:700;font-family:'Noto Sans KR',sans-serif;outline:none;-moz-appearance:textfield;flex-shrink:0}
+.pnum:focus{border-color:#60a5fa}
+.pnum::-webkit-outer-spin-button,.pnum::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.nbtn.wide{width:44px;font-size:.78rem}
 .wdsp{font-family:'Jua',sans-serif;font-size:2.2rem;color:#fbbf24;min-width:44px;text-align:center}
 .rinfo{color:#9ca3af;font-size:.84rem;flex:1}
 .ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:7px;margin-top:14px}
@@ -90,6 +94,15 @@ html[dir="rtl"] .made-by{text-align:left}
 #lc{display:block}
 .gftr{background:rgba(7,7,26,.9);backdrop-filter:blur(12px);width:100%;padding:11px 16px;text-align:center;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;min-height:56px;display:flex;align-items:center;justify-content:center}
 #rbtn{background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);border:none;color:#fff;padding:11px 40px;font-family:'Jua',sans-serif;font-size:1.05rem;border-radius:50px;cursor:pointer;display:none;animation:gpulse .9s infinite}
+#round-actions{padding:4px 0}
+.round-btn{border:none;color:#fff;padding:10px 18px;font-family:'Jua',sans-serif;font-size:.95rem;border-radius:50px;cursor:pointer;white-space:nowrap;transition:transform .15s}
+.round-btn:hover{transform:translateY(-2px)}
+.round-btn:active{transform:translateY(0)}
+.round-restart{background:rgba(255,255,255,.08);color:#d1d5db;border:1.5px solid rgba(255,255,255,.15)}
+.round-restart:hover{background:rgba(255,255,255,.14);color:#fff}
+.round-next{background:linear-gradient(135deg,#3b82f6,#8b5cf6);animation:gpulse .9s infinite}
+.round-quick{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.round-final{background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);animation:gpulse .9s infinite}
 @keyframes gpulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(239,68,68,.4)}50%{transform:scale(1.05);box-shadow:0 0 0 14px rgba(239,68,68,0)}}
 #s-result{background:radial-gradient(ellipse at 30% 0%,#1a0533 0%,#07071a 55%),radial-gradient(ellipse at 80% 100%,#002244 0%,transparent 55%);padding:32px 14px 56px;gap:18px;overflow-x:hidden}
 .rtitle{font-family:'Jua',sans-serif;font-size:clamp(1.7rem,5vw,2.4rem);text-align:center;color:#fbbf24;text-shadow:0 0 28px rgba(251,191,36,.5);animation:bounceIn .6s cubic-bezier(.175,.885,.32,1.275) both}
@@ -244,15 +257,31 @@ html[dir="rtl"] .made-by{text-align:left}
   <div class="card">
     <div class="ctitle" data-i18n="participantSec">👥 참가자 설정</div>
     <div class="row">
-      <span style="color:#d1d5db;flex:1"><span data-i18n="participantCount">참가자 수</span> <span id="cd" style="color:#60a5fa;font-weight:700">4</span><span data-i18n="personSuffix">명</span></span>
+      <span style="color:#d1d5db;font-size:.88rem"><span data-i18n="participantCount">참가자 수</span></span>
+      <input id="cd" type="number" class="pnum" min="2" max="100" value="4" onchange="setPCnt(this.value)" onblur="setPCnt(this.value)">
+      <span data-i18n="personSuffix" style="color:#d1d5db;flex:1;font-size:.88rem">명</span>
+      <button class="nbtn wide" onclick="cc(-10)">−10</button>
       <button class="nbtn" onclick="cc(-1)">−</button>
       <button class="nbtn" onclick="cc(+1)">+</button>
+      <button class="nbtn wide" onclick="cc(+10)">+10</button>
     </div>
     <div class="emoji-row" id="ng"></div>
     <div class="big-input-wrap">
       <textarea class="big-input" id="name-input" rows="2"
         oninput="onNameInput()" onfocus="showPh('name-ph',false)" onblur="showPh('name-ph',!this.value.trim())"></textarea>
       <div class="ph-label" id="name-ph" data-i18n="namePlaceholder">민서, 유준, 도혁, 하리 …&#10;반복 입력: 도혁*2, 하리*3 …</div>
+    </div>
+    <div id="split-hint" style="display:none;margin-top:8px;padding:8px 12px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:10px;color:#fbbf24;font-size:.78rem;line-height:1.4;text-align:center" data-i18n="splitHint">💡 15명 이상은 분할 진행이 가능해요!</div>
+    <div class="row" style="margin-top:10px;padding:9px 12px;background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.15);border-radius:10px">
+      <span style="color:#d1d5db;flex:1;font-size:.82rem;line-height:1.35">
+        <span data-i18n="randomOrderOpt">🎲 랜덤 순서로 시작</span>
+        <div style="color:#6b7280;font-size:.7rem;margin-top:2px" data-i18n="randomOrderDesc">입력 순서 무시, 매번 순서 섞여서 출발</div>
+      </span>
+      <label class="tog">
+        <input type="checkbox" id="random-order-opt" onchange="toggleRandomOrder(this)">
+        <div class="tog-track"></div>
+        <div class="tog-thumb"></div>
+      </label>
     </div>
   </div>
   <div class="mtabs" style="flex-wrap:wrap">
@@ -306,7 +335,13 @@ html[dir="rtl"] .made-by{text-align:left}
       <div class="swap-cnt" id="swap-cnt"></div>
       <button id="revbtn" onclick="startReveal()" data-i18n="revealBtn">✅ 공개하기!</button>
     </div>
-    <button id="rbtn" onclick="showResult()" data-i18n="finalResultBtn">🎉 최종 결과 보기!</button>
+    <button id="rbtn" style="display:none"></button>
+    <div id="round-actions" style="display:none;gap:8px;flex-wrap:wrap;justify-content:center;width:100%">
+      <button class="round-btn round-restart" onclick="restart()"><span data-i18n="roundActRestart">🔄 다시 하기</span></button>
+      <button class="round-btn round-next" onclick="goNextRound()"><span data-i18n="nextRoundBtn">▶️ 다음 회차</span></button>
+      <button class="round-btn round-quick" onclick="quickFinish()"><span data-i18n="roundActQuick">⏩ 빠른 결과</span></button>
+      <button class="round-btn round-final" onclick="showResult()"><span data-i18n="finalResultBtn">🎉 최종 결과 보기!</span></button>
+    </div>
   </div>
 </div>
 
@@ -456,6 +491,20 @@ const T={
   contactModalTitle:{ko:'📧 문의하기',en:'📧 Contact Us',zh:'📧 联系我们',es:'📧 Contáctanos',ja:'📧 お問い合わせ',fr:'📧 Nous Contacter',de:'📧 Kontaktieren',pt:'📧 Fale Conosco',ar:'📧 اتصل بنا',ru:'📧 Связаться',hi:'📧 संपर्क करें',it:'📧 Contattaci',tr:'📧 Bize Ulaşın',nl:'📧 Neem Contact Op',pl:'📧 Skontaktuj się',id:'📧 Hubungi Kami'},
   contactModalSub:{ko:'피드백이나 문의사항이 있으신가요?\n이메일로 연락주세요! 😊',en:'Got feedback or questions?\nDrop us an email! 😊',zh:'有反馈或问题吗？\n给我们发邮件吧！😊',es:'¿Comentarios o preguntas?\n¡Envíanos un email! 😊',ja:'フィードバックやご質問は？\nメールでお気軽に！😊',fr:'Des retours ou questions ?\nEnvoyez un email ! 😊',de:'Feedback oder Fragen?\nSchreib uns! 😊',pt:'Feedback ou perguntas?\nEnvie um email! 😊',ar:'لديك ملاحظات أو أسئلة؟\nراسلنا عبر البريد! 😊',ru:'Отзывы или вопросы?\nНапишите нам! 😊',hi:'फीडबैक या सवाल हैं?\nहमें ईमेल करें! 😊',it:'Feedback o domande?\nInviaci un\'email! 😊',tr:'Geri bildirim veya sorular?\nBize e-posta gönderin! 😊',nl:'Feedback of vragen?\nStuur ons een e-mail! 😊',pl:'Opinie lub pytania?\nWyślij nam email! 😊',id:'Masukan atau pertanyaan?\nKirim email kepada kami! 😊'},
   contactCopyBtn:{ko:'📋 이메일 주소 복사',en:'📋 Copy email address',zh:'📋 复制邮箱地址',es:'📋 Copiar dirección',ja:'📋 メールアドレスをコピー',fr:'📋 Copier l\'email',de:'📋 E-Mail kopieren',pt:'📋 Copiar email',ar:'📋 نسخ البريد الإلكتروني',ru:'📋 Копировать email',hi:'📋 ईमेल कॉपी',it:'📋 Copia email',tr:'📋 E-postayı kopyala',nl:'📋 E-mail kopiëren',pl:'📋 Kopiuj email',id:'📋 Salin email'},
+  randomOrderOpt:{ko:'🎲 랜덤 순서로 시작',en:'🎲 Random Start Order',zh:'🎲 随机出发顺序',es:'🎲 Orden Aleatorio',ja:'🎲 ランダム順でスタート',fr:'🎲 Ordre Aléatoire',de:'🎲 Zufällige Reihenfolge',pt:'🎲 Ordem Aleatória',ar:'🎲 ترتيب عشوائي للبدء',ru:'🎲 Случайный порядок',hi:'🎲 यादृच्छिक क्रम',it:'🎲 Ordine Casuale',tr:'🎲 Rastgele Sıra',nl:'🎲 Willekeurige Volgorde',pl:'🎲 Losowa Kolejność',id:'🎲 Urutan Acak'},
+  randomOrderDesc:{ko:'입력 순서 무시, 매번 순서 섞여서 출발',en:'Shuffled every game, ignores input order',zh:'每局随机打乱出发顺序',es:'Mezclado cada juego, ignora el orden',ja:'入力順を無視して毎回シャッフル',fr:'Mélangé à chaque partie',de:'Jedes Spiel neu gemischt',pt:'Embaralhado a cada jogo',ar:'مخلوط في كل لعبة',ru:'Перемешивается каждую игру',hi:'हर खेल में क्रम बदले',it:'Mescolato ogni partita',tr:'Her oyunda karışır',nl:'Elk spel geschud',pl:'Tasowane co grę',id:'Diacak setiap game'},
+  splitHint:{ko:'💡 15명 이상은 분할 진행이 가능해요!',en:'💡 15+ participants can be split into rounds!',zh:'💡 15人以上可分批进行！',es:'💡 ¡15+ se puede dividir en rondas!',ja:'💡 15人以上は分割進行可能！',fr:'💡 15+ peut être divisé en tours !',de:'💡 15+ kann in Runden aufgeteilt werden!',pt:'💡 15+ pode ser dividido em rodadas!',ar:'💡 يمكن تقسيم 15+ إلى جولات!',ru:'💡 15+ можно разделить на раунды!',hi:'💡 15+ को राउंड में बाँटा जा सकता है!',it:'💡 15+ può essere diviso in turni!',tr:'💡 15+ turlara bölünebilir!',nl:'💡 15+ kan in rondes worden verdeeld!',pl:'💡 15+ można podzielić na rundy!',id:'💡 15+ bisa dibagi per ronde!'},
+  splitModalTitle:{ko:'✂️ 분할 진행하기',en:'✂️ Split into Rounds',zh:'✂️ 分批进行',es:'✂️ Dividir en Rondas',ja:'✂️ 分割進行',fr:'✂️ Diviser en Tours',de:'✂️ In Runden Aufteilen',pt:'✂️ Dividir em Rodadas',ar:'✂️ تقسيم إلى جولات',ru:'✂️ Разделить на раунды',hi:'✂️ राउंड में बाँटें',it:'✂️ Dividi in Turni',tr:'✂️ Turlara Böl',nl:'✂️ In Rondes Verdelen',pl:'✂️ Podziel na Rundy',id:'✂️ Bagi per Ronde'},
+  splitModalSub:{ko:'참가자가 많네요!\n몇 회차로 나누어 진행하시겠어요?',en:'Lots of participants!\nHow many rounds to split into?',zh:'人数较多！\n要分几轮进行？',es:'¡Muchos participantes!\n¿En cuántas rondas dividir?',ja:'参加者が多いですね！\n何回に分けて進行しますか？',fr:'Beaucoup de participants !\nEn combien de tours diviser ?',de:'Viele Teilnehmer!\nIn wie viele Runden aufteilen?',pt:'Muitos participantes!\nEm quantas rodadas dividir?',ar:'الكثير من المشاركين!\nكم جولة للتقسيم؟',ru:'Много участников!\nНа сколько раундов разделить?',hi:'बहुत सारे प्रतिभागी!\nकितने राउंड में बाँटें?',it:'Molti partecipanti!\nIn quanti turni dividere?',tr:'Çok katılımcı var!\nKaç tura bölünsün?',nl:'Veel deelnemers!\nIn hoeveel rondes verdelen?',pl:'Dużo uczestników!\nNa ile rund podzielić?',id:'Banyak peserta!\nDibagi jadi berapa ronde?'},
+  splitPreview:{ko:'{n}명 → {m}회차 ({s}명)',en:'{n} → {m} rounds ({s})',zh:'{n} → {m}轮 ({s})',es:'{n} → {m} rondas ({s})',ja:'{n}人 → {m}回 ({s})',fr:'{n} → {m} tours ({s})',de:'{n} → {m} Runden ({s})',pt:'{n} → {m} rodadas ({s})',ar:'{n} → {m} جولات ({s})',ru:'{n} → {m} раундов ({s})',hi:'{n} → {m} राउंड ({s})',it:'{n} → {m} turni ({s})',tr:'{n} → {m} tur ({s})',nl:'{n} → {m} rondes ({s})',pl:'{n} → {m} rund ({s})',id:'{n} → {m} ronde ({s})'},
+  splitYes:{ko:'✓ 분할 진행',en:'✓ Split',zh:'✓ 分批',es:'✓ Dividir',ja:'✓ 分割',fr:'✓ Diviser',de:'✓ Aufteilen',pt:'✓ Dividir',ar:'✓ تقسيم',ru:'✓ Разделить',hi:'✓ बाँटें',it:'✓ Dividi',tr:'✓ Böl',nl:'✓ Verdelen',pl:'✓ Podziel',id:'✓ Bagi'},
+  splitNo:{ko:'✕ 한 번에',en:'✕ All at once',zh:'✕ 一次进行',es:'✕ De una vez',ja:'✕ 一度に',fr:'✕ En une fois',de:'✕ Auf Einmal',pt:'✕ De uma vez',ar:'✕ دفعة واحدة',ru:'✕ Сразу',hi:'✕ एक साथ',it:'✕ Tutto insieme',tr:'✕ Tek seferde',nl:'✕ In één keer',pl:'✕ Za jednym razem',id:'✕ Sekaligus'},
+  splitProgress:{ko:'⚔️ {c}/{t} 회차',en:'⚔️ Round {c}/{t}',zh:'⚔️ 第{c}/{t}轮',es:'⚔️ Ronda {c}/{t}',ja:'⚔️ {c}/{t}回戦',fr:'⚔️ Tour {c}/{t}',de:'⚔️ Runde {c}/{t}',pt:'⚔️ Rodada {c}/{t}',ar:'⚔️ الجولة {c}/{t}',ru:'⚔️ Раунд {c}/{t}',hi:'⚔️ राउंड {c}/{t}',it:'⚔️ Turno {c}/{t}',tr:'⚔️ Tur {c}/{t}',nl:'⚔️ Ronde {c}/{t}',pl:'⚔️ Runda {c}/{t}',id:'⚔️ Ronde {c}/{t}'},
+  nextRoundBtn:{ko:'▶️ 다음 회차',en:'▶️ Next Round',zh:'▶️ 下一轮',es:'▶️ Siguiente',ja:'▶️ 次の回',fr:'▶️ Suivant',de:'▶️ Nächste',pt:'▶️ Próxima',ar:'▶️ التالي',ru:'▶️ Далее',hi:'▶️ अगला',it:'▶️ Prossimo',tr:'▶️ Sonraki',nl:'▶️ Volgende',pl:'▶️ Następna',id:'▶️ Berikutnya'},
+  resTotalRounds:{ko:'📊 총 {n}회차 종합',en:'📊 {n} Rounds Summary',zh:'📊 {n}轮总结',es:'📊 Resumen {n} Rondas',ja:'📊 全{n}回総合',fr:'📊 Résumé {n} Tours',de:'📊 {n} Runden Gesamt',pt:'📊 Resumo {n} Rodadas',ar:'📊 ملخص {n} جولات',ru:'📊 Итого {n} раундов',hi:'📊 {n} राउंड सारांश',it:'📊 Riepilogo {n} Turni',tr:'📊 {n} Tur Özeti',nl:'📊 {n} Rondes Totaal',pl:'📊 Podsumowanie {n} Rund',id:'📊 Ringkasan {n} Ronde'},
+  resRoundN:{ko:'🎯 {n}회차',en:'🎯 Round {n}',zh:'🎯 第{n}轮',es:'🎯 Ronda {n}',ja:'🎯 {n}回戦',fr:'🎯 Tour {n}',de:'🎯 Runde {n}',pt:'🎯 Rodada {n}',ar:'🎯 الجولة {n}',ru:'🎯 Раунд {n}',hi:'🎯 राउंड {n}',it:'🎯 Turno {n}',tr:'🎯 Tur {n}',nl:'🎯 Ronde {n}',pl:'🎯 Runda {n}',id:'🎯 Ronde {n}'},
+  roundActRestart:{ko:'🔄 다시 하기',en:'🔄 Restart',zh:'🔄 重新开始',es:'🔄 Reiniciar',ja:'🔄 最初から',fr:'🔄 Recommencer',de:'🔄 Neu Starten',pt:'🔄 Reiniciar',ar:'🔄 إعادة',ru:'🔄 Заново',hi:'🔄 फिर से',it:'🔄 Riavvia',tr:'🔄 Yeniden',nl:'🔄 Opnieuw',pl:'🔄 Od nowa',id:'🔄 Mulai Ulang'},
+  roundActQuick:{ko:'⏩ 빠른 결과',en:'⏩ Quick Result',zh:'⏩ 快速结果',es:'⏩ Resultado Rápido',ja:'⏩ 早送り',fr:'⏩ Résultat Rapide',de:'⏩ Schnellergebnis',pt:'⏩ Resultado Rápido',ar:'⏩ نتيجة سريعة',ru:'⏩ Быстрый результат',hi:'⏩ त्वरित परिणाम',it:'⏩ Risultato Rapido',tr:'⏩ Hızlı Sonuç',nl:'⏩ Snel Resultaat',pl:'⏩ Szybki Wynik',id:'⏩ Hasil Cepat'},
   closeBtn:{ko:'닫기',en:'Close',zh:'关闭',es:'Cerrar',ja:'閉じる',fr:'Fermer',de:'Schließen',pt:'Fechar',ar:'إغلاق',ru:'Закрыть',hi:'बंद',it:'Chiudi',tr:'Kapat',nl:'Sluiten',pl:'Zamknij',id:'Tutup'}
 };
 let currentLang='ko';
@@ -547,11 +596,77 @@ const NR=16;
 let pCnt=4,wCnt=1,MODE='A',roleValues=[],penaltyValues=[],passCnt=2;
 let teamCount=2,teamDistMode='even',teamManual=[];
 let speedMult=1;
+let randomOrder=false;
+let splitTotal=1;
+let splitCurrent=0;
+let splitSessions=null;
+let splitPending=null;
+let splitOriginalMd=null;
+const SPLIT_THRESHOLD=15;
 let G=null,RAF=null,_stars=null,lastGame=null;
 
-function cc(d){pCnt=clamp(pCnt+d,2,20);wCnt=Math.min(wCnt,pCnt-1);passCnt=Math.min(passCnt,pCnt-1);renderNames();renderMS()}
+function cc(d){pCnt=clamp(pCnt+d,2,100);wCnt=Math.min(wCnt,pCnt-1);passCnt=Math.min(passCnt,pCnt-1);renderNames();renderMS()}
+function setPCnt(v){
+  const n=parseInt(v);
+  if(isNaN(n)){document.getElementById('cd').value=pCnt;return;}
+  pCnt=clamp(n,2,100);
+  wCnt=Math.min(wCnt,pCnt-1);
+  passCnt=Math.min(passCnt,pCnt-1);
+  renderNames();renderMS();
+}
 function cw(d){wCnt=clamp(wCnt+d,1,pCnt-1);renderMS()}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+// N개를 M등분 (앞쪽부터 채움: 10÷3 = [4,3,3])
+function partitionSizes(total,parts){
+  const base=Math.floor(total/parts), rem=total%parts;
+  return Array.from({length:parts},(_,i)=>base+(i<rem?1:0));
+}
+// 배열을 셔플 후 파티션
+function splitArray(arr,parts){
+  const shuffled=shuffle(arr);
+  const sizes=partitionSizes(arr.length,parts);
+  const result=[]; let idx=0;
+  for(const sz of sizes){result.push(shuffled.slice(idx,idx+sz));idx+=sz;}
+  return result;
+}
+function toggleRandomOrder(el){randomOrder=el.checked;}
+function openSplit(){
+  splitPending={parts:2};
+  document.getElementById('split-count').textContent=2;
+  updateSplitPreview();
+  document.getElementById('split-bg').classList.add('show');
+}
+function closeSplit(e){
+  if(e&&e.target!==document.getElementById('split-bg'))return;
+  document.getElementById('split-bg').classList.remove('show');
+  splitPending=null;
+}
+function chgSplit(d){
+  if(!splitPending)return;
+  splitPending.parts=clamp(splitPending.parts+d,2,5);
+  document.getElementById('split-count').textContent=splitPending.parts;
+  updateSplitPreview();
+}
+function updateSplitPreview(){
+  if(!splitPending)return;
+  const sizes=partitionSizes(pCnt,splitPending.parts);
+  document.getElementById('split-preview').innerHTML=t('splitPreview',{n:pCnt,m:splitPending.parts,s:sizes.join(' + ')});
+}
+function confirmSplit(doSplit){
+  const parts=doSplit?(splitPending?splitPending.parts:1):1;
+  const extra=splitPending?splitPending._extra:null;
+  document.getElementById('split-bg').classList.remove('show');
+  splitPending=null;
+  if(extra){
+    splitOriginalMd=extra.md;
+    splitTotal=parts;splitCurrent=0;
+    splitSessions=buildSplitSessions(extra.names,MODE,extra.md,parts);
+    runCurrentSession();
+  } else {
+    actuallyStartGame(parts);
+  }
+}
 function saveBR(){
   const ri=document.getElementById('role-input');
   if(ri) roleValues=ri.value;
@@ -573,13 +688,13 @@ function parseNames(raw, n){
   return raw.split(',').flatMap(seg=>{
     seg=seg.trim();
     const m=seg.match(/^(.+?)\s*\*\s*(\d+)$/);
-    if(m){const nm=m[1].trim()||'';const rep=Math.min(parseInt(m[2]),20);return Array(rep).fill(nm)}
+    if(m){const nm=m[1].trim()||'';const rep=Math.min(parseInt(m[2]),100);return Array(rep).fill(nm)}
     return seg?[seg]:[];
   }).slice(0,n);
 }
 
 function renderNames(){
-  document.getElementById('cd').textContent=pCnt;
+  document.getElementById('cd').value=pCnt;
   const raw=(document.getElementById('name-input')||{value:''}).value||'';
   const parsed=parseNames(raw,pCnt);
   const g=document.getElementById('ng');
@@ -588,9 +703,10 @@ function renderNames(){
     const nm=parsed[i]||'';
     const d=document.createElement('div');
     d.className='epill'+(nm?' filled':'');
-    d.innerHTML=`<span class="pem">${EMOJIS[i]}</span><span class="pnm">${nm||`P${i+1}`}</span>`;
+    d.innerHTML=`<span class="pem">${EMOJIS[i%EMOJIS.length]}</span><span class="pnm">${nm||`P${i+1}`}</span>`;
     g.appendChild(d);
   }
+  document.getElementById('split-hint').style.display=pCnt>=SPLIT_THRESHOLD?'block':'none';
 }
 
 function onNameInput(){
@@ -816,13 +932,20 @@ function buildWP(pathCols,n,cW,dim){
 }
 
 function startGame(){
+  // 임계값 이상이면 분할 팝업, 아니면 바로 단일 진행
+  if(pCnt>=SPLIT_THRESHOLD){openSplit();}
+  else{actuallyStartGame(1);}
+}
+
+function actuallyStartGame(parts){
   const rawNames=(document.getElementById('name-input')||{value:''}).value||'';
   const parsedNms=parseNames(rawNames,pCnt);
   const names=Array.from({length:pCnt},(_,i)=>parsedNms[i]||t('participantDefault',{i:i+1}));
-  const n=pCnt;
   document.getElementById('em').textContent='';
+
+  // Build md for the full game (same validation as before)
   let md={};
-  if(MODE==='A'){if(wCnt<1||wCnt>=n){document.getElementById('em').textContent=t('errInvalidWin');return}md={w:wCnt}}
+  if(MODE==='A'){if(wCnt<1||wCnt>=pCnt){document.getElementById('em').textContent=t('errInvalidWin');return}md={w:wCnt}}
   else if(MODE==='B'){
     const rawRoles=(document.getElementById('role-input')||{value:''}).value||'';
     const pr=parseNames(rawRoles,pCnt);
@@ -845,17 +968,48 @@ function startGame(){
       if(total!==pCnt){document.getElementById('em').textContent=t('msTeamSumErr',{total:total,p:pCnt}).replace(/<[^>]+>/g,'');return}
     }
     md={sizes};
-  } else if(MODE==='F'){
-    md={};
   }
-  launchGame(names,MODE,md);
+
+  splitOriginalMd=md;
+  splitTotal=parts;
+  splitCurrent=0;
+  splitSessions=buildSplitSessions(names,MODE,md,parts);
+  runCurrentSession();
 }
 
-function launchGame(names,mode,md){
+// 참가자 + 전체 슬롯을 각각 M등분해서 회차별 세션 생성
+function buildSplitSessions(names,mode,md,parts){
+  const fullSlots=genSlots(names.length,mode,md);
+  const nameIdx=shuffle(Array.from({length:names.length},(_,i)=>i));
+  const slotIdx=shuffle(Array.from({length:names.length},(_,i)=>i));
+  const sizes=partitionSizes(names.length,parts);
+  const sessions=[]; let cur=0;
+  for(let r=0;r<parts;r++){
+    const sz=sizes[r];
+    const nSlice=nameIdx.slice(cur,cur+sz);
+    const sSlice=slotIdx.slice(cur,cur+sz);
+    sessions.push({
+      names:nSlice.map(i=>names[i]),
+      origIdx:nSlice.slice(),
+      slots:sSlice.map(i=>fullSlots[i]),
+      result:null
+    });
+    cur+=sz;
+  }
+  return sessions;
+}
+
+function runCurrentSession(){
+  const s=splitSessions[splitCurrent];
+  launchGame(s.names,MODE,null,s.slots);
+}
+
+function launchGame(names,mode,md,preSlots){
+  if(randomOrder)names=shuffle(names);
   const n=names.length;
   const bars=genLadder(n);
   const paths=Array.from({length:n},(_,i)=>trace(i,bars,n));
-  const slots=genSlots(n,mode,md);
+  const slots=preSlots?preSlots.slice():genSlots(n,mode,md);
   const dim=calcDim(n);
   const{cw,rh,pt,pb}=dim;
   const cW=Math.max((n-1)*cw+50+20,window.innerWidth);
@@ -864,15 +1018,18 @@ function launchGame(names,mode,md){
   const characters=names.map((name,i)=>{
     const fc=paths[i][NR];
     const wps=buildWP(paths[i],n,cW,dim);
-    return{name,emoji:EMOJIS[i],color:COLORS[i],startCol:i,finalCol:fc,slot:slots[fc],waypoints:wps,wpIdx:0,x:wps[0].x,y:wps[0].y,done:false,trail:[]};
+    return{name,emoji:EMOJIS[i%EMOJIS.length],color:COLORS[i%COLORS.length],startCol:i,finalCol:fc,slot:slots[fc],waypoints:wps,wpIdx:0,x:wps[0].x,y:wps[0].y,done:false,trail:[]};
   });
 
-  lastGame={names:[...names],mode,md};
+  lastGame={names:[...names],mode,md,preSlots:preSlots?preSlots.slice():null};
   G={n,bars,characters,slots,cW,cH,dim,mode,phase:'waiting',revP:0,particles:[],celebT:0,swapSel:-1,swapCount:0,swapFlash:null,swapMode:document.getElementById('swap-opt').checked,pitColors:Array.from({length:n},(_,i)=>PCOLORS[i%PCOLORS.length])};
 
   showScreen('s-game');
   const mlKey={A:'modeTitleA',B:'modeTitleB',C:'modeTitleC',D:'modeTitleD',E:'modeTitleE',F:'modeTitleF'};
   document.getElementById('gml').textContent=t(mlKey[mode]);
+  if(splitTotal>1){
+    document.getElementById('gml').textContent=t(mlKey[mode])+' · '+t('splitProgress',{c:splitCurrent+1,t:splitTotal});
+  }
   document.getElementById('gstat').textContent=t('gameGo');
   document.getElementById('rbtn').style.display='none';
 
@@ -939,7 +1096,7 @@ function tick(){
   if(g.phase==='revealing'){
     g.revP=Math.min(1,g.revP+.018);
     if(g.revP>.4&&Math.random()<.3)for(const c of g.characters)if((c.slot.cls==='top'||c.slot.cls==='role'||c.slot.cls==='penalty'||c.slot.cls==='team')&&Math.random()<.5)spawnP(g,CX(c.finalCol,g.n,g.cW,g.dim.cw),RY(NR,g.dim.pt,g.dim.rh)+40,3);
-    if(g.revP>=1){g.phase='revealed';document.getElementById('rbtn').style.display='inline-block';document.getElementById('gstat').textContent=t('gameRevealed');}
+    if(g.revP>=1){g.phase='revealed';document.getElementById('gstat').textContent=t('gameRevealed');showRoundActions();}
   }
   if(g.phase==='revealed'){g.celebT++;if(g.celebT<160&&Math.random()<.2)for(const c of g.characters)if(c.slot.cls==='top'&&Math.random()<.4)spawnP(g,CX(c.finalCol,g.n,g.cW,g.dim.cw),RY(NR,g.dim.pt,g.dim.rh)+40,2)}
   g.particles=g.particles.filter(p=>p.life>0);
@@ -1248,9 +1405,67 @@ function startReveal(){
   document.getElementById('gstat').textContent=t('gameDrum');
 }
 
+function showRoundActions(){
+  // 현재 회차 결과를 먼저 저장
+  if(G && splitSessions && splitSessions[splitCurrent]){
+    splitSessions[splitCurrent].result=G.characters.map(c=>({
+      name:c.name,emoji:c.emoji,color:c.color,slot:c.slot,finalCol:c.finalCol
+    }));
+  }
+  const isLast=splitCurrent>=splitTotal-1;
+  const box=document.getElementById('round-actions');
+  box.style.display='flex';
+  box.querySelector('.round-next').style.display=isLast?'none':'inline-block';
+  box.querySelector('.round-quick').style.display=isLast?'none':'inline-block';
+  box.querySelector('.round-final').style.display=isLast?'inline-block':'none';
+}
+
+function goNextRound(){
+  document.getElementById('round-actions').style.display='none';
+  cleanupGame();
+  G=null;
+  splitCurrent++;
+  runCurrentSession();
+}
+
+function quickFinish(){
+  document.getElementById('round-actions').style.display='none';
+  cleanupGame();
+  G=null;
+  for(let r=splitCurrent+1;r<splitTotal;r++){
+    const s=splitSessions[r];
+    if(s.result)continue;
+    const nn=s.names.length;
+    const bars=genLadder(nn);
+    const paths=Array.from({length:nn},(_,i)=>trace(i,bars,nn));
+    s.result=s.names.map((name,i)=>{
+      const fc=paths[i][NR];
+      return{
+        name,
+        emoji:EMOJIS[i%EMOJIS.length],
+        color:COLORS[i%COLORS.length],
+        slot:s.slots[fc],
+        finalCol:fc
+      };
+    });
+  }
+  splitCurrent=splitTotal-1;
+  showResult();
+}
+
 function showResult(){
   snd_celebrate();
-  const{characters,mode,n}=G;
+  if(splitSessions && splitSessions[splitCurrent] && !splitSessions[splitCurrent].result && G){
+    splitSessions[splitCurrent].result=G.characters.map(c=>({
+      name:c.name,emoji:c.emoji,color:c.color,slot:c.slot,finalCol:c.finalCol
+    }));
+  }
+  const isSplit=splitTotal>1;
+  const characters=isSplit
+    ? splitSessions.flatMap((s,ri)=>(s.result||[]).map(c=>({...c,_round:ri+1})))
+    : (G?G.characters:[]);
+  const mode=MODE;
+  const n=characters.length;
   const sorted=[...characters].sort((a,b)=>{
     const pri={top:0,rank2:1,rank3:2,role:3,pass:1,penalty:0,team:0,bracket:0,'':4};
     const pa=pri[a.slot.cls]??4,pb=pri[b.slot.cls]??4;
@@ -1264,6 +1479,10 @@ function showResult(){
 
   const titleKey={A:'resTitleA',B:'resTitleB',C:'resTitleC',D:'resTitleD',E:'resTitleE',F:'resTitleF'};
   document.getElementById('rt').textContent=t(titleKey[mode]);
+  const rtEl=document.getElementById('rt');
+  if(isSplit){
+    rtEl.innerHTML=t(titleKey[mode])+`<div style="font-size:.7em;color:#a78bfa;margin-top:6px">${t('resTotalRounds',{n:splitTotal})}</div>`;
+  }
   const rh=document.getElementById('rh'),rb=document.getElementById('rb');
 
   if(mode==='A'){
@@ -1271,17 +1490,17 @@ function showResult(){
     rh.innerHTML=`<div class="hbox"><div class="hboxt">${t('resWinnersTitle',{n:winners.length})}</div><div class="hnms">${winners.map(c=>`<span class="hnm">${c.emoji} ${c.name}</span>`).join('')}</div></div>`;
     rb.innerHTML='<div class="rgrid" id="rg2"></div>';
     const rg=document.getElementById('rg2');
-    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>`;rg.appendChild(d)});
+    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>${isSplit?`<div style="color:#6b7280;font-size:.7rem;margin-top:3px">${t('resRoundN',{n:c._round})}</div>`:''}`;rg.appendChild(d)});
   } else if(mode==='B'){
     rh.innerHTML='';rb.innerHTML='<div class="rgrid" id="rg2"></div>';
     const rg=document.getElementById('rg2');
-    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className='rc role';d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">📌 ${c.slot.lbl}</div>`;rg.appendChild(d)});
+    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className='rc role';d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">📌 ${c.slot.lbl}</div>${isSplit?`<div style="color:#6b7280;font-size:.7rem;margin-top:3px">${t('resRoundN',{n:c._round})}</div>`:''}`;rg.appendChild(d)});
   } else if(mode==='C'){
     rh.innerHTML='';
     let h='<div class="rklist">';
     sorted.forEach((c,i)=>{
       const rc=i===0?'r1':i===1?'r2':i===2?'r3':'';
-      h+=`<div class="rki ${rc}" style="animation-delay:${i*.07}s"><div class="rki-rank">${c.slot.ico}</div><div class="rki-em">${c.emoji}</div><div class="rki-name">${c.name}</div><div style="color:${c.slot.color||'#6b7280'};font-weight:700;font-size:.88rem">${c.slot.lbl}</div></div>`;
+      h+=`<div class="rki ${rc}" style="animation-delay:${i*.07}s"><div class="rki-rank">${c.slot.ico}</div><div class="rki-em">${c.emoji}</div><div class="rki-name">${c.name}${isSplit?` <span style="color:#6b7280;font-size:.72rem">(${t('resRoundN',{n:c._round})})</span>`:''}</div><div style="color:${c.slot.color||'#6b7280'};font-weight:700;font-size:.88rem">${c.slot.lbl}</div></div>`;
     });
     rb.innerHTML=h+'</div>';
   } else if(mode==='D'){
@@ -1289,7 +1508,7 @@ function showResult(){
     rh.innerHTML=punished.length?`<div class="hbox" style="border-color:rgba(239,68,68,.35);background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(239,68,68,.04))"><div class="hboxt" style="color:#ef4444">${t('resPunishedTitle',{n:punished.length})}</div><div class="hnms">${punished.map(c=>`<span class="hnm" style="background:rgba(239,68,68,.18);color:#ef4444">${c.emoji} ${c.name} — ${c.slot.lbl}</span>`).join('')}</div></div>`:'';
     rb.innerHTML='<div class="rgrid" id="rg2"></div>';
     const rg=document.getElementById('rg2');
-    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>`;rg.appendChild(d)});
+    sorted.forEach((c,i)=>{const d=document.createElement('div');d.className=`rc ${c.slot.cls}`;d.style.animationDelay=`${i*.07}s`;d.innerHTML=`<div class="re">${c.emoji}</div><div class="rn">${c.name}</div><div class="rres">${c.slot.ico} ${c.slot.lbl}</div>${isSplit?`<div style="color:#6b7280;font-size:.7rem;margin-top:3px">${t('resRoundN',{n:c._round})}</div>`:''}`;rg.appendChild(d)});
   } else if(mode==='E'){
     rh.innerHTML='';
     const teams={};
@@ -1299,7 +1518,7 @@ function showResult(){
       const tc=TCOLORS_G[ti];
       h+=`<div class="team-section" style="animation-delay:${idx*.1}s">
         <div class="team-hdr"><div class="team-dot" style="background:${tc}"></div><div class="team-label" style="color:${tc}">${t('resTeamTitle',{l:TNAMES[ti],n:teams[ti].length})}</div></div>
-        <div class="team-members">${teams[ti].map(c=>`<div class="team-chip" style="border-color:${tc}40"><span class="tc-em">${c.emoji}</span>${c.name}</div>`).join('')}</div>
+        <div class="team-members">${teams[ti].map(c=>`<div class="team-chip" style="border-color:${tc}40"><span class="tc-em">${c.emoji}</span>${c.name}${isSplit?` <span style="color:#6b7280;font-size:.7rem">(${c._round}R)</span>`:''}</div>`).join('')}</div>
       </div>`;
     });
     rb.innerHTML=h;
@@ -1312,13 +1531,13 @@ function showResult(){
       if(i+1<byPos.length){
         const b=byPos[i+1];
         h+=`<div class="bracket-match" style="animation-delay:${(i/2)*.1}s">
-          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}</span></div>
+          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}${isSplit?` <span style="color:#a78bfa;font-size:.7rem">(${a._round}R)</span>`:''}</span></div>
           <div class="bracket-vs">VS</div>
-          <div class="bracket-slot" style="justify-content:flex-end"><span class="bracket-nm">${b.name}</span><span class="bracket-em">${b.emoji}</span></div>
+          <div class="bracket-slot" style="justify-content:flex-end"><span class="bracket-nm">${b.name}${isSplit?` <span style="color:#a78bfa;font-size:.7rem">(${b._round}R)</span>`:''}</span><span class="bracket-em">${b.emoji}</span></div>
         </div>`;
       } else {
         h+=`<div class="bracket-match" style="animation-delay:${(i/2)*.1}s">
-          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}</span></div>
+          <div class="bracket-slot"><span class="bracket-em">${a.emoji}</span><span class="bracket-nm">${a.name}${isSplit?` <span style="color:#a78bfa;font-size:.7rem">(${a._round}R)</span>`:''}</span></div>
           <div class="bracket-vs">VS</div>
           <div class="bracket-bye">${t('bracketBye')}</div>
         </div>`;
@@ -1497,39 +1716,53 @@ function cleanupGame(){
   lc.onclick=null;lc.ontouchend=null;
   document.getElementById('swap-ui').style.display='none';
   document.getElementById('rbtn').style.display='none';
+  const ra=document.getElementById('round-actions');if(ra)ra.style.display='none';
   _stars=null;
 }
 
 function restart(){
   cleanupGame();
   G=null;
+  splitSessions=null;splitCurrent=0;splitTotal=1;
+  splitOriginalMd=null;
   showScreen('s-setup');
 }
 
 function reshuffle(){
-  if(!lastGame)return;
-  cleanupGame();
-  G=null;
-  launchGame(lastGame.names,lastGame.mode,lastGame.md);
+  cleanupGame();G=null;
+  // 경로 1: splitSessions 존재 → 전체 이름 재수집
+  if(splitSessions && splitSessions.length){
+    const allNames=splitSessions.reduce((a,s)=>a.concat(s.names),[]);
+    splitCurrent=0;
+    splitSessions=buildSplitSessions(allNames,MODE,splitOriginalMd,splitTotal);
+    runCurrentSession();
+    return;
+  }
+  // 경로 2 (폴백): lastGame으로 복구
+  if(lastGame){
+    splitOriginalMd=lastGame.md;
+    splitTotal=1;splitCurrent=0;
+    splitSessions=buildSplitSessions([...lastGame.names],lastGame.mode,lastGame.md,1);
+    runCurrentSession();
+  }
 }
 
 function extraDraw(){
-  if(!G||!lastGame)return;
-  const mode=G.mode;
-  // Determine losers based on mode
+  if(!splitSessions)return;
+  const mode=MODE;
+  // 모든 회차 결과 합쳐서 패자 추출
+  const allChars=splitSessions.flatMap(s=>s.result||[]);
   let losers;
-  if(mode==='A') losers=G.characters.filter(c=>c.slot.cls!=='top');
-  else if(mode==='D') losers=G.characters.filter(c=>c.slot.cls!=='pass');
+  if(mode==='A') losers=allChars.filter(c=>c.slot.cls!=='top');
+  else if(mode==='D') losers=allChars.filter(c=>c.slot.cls!=='pass');
   else return;
-
   if(losers.length<2)return;
-  cleanupGame();
+
   const names=losers.map(c=>c.name);
-  // Rebuild md for the subset
   let md={};
-  if(mode==='A'){md={w:Math.min(lastGame.md.w,Math.max(1,names.length-1))};}
+  if(mode==='A'){md={w:Math.min(wCnt,Math.max(1,names.length-1))};}
   else if(mode==='D'){
-    const oldPenalties=lastGame.md.penalties.filter(p=>p!==t('msPass'));
+    const oldPenalties=(lastGame&&lastGame.md&&lastGame.md.penalties)?lastGame.md.penalties.filter(p=>p!==t('msPass')):[];
     const newPassCnt=Math.max(1,names.length-oldPenalties.length);
     const penaltySlots=names.length-newPassCnt;
     const penalties=[];
@@ -1537,8 +1770,21 @@ function extraDraw(){
     for(let i=0;i<penaltySlots;i++)penalties.push(oldPenalties[i]||`${t('msPenPrefix')}${i+1}`);
     md={penalties};
   }
+  cleanupGame();
   G=null;
-  launchGame(names,mode,md);
+  // 15명 이상이면 분할 팝업 다시, 아니면 단일 진행
+  if(names.length>=SPLIT_THRESHOLD){
+    pCnt=names.length;
+    splitPending={parts:2,_extra:{names,md}};
+    document.getElementById('split-count').textContent=2;
+    updateSplitPreview();
+    document.getElementById('split-bg').classList.add('show');
+  } else {
+    splitOriginalMd=md;
+    splitTotal=1;splitCurrent=0;
+    splitSessions=buildSplitSessions(names,mode,md,1);
+    runCurrentSession();
+  }
 }
 
 applyLanguage(detectLanguage());
@@ -1636,4 +1882,24 @@ function copyContactMail(){
       <button class="cbtn cbtn-copy" onclick="copyContactMail()" data-i18n="contactCopyBtn">📋 이메일 주소 복사</button>
     </div>
     <div class="copy-ok" id="contact-ok"></div>
-    <
+  </div>
+</div>
+<div class="coffee-bg" id="split-bg" onclick="closeSplit(event)">
+  <div class="coffee-box">
+    <div class="coffee-ttl" data-i18n="splitModalTitle">✂️ 분할 진행하기</div>
+    <div class="coffee-sub" data-i18n="splitModalSub" style="white-space:pre-line">참가자가 많네요!
+몇 회차로 나누어 진행하시겠어요?</div>
+    <div class="row" style="justify-content:center;margin:14px 0 8px">
+      <button class="nbtn" onclick="chgSplit(-1)">−</button>
+      <div class="wdsp" id="split-count">2</div>
+      <button class="nbtn" onclick="chgSplit(+1)">+</button>
+    </div>
+    <div id="split-preview" style="color:#9ca3af;font-size:.78rem;text-align:center;margin-bottom:14px"></div>
+    <div class="coffee-btns" style="flex-direction:row;gap:8px">
+      <button class="cbtn" style="flex:1;background:rgba(255,255,255,.08);color:#d1d5db;border:1px solid rgba(255,255,255,.12)" onclick="confirmSplit(false)"><span data-i18n="splitNo">✕ 한 번에</span></button>
+      <button class="cbtn" style="flex:1;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff" onclick="confirmSplit(true)"><span data-i18n="splitYes">✓ 분할 진행</span></button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
