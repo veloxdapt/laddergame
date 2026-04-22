@@ -59,7 +59,7 @@ html[dir="rtl"] .made-by{text-align:left}
 .big-input::placeholder{color:transparent}
 .ph-label{position:absolute;top:10px;left:12px;right:12px;color:rgba(255,255,255,.25);font-size:.78rem;line-height:1.5;pointer-events:none;transition:opacity .2s;white-space:pre-wrap}
 .ctitle{color:#60a5fa;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .nbtn{background:rgba(96,165,250,.12);border:1.5px solid #60a5fa;color:#60a5fa;width:36px;height:36px;border-radius:9px;font-size:1.3rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
 .nbtn:hover{background:#60a5fa;color:#fff}.nbtn:active{transform:scale(.88)}
 .ndsp{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);color:#fff;width:52px;text-align:center;padding:7px 4px;border-radius:9px;font-size:1.1rem;font-weight:700}
@@ -226,6 +226,26 @@ html[dir="rtl"] .made-by{text-align:left}
 .coffee-close{margin-top:16px;background:none;border:none;color:#6b7280;font-size:.82rem;cursor:pointer;}
 .copy-ok{color:#34d399;font-size:.78rem;margin-top:6px;min-height:18px;}
 .cbtn-mail{background:linear-gradient(135deg,#4a5aeb,#1f30c5);color:#fff;border:none;font-weight:700;word-break:break-all;line-height:1.4;}
+.game-intro{position:fixed;inset:0;z-index:1500;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(7,7,26,.75);backdrop-filter:blur(10px)}
+.game-intro.show{display:flex;animation:introFade .3s ease-out}
+@keyframes introFade{from{opacity:0}to{opacity:1}}
+.gi-card{background:linear-gradient(135deg,rgba(30,30,60,.95),rgba(20,20,45,.95));border:1.5px solid rgba(167,139,250,.35);border-radius:20px;padding:22px 20px;width:100%;max-width:440px;max-height:88vh;overflow-y:auto;box-shadow:0 12px 48px rgba(124,58,237,.3);animation:giPop .4s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes giPop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.gi-title{font-family:'Jua',sans-serif;font-size:1.4rem;text-align:center;background:linear-gradient(135deg,#ff6ef7,#ff9500,#ffe600);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.gi-round{color:#a78bfa;font-family:'Jua',sans-serif;text-align:center;font-size:.95rem;margin-bottom:14px}
+.gi-section{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-bottom:10px}
+.gi-section-ttl{color:#60a5fa;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.gi-names{display:flex;flex-wrap:wrap;gap:6px}
+.gi-name-pill{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(167,139,250,.25);border-radius:18px;padding:4px 10px 4px 6px;font-size:.82rem;color:#e5e7eb}
+.gi-name-pill .gi-em{font-size:1rem}
+.gi-name-pill .gi-num{color:#a78bfa;font-weight:700;font-size:.7rem;min-width:16px;text-align:right;margin-left:2px}
+.gi-info{display:flex;flex-direction:column;gap:6px}
+.gi-info-row{display:flex;align-items:center;gap:8px;color:#d1d5db;font-size:.85rem}
+.gi-info-row .gi-info-ico{font-size:1.05rem}
+.gi-info-row .gi-info-val{color:#fbbf24;font-weight:700;margin-left:auto}
+.gi-start-btn{display:block;width:100%;background:linear-gradient(135deg,#7c3aed,#a855f7,#ec4899);border:none;color:#fff;padding:13px;font-family:'Jua',sans-serif;font-size:1.1rem;border-radius:50px;cursor:pointer;margin-top:14px;box-shadow:0 6px 20px rgba(168,85,247,.35);transition:transform .15s,box-shadow .2s}
+.gi-start-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(168,85,247,.5)}
+.gi-start-btn:active{transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -257,13 +277,13 @@ html[dir="rtl"] .made-by{text-align:left}
   <div class="card">
     <div class="ctitle" data-i18n="participantSec">👥 참가자 설정</div>
     <div class="row">
-      <span style="color:#d1d5db;font-size:.88rem"><span data-i18n="participantCount">참가자 수</span></span>
-      <input id="cd" type="number" class="pnum" min="2" max="100" value="4" onchange="setPCnt(this.value)" onblur="setPCnt(this.value)">
-      <span data-i18n="personSuffix" style="color:#d1d5db;flex:1;font-size:.88rem">명</span>
+      <span style="color:#d1d5db;font-size:.88rem;flex-shrink:0"><span data-i18n="participantCount">참가자 수</span></span>
       <button class="nbtn wide" onclick="cc(-10)">−10</button>
       <button class="nbtn" onclick="cc(-1)">−</button>
+      <input id="cd" type="number" class="pnum" min="2" max="100" value="4" onchange="setPCnt(this.value)" onblur="setPCnt(this.value)">
       <button class="nbtn" onclick="cc(+1)">+</button>
       <button class="nbtn wide" onclick="cc(+10)">+10</button>
+      <span style="flex:1"></span>
     </div>
     <div class="emoji-row" id="ng"></div>
     <div class="big-input-wrap">
@@ -505,6 +525,18 @@ const T={
   resRoundN:{ko:'🎯 {n}회차',en:'🎯 Round {n}',zh:'🎯 第{n}轮',es:'🎯 Ronda {n}',ja:'🎯 {n}回戦',fr:'🎯 Tour {n}',de:'🎯 Runde {n}',pt:'🎯 Rodada {n}',ar:'🎯 الجولة {n}',ru:'🎯 Раунд {n}',hi:'🎯 राउंड {n}',it:'🎯 Turno {n}',tr:'🎯 Tur {n}',nl:'🎯 Ronde {n}',pl:'🎯 Runda {n}',id:'🎯 Ronde {n}'},
   roundActRestart:{ko:'🔄 다시 하기',en:'🔄 Restart',zh:'🔄 重新开始',es:'🔄 Reiniciar',ja:'🔄 最初から',fr:'🔄 Recommencer',de:'🔄 Neu Starten',pt:'🔄 Reiniciar',ar:'🔄 إعادة',ru:'🔄 Заново',hi:'🔄 फिर से',it:'🔄 Riavvia',tr:'🔄 Yeniden',nl:'🔄 Opnieuw',pl:'🔄 Od nowa',id:'🔄 Mulai Ulang'},
   roundActQuick:{ko:'⏩ 빠른 결과',en:'⏩ Quick Result',zh:'⏩ 快速结果',es:'⏩ Resultado Rápido',ja:'⏩ 早送り',fr:'⏩ Résultat Rapide',de:'⏩ Schnellergebnis',pt:'⏩ Resultado Rápido',ar:'⏩ نتيجة سريعة',ru:'⏩ Быстрый результат',hi:'⏩ त्वरित परिणाम',it:'⏩ Risultato Rapido',tr:'⏩ Hızlı Sonuç',nl:'⏩ Snel Resultaat',pl:'⏩ Szybki Wynik',id:'⏩ Hasil Cepat'},
+  giNamesTitle:{ko:'참가자 (출발 순서)',en:'Participants (Start Order)',zh:'参与者（出发顺序）',es:'Participantes (Orden)',ja:'参加者（出発順）',fr:'Participants (Ordre)',de:'Teilnehmer (Reihenfolge)',pt:'Participantes (Ordem)',ar:'المشاركون (ترتيب البدء)',ru:'Участники (порядок)',hi:'प्रतिभागी (क्रम)',it:'Partecipanti (Ordine)',tr:'Katılımcılar (Sıra)',nl:'Deelnemers (Volgorde)',pl:'Uczestnicy (Kolejność)',id:'Peserta (Urutan)'},
+  giOptsTitle:{ko:'게임 정보',en:'Game Info',zh:'游戏信息',es:'Info del Juego',ja:'ゲーム情報',fr:'Infos du Jeu',de:'Spielinfo',pt:'Info do Jogo',ar:'معلومات اللعبة',ru:'Информация',hi:'खेल जानकारी',it:'Info Gioco',tr:'Oyun Bilgisi',nl:'Spelinfo',pl:'Info Gry',id:'Info Game'},
+  giStartBtn:{ko:'🎮 게임 시작!',en:'🎮 Start Game!',zh:'🎮 开始游戏！',es:'🎮 ¡Empezar!',ja:'🎮 ゲーム開始！',fr:'🎮 Démarrer !',de:'🎮 Spiel Starten!',pt:'🎮 Começar!',ar:'🎮 ابدأ اللعبة!',ru:'🎮 Начать!',hi:'🎮 शुरू करें!',it:'🎮 Avvia!',tr:'🎮 Başlat!',nl:'🎮 Start!',pl:'🎮 Start!',id:'🎮 Mulai!'},
+  giInfoCount:{ko:'참가자 수',en:'Players',zh:'人数',es:'Jugadores',ja:'人数',fr:'Joueurs',de:'Spieler',pt:'Jogadores',ar:'العدد',ru:'Игроков',hi:'खिलाड़ी',it:'Giocatori',tr:'Oyuncu',nl:'Spelers',pl:'Graczy',id:'Pemain'},
+  giInfoWinners:{ko:'당첨 인원',en:'Winners',zh:'中奖人数',es:'Ganadores',ja:'当選人数',fr:'Gagnants',de:'Gewinner',pt:'Vencedores',ar:'الفائزون',ru:'Победителей',hi:'विजेता',it:'Vincitori',tr:'Kazanan',nl:'Winnaars',pl:'Wygrywających',id:'Pemenang'},
+  giInfoPass:{ko:'통과',en:'Pass',zh:'通过',es:'Pasa',ja:'パス',fr:'Passe',de:'Frei',pt:'Passa',ar:'مرر',ru:'Пропуск',hi:'पास',it:'Passa',tr:'Geç',nl:'Pas',pl:'Pass',id:'Lolos'},
+  giInfoPenalty:{ko:'벌칙',en:'Penalty',zh:'惩罚',es:'Castigo',ja:'罰',fr:'Pénalité',de:'Strafe',pt:'Castigo',ar:'عقوبة',ru:'Штраф',hi:'सजा',it:'Penalità',tr:'Ceza',nl:'Straf',pl:'Kara',id:'Hukuman'},
+  giInfoTeams:{ko:'팀 수',en:'Teams',zh:'团队数',es:'Equipos',ja:'チーム数',fr:'Équipes',de:'Teams',pt:'Equipes',ar:'الفرق',ru:'Команд',hi:'टीमें',it:'Squadre',tr:'Takım',nl:'Teams',pl:'Drużyn',id:'Tim'},
+  giInfoSwap:{ko:'바꾸기 찬스',en:'Swap Chance',zh:'交换机会',es:'Intercambio',ja:'交換チャンス',fr:'Échange',de:'Tausch',pt:'Troca',ar:'تبديل',ru:'Обмен',hi:'अदला-बदली',it:'Scambio',tr:'Takas',nl:'Wissel',pl:'Zamiana',id:'Tukar'},
+  giInfoRandom:{ko:'랜덤 순서',en:'Random Order',zh:'随机顺序',es:'Aleatorio',ja:'ランダム順',fr:'Aléatoire',de:'Zufällig',pt:'Aleatório',ar:'عشوائي',ru:'Случайный',hi:'यादृच्छिक',it:'Casuale',tr:'Rastgele',nl:'Willekeurig',pl:'Losowo',id:'Acak'},
+  giInfoSpeed:{ko:'사다리 속도',en:'Speed',zh:'速度',es:'Velocidad',ja:'速度',fr:'Vitesse',de:'Geschwindigkeit',pt:'Velocidade',ar:'السرعة',ru:'Скорость',hi:'गति',it:'Velocità',tr:'Hız',nl:'Snelheid',pl:'Prędkość',id:'Kecepatan'},
+  giOptOn:{ko:'ON',en:'ON',zh:'开',es:'ON',ja:'ON',fr:'ON',de:'AN',pt:'ON',ar:'تشغيل',ru:'ВКЛ',hi:'चालू',it:'ON',tr:'AÇIK',nl:'AAN',pl:'WŁ',id:'AKTIF'},
   closeBtn:{ko:'닫기',en:'Close',zh:'关闭',es:'Cerrar',ja:'閉じる',fr:'Fermer',de:'Schließen',pt:'Fechar',ar:'إغلاق',ru:'Закрыть',hi:'बंद',it:'Chiudi',tr:'Kapat',nl:'Sluiten',pl:'Zamknij',id:'Tutup'}
 };
 let currentLang='ko';
@@ -1044,14 +1076,73 @@ function launchGame(names,mode,md,preSlots){
   lc.onclick=handleCanvasClick;
   lc.ontouchend=handleCanvasTouch;
   drawFrame();
+  // 인트로 카드 표시 — 사용자가 "게임 시작" 누를 때까지 대기
+  showGameIntro();
+}
+
+function showGameIntro(){
+  if(!G)return;
+  // 타이틀
+  const mlKey={A:'modeTitleA',B:'modeTitleB',C:'modeTitleC',D:'modeTitleD',E:'modeTitleE',F:'modeTitleF'};
+  document.getElementById('gi-title').textContent=t(mlKey[G.mode]);
+  // 회차 표시 (분할일 때만)
+  const roundEl=document.getElementById('gi-round');
+  if(splitTotal>1){
+    roundEl.textContent=t('splitProgress',{c:splitCurrent+1,t:splitTotal});
+    roundEl.style.display='block';
+  } else {
+    roundEl.style.display='none';
+  }
+  // 참가자 명단 (사다리 출발 순서대로)
+  const namesEl=document.getElementById('gi-names');
+  namesEl.innerHTML='';
+  G.characters.forEach((c,i)=>{
+    const pill=document.createElement('div');
+    pill.className='gi-name-pill';
+    pill.innerHTML='<span class="gi-em">'+c.emoji+'</span><span>'+c.name+'</span><span class="gi-num">'+(i+1)+'</span>';
+    namesEl.appendChild(pill);
+  });
+  // 게임 정보
+  const infoEl=document.getElementById('gi-info');
+  infoEl.innerHTML='';
+  const addRow=(ico,lbl,val)=>{
+    const row=document.createElement('div');
+    row.className='gi-info-row';
+    row.innerHTML='<span class="gi-info-ico">'+ico+'</span><span>'+lbl+'</span><span class="gi-info-val">'+val+'</span>';
+    infoEl.appendChild(row);
+  };
+  addRow('👥',t('giInfoCount'),G.n+'');
+  // 모드별 정보 (A 모드는 결과 스포일러 방지를 위해 당첨 인원 표시 안 함)
+  if(G.mode==='D'){
+    const passCntG=G.characters.filter(c=>c.slot.cls==='pass').length;
+    const penCntG=G.n-passCntG;
+    addRow('✅',t('giInfoPass'),passCntG+'');
+    addRow('🔥',t('giInfoPenalty'),penCntG+'');
+  } else if(G.mode==='E'){
+    const teamCnt=new Set(G.characters.map(c=>c.slot.teamIdx)).size;
+    addRow('👥',t('giInfoTeams'),teamCnt+'');
+  }
+  // 공통 옵션
+  if(G.swapMode) addRow('🔀',t('giInfoSwap'),t('giOptOn'));
+  if(randomOrder) addRow('🎲',t('giInfoRandom'),t('giOptOn'));
+  const spdLabels={1:t('spdNormal'),1.8:t('spdFast'),3.5:t('spdFastest')};
+  addRow('🏃',t('giInfoSpeed'),spdLabels[speedMult]||'');
+  document.getElementById('game-intro').classList.add('show');
+}
+
+function confirmIntroStart(){
+  document.getElementById('game-intro').classList.remove('show');
+  if(!G)return;
+  // 1초 동안 사다리/슬롯을 눈으로 확인할 수 있도록 시작 텀
+  document.getElementById('gstat').textContent=t('gameGo');
   setTimeout(()=>{
     if(!G)return;
-    try{AC().resume()}catch(e){}  // unlock AudioContext
+    try{AC().resume()}catch(e){}
     G.phase='moving';
     document.getElementById('gstat').textContent=t('gameRunning');
     if(RAF)cancelAnimationFrame(RAF);
     RAF=requestAnimationFrame(loop);
-  },1300);
+  },1000);
 }
 
 function loop(){if(!G)return;tick();drawFrame();if(G.phase==='revealed'&&G.particles.length===0&&G.celebT>200)return;RAF=requestAnimationFrame(loop)}
@@ -1717,6 +1808,7 @@ function cleanupGame(){
   document.getElementById('swap-ui').style.display='none';
   document.getElementById('rbtn').style.display='none';
   const ra=document.getElementById('round-actions');if(ra)ra.style.display='none';
+  const gi=document.getElementById('game-intro');if(gi)gi.classList.remove('show');
   _stars=null;
 }
 
@@ -1899,6 +1991,21 @@ function copyContactMail(){
       <button class="cbtn" style="flex:1;background:rgba(255,255,255,.08);color:#d1d5db;border:1px solid rgba(255,255,255,.12)" onclick="confirmSplit(false)"><span data-i18n="splitNo">✕ 한 번에</span></button>
       <button class="cbtn" style="flex:1;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff" onclick="confirmSplit(true)"><span data-i18n="splitYes">✓ 분할 진행</span></button>
     </div>
+  </div>
+</div>
+<div class="game-intro" id="game-intro">
+  <div class="gi-card">
+    <div class="gi-title" id="gi-title">🎯 사다리 타기</div>
+    <div class="gi-round" id="gi-round" style="display:none"></div>
+    <div class="gi-section">
+      <div class="gi-section-ttl" data-i18n="giNamesTitle">참가자 (출발 순서)</div>
+      <div class="gi-names" id="gi-names"></div>
+    </div>
+    <div class="gi-section">
+      <div class="gi-section-ttl" data-i18n="giOptsTitle">게임 정보</div>
+      <div class="gi-info" id="gi-info"></div>
+    </div>
+    <button class="gi-start-btn" onclick="confirmIntroStart()" data-i18n="giStartBtn">🎮 게임 시작!</button>
   </div>
 </div>
 </body>
